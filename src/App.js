@@ -1,9 +1,10 @@
-import './App.css';
+import "./App.css";
+import NavigationBar from "./site/NavBar";
 
 function App() {
   return (
     <div>
-      Hello from App
+      <NavigationBar />
     </div>
   );
 }

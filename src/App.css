@@ -1,3 +1,16 @@
+/* START NAVBAR STYLING */
+
+#AppBar {
+  background-color: #453054;
+}
+
+/* END  NAVBAR STYLING */
+
+body {
+  background-image: url("./assets/asset-1.jpg");
+  width: 100%;
+}
+
 .App {
   text-align: center;
 }

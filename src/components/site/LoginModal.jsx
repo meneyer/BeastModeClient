@@ -1,42 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
+// import Button from '@material-ui/core/Button';
+// import * as Mui from '@material-ui/core';
 import { Button, Modal } from "@material-ui/core";
 
-// The styling for the modal
-const LoginModal = (theme) => ({
-  modalStyle1: {
-    position: "absolute",
-    top: "10%",
-    left: "10%",
-    overflow: "scroll",
-    height: "100%",
-    display: "block",
-  },
-});
+import { makeStyles } from "@material-ui/core/styles";
+import Create from "./Auth/Create";
+
+function rand() {
+  return Math.round(Math.random() * 20) - 10;
+}
 
 function getModalStyle() {
-  const top = 50;
-  const left = 50;
+  const top = 50 + rand();
+  const left = 50 + rand();
 
   return {
     top: `${top}%`,
     left: `${left}%`,
     transform: `translate(-${top}%, -${left}%)`,
-    overflow: "scroll",
   };
 }
-// The actual modal
-<Modal open={this.state.open4} className={this.props.classes.modalStyle1}>
-  <div>
-    <Button
-      size="small"
-      color="primary"
-      variant="contained"
-      onClick={this.closeOrder}
-    >
-      Close
-    </Button>
-    {this.getPics()}
-  </div>
-</Modal>;
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    position: "absolute",
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+}));
+
+const LoginModal = (props) => {
+  const classes = useStyles();
+  // getModalStyle is not a pure function, we roll the style only on the first render
+  const [modalStyle] = React.useState(getModalStyle);
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const body = (
+    <div style={modalStyle} className={classes.paper}>
+      <Create updateToken={props.updateToken} />
+      {/* <SimpleModal /> */}
+    </div>
+  );
+
+  return (
+    <div>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        {body}
+      </Modal>
+    </div>
+  );
+};
 
 export default LoginModal;

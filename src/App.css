@@ -1,4 +1,10 @@
 /* START NAVBAR STYLING */
+/* COLOR HEX CODES and font choices
+#453054 - purple (MAIN)
+#A8C553 - green (SECONDARY)
+
+Google fonts: Russo One - Open Sans
+*/
 
 #AppBar {
   background-color: #453054;
@@ -6,9 +12,19 @@
 
 /* END  NAVBAR STYLING */
 
+#heroTitle {
+  font-family: Russo One, sans-serif;
+  font-size: 4em;
+  display: flex;
+  justify-content: center;
+  color: #a8c553;
+  margin-top: 400px;
+}
+
 body {
   background-image: url("./assets/asset-1.jpg");
-  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .App {

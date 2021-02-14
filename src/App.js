@@ -1,10 +1,13 @@
 import "./App.css";
-import NavigationBar from "./site/NavBar";
+import ButtonAppBar from "./components/site/ButtonAppBar";
+// import NavigationBar from "./components/site/NavBar";
 
 function App() {
   return (
     <div>
-      <NavigationBar />
+      <ButtonAppBar />
+
+      <h1 id="heroTitle">BEAST : MODE</h1>
     </div>
   );
 }

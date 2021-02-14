@@ -8,7 +8,6 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
-import LoginModal from "./LoginModal";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,11 +37,7 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}></Typography>
-          <Button
-            startIcon={<AccountBoxIcon />}
-            color="inherit"
-            onClick={<LoginModal />}
-          >
+          <Button startIcon={<AccountBoxIcon />} color="inherit">
             Log In
           </Button>
           <Button startIcon={<VpnKeyIcon />} color="inherit">

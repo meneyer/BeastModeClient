@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Button, Modal } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core/styles";
-import Create from "./Auth/Create";
+// import Create from "./Auth/Create";
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -48,7 +48,7 @@ const LoginModal = (props) => {
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <Create updateToken={props.updateToken} />
+      {/* <Create updateToken={props.updateToken} /> */}
       {/* <SimpleModal /> */}
     </div>
   );

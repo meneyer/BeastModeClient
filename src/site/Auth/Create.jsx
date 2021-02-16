@@ -9,12 +9,20 @@ const Create = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        //keeps page from reloading after submit
         // console.log(email,password);
-        if (password.length < 6) {
-            alert("password must be 6 or more characters");
+        if (password.length < 5) {
+            alert("password must be at least 5 characters");
             return;
         }
-        //keeps page from reloading after submit
+        let R = new RegExp(/[^@]+@[^@]+\.[^@]+/g);
+
+        //TODO ---WORK ON THIS REGEX!
+        if (!R.test(email)) {
+            alert("Must use valid email address");
+            return;
+        }
+        
         fetch('http://localhost:3000/user/create', {
             method: 'POST',
             body: JSON.stringify({user:{email: email, password: password}}),
@@ -26,7 +34,7 @@ const Create = (props) => {
             (response) => response.json()
         ).then((data) => {
             props.updateToken(data.sessionToken);
-            console.log("User created!")
+            console.log("Account created!")
             setSuccess("Account Created!")
             props.setOpen(false);
         })
@@ -37,13 +45,13 @@ const Create = (props) => {
         <div>
             <form >
                 <label>Create New Account</label><br />
-                <TextField id="outlined-basic" label="email" variant="outlined" onChange={(e) => setEmail(e.target.value)}
+                <TextField required id="email outlined-required" label="email" variant="outlined" onChange={(e) => setEmail(e.target.value)}
                         name="email" value={email}/>
                 <br/>
-                <TextField id="outlined-basic" label="password" variant="outlined" onChange={(e) => setPassword(e.target.value)}
+                <TextField required id="password outlined-required" type="password" label="password" variant="outlined" onChange={(e) => setPassword(e.target.value)}
                         name="password" value={password}/>
                 <br/>
-                <Button variant="contained" color="primary" onClick={handleSubmit}>
+                <Button variant="contained" color="primary" onClick={handleSubmit}>           
                 Submit
                 </Button>
             </form>

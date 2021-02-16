@@ -9,7 +9,7 @@ const Login = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(email,password);
+        // console.log(email,password);
         //keeps page from reloading after submit
         fetch('http://localhost:3000/user/login', {
             method: 'POST',
@@ -24,7 +24,9 @@ const Login = (props) => {
             props.updateToken(data.sessionToken);
             console.log("User logged in!")
             setSuccess("Logged In!")
+            props.setOpen(false);
         })
+        .catch((err) => console.log(err));
     }
 
     return ( 

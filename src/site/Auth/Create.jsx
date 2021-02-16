@@ -9,7 +9,11 @@ const Create = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(email,password);
+        // console.log(email,password);
+        if (password.length < 6) {
+            alert("password must be 6 or more characters");
+            return;
+        }
         //keeps page from reloading after submit
         fetch('http://localhost:3000/user/create', {
             method: 'POST',
@@ -24,6 +28,7 @@ const Create = (props) => {
             props.updateToken(data.sessionToken);
             console.log("User created!")
             setSuccess("Account Created!")
+            props.setOpen(false);
         })
         .catch((err) => console.log(err))
     }
@@ -31,7 +36,7 @@ const Create = (props) => {
     return ( 
         <div>
             <form >
-                <label>Create Account</label><br />
+                <label>Create New Account</label><br />
                 <TextField id="outlined-basic" label="email" variant="outlined" onChange={(e) => setEmail(e.target.value)}
                         name="email" value={email}/>
                 <br/>

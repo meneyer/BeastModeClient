@@ -3,6 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 const Create = (props) => {
+    const [success, setSuccess] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -22,23 +23,26 @@ const Create = (props) => {
         ).then((data) => {
             props.updateToken(data.sessionToken);
             console.log("User created!")
+            setSuccess("Account Created!")
         })
+        .catch((err) => console.log(err))
     }
 
     return ( 
         <div>
             <form >
-            <label>Create Account</label><br />
-            <TextField id="outlined-basic" label="email" variant="outlined" onChange={(e) => setEmail(e.target.value)}
-                    name="email" value={email}/>
-            <br/>
-            <TextField id="outlined-basic" label="password" variant="outlined" onChange={(e) => setPassword(e.target.value)}
-                    name="password" value={password}/>
-            <br/>
-            <Button variant="contained" color="primary" onClick={handleSubmit}>
-            Submit
-            </Button>
-        </form>
+                <label>Create Account</label><br />
+                <TextField id="outlined-basic" label="email" variant="outlined" onChange={(e) => setEmail(e.target.value)}
+                        name="email" value={email}/>
+                <br/>
+                <TextField id="outlined-basic" label="password" variant="outlined" onChange={(e) => setPassword(e.target.value)}
+                        name="password" value={password}/>
+                <br/>
+                <Button variant="contained" color="primary" onClick={handleSubmit}>
+                Submit
+                </Button>
+            </form>
+            <p>{success}</p>
         </div>
      );
 }

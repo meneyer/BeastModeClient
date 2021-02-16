@@ -5,6 +5,7 @@ import {Button, Modal} from "@material-ui/core";
 
 import { makeStyles } from '@material-ui/core/styles';
 import Create from './Auth/Create';
+import Login from './Auth/Login';
 
 function rand() {
     return Math.round(Math.random() * 20) - 10;
@@ -48,7 +49,7 @@ const NavigationBar = (props) => {
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      
+      <Login updateToken={props.updateToken} />
       <Create updateToken={props.updateToken}/>
       {/* <SimpleModal /> */}
     </div>
@@ -61,6 +62,8 @@ const NavigationBar = (props) => {
         <div>
             Hello from Navbar!!
             <Button variant="contained" color="secondary" onClick={handleOpen}>Sign In/Create Account</Button>
+            {props.token === "" ? "" :
+            <Button variant="contained" color='primary' onClick={props.clearToken}>Logout</Button>}
             <Modal
                 open={open}
                 onClose={handleClose}

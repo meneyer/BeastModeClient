@@ -5,6 +5,7 @@ import {Button, Modal} from "@material-ui/core";
 
 import { makeStyles } from '@material-ui/core/styles';
 import Create from './Auth/Create';
+import Login from './Auth/Login';
 
 function rand() {
     return Math.round(Math.random() * 20) - 10;
@@ -35,8 +36,9 @@ function rand() {
 const NavigationBar = (props) => {
     const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
-  const [modalStyle] = React.useState(getModalStyle);
-  const [open, setOpen] = React.useState(false);
+  const [modalStyle] = useState(getModalStyle);
+  const [open, setOpen] = useState(false);
+  const [signup, setSignup] = useState(false);
 
   const handleOpen = () => {
     setOpen(true);
@@ -44,12 +46,23 @@ const NavigationBar = (props) => {
 
   const handleClose = () => {
     setOpen(false);
+    setSignup(false);
   };
+
+  const signupOpen = () => {
+    setSignup(true);
+  }
+
+  const signupClosed =() => {
+    setSignup(false);
+  }
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      
-      <Create updateToken={props.updateToken}/>
+      {signup === false ? 
+        <Login updateToken={props.updateToken} open={open} setOpen={setOpen} /> : ""}
+      {signup === false ? <div><a href="#" onClick={signupOpen}>Create New Account</a></div> : 
+      <Create updateToken={props.updateToken} open={open} setOpen={setOpen} /> }
       {/* <SimpleModal /> */}
     </div>
   );
@@ -60,7 +73,9 @@ const NavigationBar = (props) => {
 
         <div>
             Hello from Navbar!!
-            <Button variant="contained" color="secondary" onClick={handleOpen}>Sign In/Create Account</Button>
+            {props.token === "" ? <Button variant="contained" color="secondary" onClick={handleOpen}>Sign In/Create Account</Button> : <span> LOGGED IN </span>}
+            {props.token === "" ? "" :
+            <Button variant="contained" color='primary' onClick={props.clearToken}>Logout</Button>}
             <Modal
                 open={open}
                 onClose={handleClose}

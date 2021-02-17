@@ -8,6 +8,8 @@ import {
   NavItem,
   NavLink,
   NavbarText,
+  Alert,
+  Button,
 } from "reactstrap";
 
 const Header = (props) => {
@@ -23,7 +25,7 @@ const Header = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Register</NavLink>
+              <Button>Register</Button>
             </NavItem>
             <NavItem>
               <NavLink href="/">Log In</NavLink>

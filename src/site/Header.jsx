@@ -29,11 +29,9 @@ const Header = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            <NavItem>
-              <Button className="btn-secondary">Register</Button>
-            </NavItem>
-            <NavItem>
-              <Button className="btn-outline-dark">Log In</Button>
+            <NavItem className="btn-group">
+              <Button>Register</Button>
+              <Button>Log In</Button>
             </NavItem>
           </Nav>
         </Collapse>

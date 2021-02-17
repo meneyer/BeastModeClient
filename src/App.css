@@ -1,3 +1,18 @@
+/* Custom items for website
+PURPLE --> #453054
+GREEN --> #A8C553
+WHITE --> #FFFFFF
+FONTS --> Russo One & Open Sans
+*/
+
+#navBar {
+  background-color: #453054;
+}
+
+#footer {
+  background-color: #a8c553;
+}
+
 .App {
   text-align: center;
 }

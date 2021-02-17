@@ -33,10 +33,10 @@ const Login = (props) => {
         <div>
             <form >
             <label>Login</label><br />
-            <TextField required id="outlined-required" label="email" variant="outlined" onChange={(e) => setEmail(e.target.value)}
+            <TextField required id="email outlined-required" label="email" variant="outlined" onChange={(e) => setEmail(e.target.value)}
                     name="email" value={email}/>
             <br/>
-            <TextField required id="outlined-required" type="password" label="password" variant="outlined" onChange={(e) => setPassword(e.target.value)}
+            <TextField required id="password outlined-required" type="password" label="password" variant="outlined" onChange={(e) => setPassword(e.target.value)}
                     name="password" value={password}/>
             <br/>
             <Button variant="contained" color="primary" onClick={handleSubmit}>

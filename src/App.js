@@ -3,7 +3,8 @@ import NavigationBar from "./site/NavBar";
 import React, { useState, useEffect } from "react";
 import LoggedIn from "./site/Auth/LoggedIn";
 import BeforeLogIn from "./site/Auth/BeforeLogin";
-import Footer from "./components/Footer";
+import Footer from "./site/Footer";
+import Header from "./site/Header";
 
 function App() {
   // app.get('/*', function(req, res) {
@@ -47,13 +48,14 @@ function App() {
 
   return (
     <div>
-      <NavigationBar
+      <Header />
+      {/* <NavigationBar
         updateToken={updateToken}
         clearToken={clearToken}
         token={sessionToken}
       />
 
-      {loggedInVsOut()}
+      {loggedInVsOut()} */}
       <Footer />
     </div>
   );

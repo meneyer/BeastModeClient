@@ -5,6 +5,15 @@ import LoggedIn from './site/Auth/LoggedIn';
 import BeforeLogIn from './site/Auth/BeforeLogin';
 
 function App() {
+  // app.get('/*', function(req, res) {
+  //   res.sendFile(path.join(__dirname, 'path/to/your/index.html'), function(err) {
+  //     if (err) {
+  //       res.status(500).send(err)
+  //     }
+  //   })
+  // })
+
+
   const [sessionToken, setSessionToken] = useState('');
   //using useState Hook to create a new state variable, sessionToken, will be empty, then have value, then emptied again
 
@@ -25,6 +34,7 @@ function App() {
   const clearToken = () => {
     localStorage.clear();
     setSessionToken('');
+    console.log("Token cleared and Logged out")
   }
 
   const loggedInVsOut = () => {
@@ -34,8 +44,8 @@ function App() {
 
   return (
     <div>
-      <NavigationBar updateToken={updateToken}/>
-      Hello from App
+      <NavigationBar updateToken={updateToken} clearToken={clearToken} token={sessionToken}/>
+      
       {loggedInVsOut()}
     </div>
   );

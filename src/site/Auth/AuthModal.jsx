@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  NavItem,
+} from "reactstrap";
 import Login from "./Login";
 import Create from "./Create";
 
@@ -29,7 +36,10 @@ const AuthModal = (props) => {
   );
   return (
     <>
-      <Button onClick={toggle}>Login</Button>
+      <NavItem className="btn-group">
+        <Button>Register</Button>
+        <Button onClick={toggle}>Login</Button>
+      </NavItem>
       <Modal
         isOpen={modal}
         toggle={toggle}

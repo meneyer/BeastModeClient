@@ -5,6 +5,12 @@ WHITE --> #ffff
 FONTS --> Russo One & Open Sans
 */
 
+/* All placeholder text should use classname='placeholder' */
+.placeholder {
+  color: white;
+  font-size: 25px;
+}
+/* ------------ */
 #navBar {
   background-color: #453054;
 }
@@ -30,7 +36,10 @@ FONTS --> Russo One & Open Sans
   font-family: Open Sans;
 }
 
-/* Custom CSS is above this */
+button {
+}
+
+/* Custom CSS is above this line*/
 .App {
   text-align: center;
 }

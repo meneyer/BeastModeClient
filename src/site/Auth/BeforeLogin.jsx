@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const BeforeLogin = (props) => {
-    return ( 
-        <div>
-            Hello from BeforeLogin
-        </div>
-     );
-}
- 
+  return (
+    <div>
+      <p className="placeholder">Hello from BeforeLogin</p>
+    </div>
+  );
+};
+
 export default BeforeLogin;

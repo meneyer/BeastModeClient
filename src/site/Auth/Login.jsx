@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 const Login = (props) => {
     const [email, setEmail] = useState("");
@@ -31,19 +31,20 @@ const Login = (props) => {
 
     return ( 
         <div>
-            <form >
-            <label>Login</label><br />
-            <TextField required id="email outlined-required" label="email" variant="outlined" onChange={(e) => setEmail(e.target.value)}
-                    name="email" value={email}/>
-            <br/>
-            <TextField required id="password outlined-required" type="password" label="password" variant="outlined" onChange={(e) => setPassword(e.target.value)}
-                    name="password" value={password}/>
-            <br/>
-            <Button variant="contained" color="primary" onClick={handleSubmit}>
-            Submit
-            </Button>
-            <p>{success}</p>
-        </form>
+            <Form>
+                <Label>Login</Label>
+                <FormGroup>
+                    <Label for="email">Email</Label>
+                    <Input type="email" name="email" id="email" placeholder="" onChange={(e) => setEmail(e.target.value)}  value={email}/>
+                </FormGroup>
+                <FormGroup>
+                    <Label for="password">Password</Label>
+                    <Input type="password" name="password" id="password" placeholder="" onChange={(e) => setPassword(e.target.value)} value={password}/>
+                </FormGroup>
+                <Button  color="primary" onClick={handleSubmit}>Submit</Button>
+            </Form>
+
+
         </div>
      );
 }

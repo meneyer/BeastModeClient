@@ -1,10 +1,16 @@
 /* Custom items for website
 PURPLE --> #453054
 GREEN --> #A8C553
-WHITE --> #FFFFFF
+WHITE --> #ffff
 FONTS --> Russo One & Open Sans
 */
 
+/* All placeholder text should use classname='placeholder' */
+.placeholder {
+  color: white;
+  font-size: 25px;
+}
+/* ------------ */
 #navBar {
   background-color: #453054;
 }
@@ -13,6 +19,27 @@ FONTS --> Russo One & Open Sans
   background-color: #a8c553;
 }
 
+#heroIntro {
+  margin-top: 300px;
+  text-align: center;
+}
+
+.intro {
+  color: #a8c553;
+  font-size: 4em;
+  font-family: Russo One;
+}
+
+.subIntro {
+  color: #ffff;
+  font-size: 2em;
+  font-family: Open Sans;
+}
+
+button {
+}
+
+/* Custom CSS is above this line*/
 .App {
   text-align: center;
 }

@@ -53,9 +53,9 @@ function App() {
         updateToken={updateToken}
         clearToken={clearToken}
         token={sessionToken}
-      />
+      /> */}
 
-      {loggedInVsOut()} */}
+      {loggedInVsOut()}
       <Footer />
     </div>
   );

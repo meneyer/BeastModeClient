@@ -48,14 +48,14 @@ function App() {
 
   return (
     <div>
-      <Header />
-      {/* <NavigationBar
+      {/* <Header /> */}
+      <NavigationBar
         updateToken={updateToken}
         clearToken={clearToken}
         token={sessionToken}
       />
 
-      {loggedInVsOut()} */}
+      {loggedInVsOut()}
       <Footer />
     </div>
   );

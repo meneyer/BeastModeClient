@@ -34,7 +34,7 @@ const AuthModal = (props) => {
         :  <div style={{display: 'none'}}><Login updateToken={props.updateToken} open={open} setOpen={setOpen}/></div> }
         
 
-        {signup === false ? <div><a href="#" onClick={signupOpen}>Create New Account</a><div style={{display: 'none'}}><Create updateToken={props.updateToken} open={open} setOpen={setOpen} /></div></div> : 
+        {signup === false ? <p><a href="#" onClick={signupOpen}>Create New Account</a><div style={{display: 'none'}}><Create updateToken={props.updateToken} open={open} setOpen={setOpen} /></div></p> : 
         <Create updateToken={props.updateToken} open={open} setOpen={setOpen} /> }
         </ModalBody>
 

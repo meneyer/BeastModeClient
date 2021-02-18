@@ -19,7 +19,7 @@ const Header = (props) => {
   return (
     <div>
       <Navbar className="shadow p-2 mb-5 bg-body" id="navBar" dark expand="md">
-        <NavbarBrand>Beast : Mode</NavbarBrand>
+        <NavbarBrand>LOGO HERE</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>

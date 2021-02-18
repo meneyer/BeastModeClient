@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import {} from 'reactstrap';
 
-
 const EventUpdate = (props) => {
-    return (
-        <div>
-            Hello from Event Update
-        </div>
-    );
-}
+  return (
+    <div>
+      <p className="placeholder">Hello from Event Update</p>
+    </div>
+  );
+};
 
 export default EventUpdate;

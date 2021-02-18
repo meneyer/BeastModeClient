@@ -8,7 +8,6 @@ import {
   NavItem,
   NavLink,
   NavbarText,
-  Alert,
   Button,
 } from "reactstrap";
 
@@ -19,19 +18,17 @@ const Header = (props) => {
 
   return (
     <div>
-      <Navbar id="navBar" dark expand="md">
-        <NavbarBrand>Beast : Mode</NavbarBrand>
+      <Navbar className="shadow p-2 mb-5 bg-body" id="navBar" dark expand="md">
+        <NavbarBrand>LOGO HERE</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
+          <Nav className="ml-auto" navbar>
+            <NavItem className="btn-group">
               <Button>Register</Button>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/">Log In</NavLink>
+              <Button>Log In</Button>
+              <Button>Log Out</Button>
             </NavItem>
           </Nav>
-          <NavbarText>Nope</NavbarText>
         </Collapse>
       </Navbar>
     </div>

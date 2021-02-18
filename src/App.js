@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import LoggedIn from "./site/Auth/LoggedIn";
 import BeforeLogIn from "./site/Auth/BeforeLogin";
 import Footer from "./site/Footer";
-import Header from "./site/Header";
+import background from "./assets/Megs1.jpg";
 
 function App() {
   // app.get('/*', function(req, res) {
@@ -47,15 +47,34 @@ function App() {
   };
 
   return (
-    <div>
-      <Header />
-      {/* <NavigationBar
+
+    <div
+      class="bg_image"
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundSize: "cover",
+        height: "100vh",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
+    >
+
+      <NavigationBar
         updateToken={updateToken}
         clearToken={clearToken}
         token={sessionToken}
       /> */}
 
       {loggedInVsOut()}
+<<<<<<< HEAD
+=======
+
+      <div id="heroIntro">
+        <p className="intro">BEAST : MODE</p>
+        <p className="subIntro">Prepare Yourself</p>
+      </div>
+
+>>>>>>> 99cc772b817333e5d0a281d712d5cb77c7ddb95d
       <Footer />
     </div>
   );

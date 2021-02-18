@@ -8,7 +8,6 @@ import {
   NavItem,
   NavLink,
   NavbarText,
-  Alert,
   Button,
 } from "reactstrap";
 
@@ -19,12 +18,7 @@ const Header = (props) => {
 
   return (
     <div>
-      <Navbar
-        className="shadow-lg p-2 mb-5 bg-body"
-        id="navBar"
-        dark
-        expand="md"
-      >
+      <Navbar className="shadow p-2 mb-5 bg-body" id="navBar" dark expand="md">
         <NavbarBrand>Beast : Mode</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

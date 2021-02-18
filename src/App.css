@@ -13,14 +13,14 @@ FONTS --> Russo One & Open Sans
   background-color: #a8c553;
 }
 
-body {
+/* body {
   margin: 0;
-  background-image: url("./assets/ultra-video-overlay.png");
+  background-image: url("./assets/WallClimb.png");
   height: 100%;
   /* background-position: center; */
-  background-repeat: no-repeat;
+/* background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
 /* Custom CSS is above this */
 .App {

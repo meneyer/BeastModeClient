@@ -5,6 +5,7 @@ import LoggedIn from "./site/Auth/LoggedIn";
 import BeforeLogIn from "./site/Auth/BeforeLogin";
 import Footer from "./site/Footer";
 import Header from "./site/Header";
+import background from "./assets/Megs1.jpg";
 
 function App() {
   // app.get('/*', function(req, res) {
@@ -47,7 +48,16 @@ function App() {
   };
 
   return (
-    <div>
+    <div
+      class="bg_image"
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundSize: "cover",
+        height: "100vh",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
+    >
       <Header />
       {/* <NavigationBar
         updateToken={updateToken}

@@ -26,6 +26,7 @@ const Header = (props) => {
             <NavItem className="btn-group">
               <Button>Register</Button>
               <Button>Log In</Button>
+              <Button>Log Out</Button>
             </NavItem>
           </Nav>
         </Collapse>

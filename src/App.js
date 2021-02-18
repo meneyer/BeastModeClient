@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import LoggedIn from "./site/Auth/LoggedIn";
 import BeforeLogIn from "./site/Auth/BeforeLogin";
 import Footer from "./site/Footer";
-import Header from "./site/Header";
 import background from "./assets/Megs1.jpg";
 
 function App() {
@@ -58,15 +57,13 @@ function App() {
         backgroundPosition: "center",
       }}
     >
-      <Header />
-
-      {/* <NavigationBar
+      <NavigationBar
         updateToken={updateToken}
         clearToken={clearToken}
         token={sessionToken}
       />
 
-      {loggedInVsOut()} */}
+      {loggedInVsOut()}
       <div id="heroIntro">
         <p className="intro">BEAST : MODE</p>
         <p className="subIntro">Prepare Yourself</p>

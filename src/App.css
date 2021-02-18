@@ -1,7 +1,7 @@
 /* Custom items for website
 PURPLE --> #453054
 GREEN --> #A8C553
-WHITE --> #FFFFFF
+WHITE --> #ffff
 FONTS --> Russo One & Open Sans
 */
 
@@ -13,14 +13,22 @@ FONTS --> Russo One & Open Sans
   background-color: #a8c553;
 }
 
-/* body {
-  margin: 0;
-  background-image: url("./assets/WallClimb.png");
-  height: 100%;
-  /* background-position: center; */
-/* background-repeat: no-repeat;
-  background-size: cover;
-} */
+#heroIntro {
+  margin-top: 300px;
+  text-align: center;
+}
+
+.intro {
+  color: #a8c553;
+  font-size: 4em;
+  font-family: Russo One;
+}
+
+.subIntro {
+  color: #ffff;
+  font-size: 2em;
+  font-family: Open Sans;
+}
 
 /* Custom CSS is above this */
 .App {

@@ -59,6 +59,7 @@ function App() {
       }}
     >
       <Header />
+
       {/* <NavigationBar
         updateToken={updateToken}
         clearToken={clearToken}
@@ -66,6 +67,11 @@ function App() {
       />
 
       {loggedInVsOut()} */}
+      <div id="heroIntro">
+        <p className="intro">BEAST : MODE</p>
+        <p className="subIntro">Prepare Yourself</p>
+      </div>
+
       <Footer />
     </div>
   );

@@ -37,8 +37,9 @@ const AuthModal = (props) => {
   return (
     <>
       <NavItem className="btn-group">
-        {/* <Button>Register</Button> */}
-        <Button onClick={toggle}>Login</Button>
+
+        <Button onClick={toggle}>Create User / Login</Button>
+
       </NavItem>
       <Modal
         isOpen={modal}

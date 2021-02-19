@@ -43,7 +43,7 @@ const NavigationBar = (props) => {
   return (
     <div>
       <Navbar className="shadow p-2 mb-5 bg-body" id="navBar" dark expand="md">
-        <NavbarBrand>LOGO HERE</NavbarBrand>
+        <NavbarBrand className="brandName">BEAST : MODE</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>

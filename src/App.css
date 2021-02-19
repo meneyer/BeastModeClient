@@ -20,19 +20,20 @@ FONTS --> Russo One & Open Sans
 }
 
 #heroIntro {
-  margin-top: 600px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
 .intro {
   color: #a8c553;
-  font-size: 4em;
+  font-size: 3em;
   font-family: Russo One;
 }
 
-.subIntro {
+.brandName {
   color: #ffff;
-  font-size: 2em;
+  font-size: 20px;
+  margin-left: 5px;
   font-family: Open Sans;
 }
 

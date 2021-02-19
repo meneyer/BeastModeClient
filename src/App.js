@@ -51,7 +51,8 @@ function App() {
       class="bg_image"
       style={{
         // backgroundImage: `url(${background})`,
-        background: "linear-gradient(to left, #221f3b, #4b5d67)",
+        // background: "linear-gradient(to left, #393e46, #222831)",
+        backgroundColor: "#1d2323",
         backgroundSize: "cover",
         height: "100vh",
         backgroundRepeat: "no-repeat",
@@ -66,8 +67,7 @@ function App() {
 
       {loggedInVsOut()}
       <div id="heroIntro">
-        <p className="intro">BEAST : MODE</p>
-        <p className="subIntro">Prepare Yourself</p>
+        <p className="intro">Prepare.Yourself</p>
       </div>
 
       <Footer />

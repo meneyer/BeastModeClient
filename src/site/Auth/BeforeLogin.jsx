@@ -25,34 +25,23 @@ const BeforeLogin = () => {
         <MDBCarouselInner>
           <MDBCarouselItem itemId="1">
             <MDBView>
-              <img
-                className="d-block h-50 w-100"
-                src={Image1}
-                alt="First slide"
-              />
+              <img className="d-block w-100" src={Image1} alt="First slide" />
+              {/* d-flex align-items-center justify-content-center min-vh-100 */}
             </MDBView>
           </MDBCarouselItem>
           <MDBCarouselItem itemId="2">
             <MDBView>
-              <img className="d-block  w-100" src={Image2} alt="Second slide" />
+              <img className="d-block w-100" src={Image2} alt="Second slide" />
             </MDBView>
           </MDBCarouselItem>
           <MDBCarouselItem itemId="3">
             <MDBView>
-              <img
-                className="d-block h-50 w-100"
-                src={Image3}
-                alt="Third slide"
-              />
+              <img className="d-block w-100" src={Image3} alt="Third slide" />
             </MDBView>
           </MDBCarouselItem>
           <MDBCarouselItem itemId="4">
             <MDBView>
-              <img
-                className="d-block h-50 w-100"
-                src={Image4}
-                alt="Fourth slide"
-              />
+              <img className="d-block w-100" src={Image4} alt="Fourth slide" />
             </MDBView>
           </MDBCarouselItem>
         </MDBCarouselInner>

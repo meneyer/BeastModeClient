@@ -10,9 +10,31 @@ FONTS --> Russo One & Open Sans
   color: white;
   font-size: 25px;
 }
+
+#root {
+  color: white;
+}
+
+#loggedIn {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle; 
+  display: inline-block;
+  font-size: .9em;
+  height: 38px;
+  line-height: 38px;
+  /* padding-top: 10px; */
+}
+
+
 /* ------------ */
 #navBar {
   background-color: #453054;
+  align-items: center;
+  display: flex;
+  
 }
 
 #footer {
@@ -36,6 +58,7 @@ FONTS --> Russo One & Open Sans
   margin-left: 5px;
   font-family: Open Sans;
 }
+
 
 /* Custom CSS is above this line*/
 .App {

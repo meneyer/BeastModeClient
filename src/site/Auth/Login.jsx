@@ -1,6 +1,8 @@
-import React, { useState } from "react";
 
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import React, { useState } from 'react';
+
+import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
+
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
@@ -29,38 +31,52 @@ const Login = (props) => {
       .catch((err) => console.log(err));
   };
 
-  return (
-    <div>
-      <Form>
-        <Label>Login</Label>
-        <FormGroup>
-          <Label for="email">Email</Label>
-          <Input
-            type="email"
-            name="email"
-            id="email"
-            placeholder=""
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="password">Password</Label>
-          <Input
-            type="password"
-            name="password"
-            id="password"
-            placeholder=""
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
-        </FormGroup>
-        <Button color="primary" onClick={handleSubmit}>
-          Submit
-        </Button>
-      </Form>
-    </div>
-  );
-};
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // console.log(email,password);
+        //keeps page from reloading after submit
+        fetch('http://localhost:3000/user/login', {
+            method: 'POST',
+            body: JSON.stringify({user:{email: email, password: password}}),
+            
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        }).then (
+            (response) => response.json()
+        ).then((data) => {
+            props.updateToken(data.sessionToken);
+            console.log("User logged in!")
+            setSuccess("Logged In!")
+            props.setOpen(false);
+        })
+        .catch((err) => console.log(err));
+    }
 
+    return ( 
+        <div>
+            <Form>
+                <Label><h3>Login</h3></Label>
+                <FormGroup>
+                    <Label for="email">Email</Label>
+                    <Input type="email" name="email" id="loginEmail" placeholder="" onChange={(e) => {
+                        setEmail(e.target.value) 
+                        localStorage.setItem('beastEmail', e.target.value)
+                        }}
+                        value={email}/>
+                </FormGroup>
+                <FormGroup>
+                    <Label for="password">Password</Label>
+                    <Input type="password" name="password" id="loginPassword" placeholder="" onChange={(e) => 
+                        setPassword(e.target.value)} value={password}/>
+                </FormGroup>
+                <Button  color="primary" onClick={handleSubmit}>Submit</Button>
+            </Form>
+
+
+        </div>
+     );
+}
+ 
 export default Login;
+

@@ -47,6 +47,7 @@ function App() {
   };
 
   return (
+
     <div
       class="bg_image"
       style={{
@@ -59,13 +60,15 @@ function App() {
         backgroundPosition: "center",
       }}
     >
+
       <NavigationBar
         updateToken={updateToken}
         clearToken={clearToken}
         token={sessionToken}
-      />
+      /> 
 
       {loggedInVsOut()}
+
       <div id="heroIntro">
         <p className="intro">Prepare.Yourself</p>
       </div>

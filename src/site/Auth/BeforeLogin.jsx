@@ -13,6 +13,7 @@ import Image4 from "../assets/Megs2.jpg";
 
 const BeforeLogin = () => {
   return (
+
     <MDBContainer>
       <MDBCarousel
         activeItem={1}
@@ -47,6 +48,7 @@ const BeforeLogin = () => {
         </MDBCarouselInner>
       </MDBCarousel>
     </MDBContainer>
+
   );
 };
 

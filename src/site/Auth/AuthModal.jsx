@@ -37,7 +37,9 @@ const AuthModal = (props) => {
   return (
     <>
       <NavItem className="btn-group">
+
         <Button onClick={toggle}>Create User / Login</Button>
+
       </NavItem>
       <Modal
         isOpen={modal}
@@ -53,6 +55,7 @@ const AuthModal = (props) => {
                 updateToken={props.updateToken}
                 open={open}
                 setOpen={setOpen}
+                displayEmail={props.displayEmail}
               />
             </div>
           ) : (
@@ -61,11 +64,23 @@ const AuthModal = (props) => {
                 updateToken={props.updateToken}
                 open={open}
                 setOpen={setOpen}
+                displayEmail={props.displayEmail}
               />
             </div>
           )}
 
-          {signup === false ? (
+          {/* GINGER MODAL */}
+
+        {/* {signup === false ? 
+        <div><Login updateToken={props.updateToken} open={open} setOpen={setOpen}/></div>
+        :  <div style={{display: 'none'}}><Login updateToken={props.updateToken} open={open} setOpen={setOpen}/></div> }
+        
+
+        {signup === false ? <p><a href="#" onClick={signupOpen}>Create New Account</a><div style={{display: 'none'}}><Create updateToken={props.updateToken} open={open} setOpen={setOpen} /></div></p> : 
+        <Create updateToken={props.updateToken} open={open} setOpen={setOpen} /> } */}
+
+
+           {signup === false ? (
             <div>
               <a href="#" onClick={signupOpen}>
                 Create New Account
@@ -75,6 +90,7 @@ const AuthModal = (props) => {
                   updateToken={props.updateToken}
                   open={open}
                   setOpen={setOpen}
+                  displayEmail={props.displayEmail}
                 />
               </div>
             </div>
@@ -83,8 +99,11 @@ const AuthModal = (props) => {
               updateToken={props.updateToken}
               open={open}
               setOpen={setOpen}
+              displayEmail={props.displayEmail}
             />
           )}
+
+
         </ModalBody>
       </Modal>
     </>

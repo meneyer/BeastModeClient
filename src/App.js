@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import LoggedIn from "./site/Auth/LoggedIn";
 import BeforeLogIn from "./site/Auth/BeforeLogin";
 import Footer from "./site/Footer";
-import background from "./assets/Megs1.jpg";
+// import background from "./assets/Megs1.jpg";
 
 function App() {
   // app.get('/*', function(req, res) {
@@ -50,7 +50,8 @@ function App() {
     <div
       class="bg_image"
       style={{
-        backgroundImage: `url(${background})`,
+        // backgroundImage: `url(${background})`,
+        background: "linear-gradient(to left, #221f3b, #4b5d67)",
         backgroundSize: "cover",
         height: "100vh",
         backgroundRepeat: "no-repeat",

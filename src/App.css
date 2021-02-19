@@ -20,7 +20,7 @@ FONTS --> Russo One & Open Sans
 }
 
 #heroIntro {
-  margin-top: 300px;
+  margin-top: 600px;
   text-align: center;
 }
 
@@ -34,9 +34,6 @@ FONTS --> Russo One & Open Sans
   color: #ffff;
   font-size: 2em;
   font-family: Open Sans;
-}
-
-button {
 }
 
 /* Custom CSS is above this line*/

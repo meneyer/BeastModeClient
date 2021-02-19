@@ -16,7 +16,7 @@ import AuthModal from "./Auth/AuthModal";
 
 const NavigationBar = (props) => {
   const [open, setOpen] = useState(false);
-
+  const [email, setEmail] = useState("");
   // navbar collapses
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
@@ -39,6 +39,9 @@ const NavigationBar = (props) => {
   // const signupClosed =() => {
   //   setSignup(false);
   // }
+  const displayEmail = (email) => {
+      setEmail(localStorage.getItem('beastEmail'));
+  }
 
   return (
     <div>
@@ -47,22 +50,24 @@ const NavigationBar = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            <NavItem className="btn-group">
+            
               {props.token === "" ? (
+                <NavItem className="btn-group">
                 <AuthModal
                   updateToken={props.updateToken}
                   open={open}
-                  setOpen={setOpen}
-                />
-              ) : (
-                <span> LOGGED IN </span>
+                  setOpen={setOpen} displayEmail={displayEmail}
+                /></NavItem>
+              ) : ( <NavItem id="loggedIn" disabled> 
+              {email === "" ? <p>Logged In</p> :
+                <p>Welcome, {email}</p> }</NavItem>
               )}
+              <NavItem>
               {props.token === "" ? (
                 ""
               ) : (
                 <Button
-                  variant="contained"
-                  color="primary"
+                  
                   onClick={props.clearToken}
                 >
                   Logout

@@ -17,7 +17,7 @@ const EventCreate = (props) => {
         e.preventDefault();
         fetch('http://localhost:3000/events/create', {
             method: 'POST',
-            body: JSON.stringify({create: {raceName: raceName, location: location, length: length, date: date, startTime: startTime, packList: packList, lodging: lodging, travelPlan:travelPlan}}),
+            body: JSON.stringify({events: {raceName: raceName, location: location, length: length, date: date, startTime: startTime, packList: packList, lodging: lodging, travelPlan:travelPlan}}),
             headers: new Headers ({
                 'Content-Type': 'application/json',
                 'Authorization' : props.token

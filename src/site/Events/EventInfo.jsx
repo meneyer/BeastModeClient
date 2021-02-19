@@ -29,7 +29,7 @@ const EventInfo = (props) => {
   return (
     <div>
       <p className="placeholder">Hello from Event Info</p>
-      <EventCreate token={props.token} />
+      <EventCreate token={props.token} fetchEventInfo={fetchEventInfo}/>
       <EventUpdate token={props.token} />
       <EventDelete token={props.token} />
       <h1>Enter Your Event Info Here!</h1>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 
 const Login = (props) => {
     const [email, setEmail] = useState("");
@@ -14,7 +14,7 @@ const Login = (props) => {
         fetch('http://localhost:3000/user/login', {
             method: 'POST',
             body: JSON.stringify({user:{email: email, password: password}}),
-            //changed password to passwordhash
+            
             headers: new Headers({
                 'Content-Type': 'application/json'
             })
@@ -32,14 +32,19 @@ const Login = (props) => {
     return ( 
         <div>
             <Form>
-                <Label>Login</Label>
+                <Label><h3>Login</h3></Label>
                 <FormGroup>
                     <Label for="email">Email</Label>
-                    <Input type="email" name="email" id="email" placeholder="" onChange={(e) => setEmail(e.target.value)}  value={email}/>
+                    <Input type="email" name="email" id="loginEmail" placeholder="" onChange={(e) => {
+                        setEmail(e.target.value) 
+                        localStorage.setItem('beastEmail', e.target.value)
+                        }}
+                        value={email}/>
                 </FormGroup>
                 <FormGroup>
                     <Label for="password">Password</Label>
-                    <Input type="password" name="password" id="password" placeholder="" onChange={(e) => setPassword(e.target.value)} value={password}/>
+                    <Input type="password" name="password" id="loginPassword" placeholder="" onChange={(e) => 
+                        setPassword(e.target.value)} value={password}/>
                 </FormGroup>
                 <Button  color="primary" onClick={handleSubmit}>Submit</Button>
             </Form>

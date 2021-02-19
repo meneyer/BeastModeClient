@@ -69,6 +69,7 @@ const AuthModal = (props) => {
           )}
 
           {/* GINGER MODAL */}
+
         {/* {signup === false ? 
         <div><Login updateToken={props.updateToken} open={open} setOpen={setOpen}/></div>
         :  <div style={{display: 'none'}}><Login updateToken={props.updateToken} open={open} setOpen={setOpen}/></div> }
@@ -76,6 +77,7 @@ const AuthModal = (props) => {
 
         {signup === false ? <p><a href="#" onClick={signupOpen}>Create New Account</a><div style={{display: 'none'}}><Create updateToken={props.updateToken} open={open} setOpen={setOpen} /></div></p> : 
         <Create updateToken={props.updateToken} open={open} setOpen={setOpen} /> } */}
+
 
            {signup === false ? (
             <div>
@@ -99,6 +101,7 @@ const AuthModal = (props) => {
               displayEmail={props.displayEmail}
             />
           )}
+
 
         </ModalBody>
       </Modal>

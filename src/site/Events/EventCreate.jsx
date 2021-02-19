@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
+import {Container, Row, Col, Button, Form, FormGroup, FormText, Label, Input} from 'reactstrap';
 
 
 const EventCreate = (props) => {
@@ -39,51 +39,65 @@ const EventCreate = (props) => {
 
     return (
         <div>
-            <h2>It's almost RACE DAY!</h2>
-            <h4>Enter your details below</h4>
-            <Form onSubmit={handleSubmit}> 
-            <FormGroup>
-                    <Label htmlFor="raceName"/>
-                    <Input name = "raceName" value={raceName} onChange={(e) =>setRaceName(e.target.value)}/>
-                    <option>Race Name</option>
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="location"/>
-                    <Input name = "location" value={location} onChange={(e) =>setLocation(e.target.value)}/>
-                    <option>Race Location</option>
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="length"/>
-                    <Input name = "length" value={length} onChange={(e) =>setLength(e.target.value)}/>
-                    <option>Race Distance</option>
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="date"/>
-                    <Input name = "date" value={date} onChange={(e) =>setDate(e.target.value)}/>
-                    <option>Race Date</option>
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="startTime"/>
-                    <Input name = "startTime" value={startTime} onChange={(e) =>setStartTime(e.target.value)}/>
-                    <option>Start Time</option>
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="packList"/>
-                    <Input name = "packList" value={packList} onChange={(e) =>setPackList(e.target.value)}/>
-                    <option>Pack List</option>
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="lodging"/>
-                    <Input name = "lodging" value={lodging} onChange={(e) =>setLodging(e.target.value)}/>
-                    <option>Lodging Plan</option>
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="travelPlan"/>
-                    <Input name = "travelPlan" value={travelPlan} onChange={(e) =>setTravelPlan(e.target.value)}/>
-                    <option>Travel Plan</option>
-                </FormGroup>
-                <Button type="submit">Submit Your Event Details</Button>
-            </Form>
+            <Container>
+                        <h2>It's almost RACE DAY!</h2>
+                        <h4>Enter your details below</h4>
+                <Row>
+                    <Col>
+                        <Form onSubmit={handleSubmit}> 
+                        <FormGroup>
+                                <Label htmlFor="raceName">Race Name</Label>
+                                <Input name = "raceName" value={raceName} placeholder = "Spartan Race, Savage Race, Tough Mudder, Rugged Maniac, etc." onChange={(e) =>setRaceName(e.target.value)}/>
+                               {/* <FormText> </FormText> */}
+                            </FormGroup>
+
+                            <FormGroup>
+                                <Label htmlFor="location">Race Location</Label>
+                                <Input name = "location" value={location} placeholder = "Race Location, Parking Details, etc." onChange={(e) =>setLocation(e.target.value)}/>
+                                {/* <FormText> </FormText> */}
+                            </FormGroup>
+
+                            <FormGroup>
+                                <Label htmlFor="length">Race Length</Label>
+                                <Input name = "length" value={length} placeholder = "Sprint, Super, Beast, Ultra, Trail, Stadion, 5K, 10K, Half Marathon, Marathon, etc." onChange={(e) =>setLength(e.target.value)}/>
+                                {/* <FormText> </FormText> */}
+                            </FormGroup>
+
+                            <FormGroup>
+                                <Label htmlFor="date">Date of Race</Label>
+                                <Input name = "date" type="date" value={date} placeholder = "Date of Race" onChange={(e) =>setDate(e.target.value)}/>
+                                {/* <FormText> </FormText> */}
+                            </FormGroup>
+
+                            <FormGroup>
+                                <Label htmlFor="Race Start Time">Start Time</Label>
+                                <Input name = "startTime" type="time" value={startTime} placeholder = "Wave Start Time" onChange={(e) =>setStartTime(e.target.value)}/>
+                                {/* <FormText> </FormText> */}
+                            </FormGroup>
+
+                            <FormGroup>
+                                <Label htmlFor="packList">Packing List</Label>
+                                <Input type="textarea" name = "packList" value={packList} placeholder = "Trashbags, Towels, Racing Shoes, Gels, Hydration Pack, Salt, Cash, ID, Race Confirmation Number, etc." onChange={(e) =>setPackList(e.target.value)}/>
+                                {/* <FormText> </FormText> */}
+                            </FormGroup>
+
+                            <FormGroup>
+                                <Label htmlFor="lodging">Lodging Plans</Label>
+                                <Input name = "lodging" value={lodging} placeholder = "Hotel: Name, Address, Confirmation Number;  Friend's Home: Address, Phone Number, Arrival Time" onChange={(e) =>setLodging(e.target.value)}/>
+                                {/* <FormText> </FormText> */}
+                            </FormGroup>
+
+                            <FormGroup>
+                                <Label htmlFor="travelPlan">Travel Plans</Label>
+                                <Input type="textarea" name = "travelPlan" placeholder = "General Travel Plans - Flight Details, Transportation to the Venue, Team Meet-ups, Favorite Restaraunts, Sites Seeing Opportunities, etc." value={travelPlan} onChange={(e) =>setTravelPlan(e.target.value)}/> 
+                                {/* <FormText> </FormText> */}
+                            </FormGroup>
+
+                            <Button type="submit">Submit Your Event Details</Button>
+                        </Form>
+                    </Col>
+                </Row>
+            </Container>
         </div>
     );
 }

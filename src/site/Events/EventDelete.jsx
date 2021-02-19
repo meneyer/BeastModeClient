@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import {} from 'reactstrap';
+import {} from 'reactstrap';
 
 const EventDelete = (props) => {
   return (

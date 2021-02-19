@@ -31,28 +31,6 @@ const Login = (props) => {
       .catch((err) => console.log(err));
   };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // console.log(email,password);
-        //keeps page from reloading after submit
-        fetch('http://localhost:3000/user/login', {
-            method: 'POST',
-            body: JSON.stringify({user:{email: email, password: password}}),
-            
-            headers: new Headers({
-                'Content-Type': 'application/json'
-            })
-        }).then (
-            (response) => response.json()
-        ).then((data) => {
-            props.updateToken(data.sessionToken);
-            console.log("User logged in!")
-            setSuccess("Logged In!")
-            props.setOpen(false);
-        })
-        .catch((err) => console.log(err));
-    }
-
     return ( 
         <div>
             <Form>

@@ -37,7 +37,7 @@ const AuthModal = (props) => {
   return (
     <>
       <NavItem className="btn-group">
-        <Button>Register</Button>
+        {/* <Button>Register</Button> */}
         <Button onClick={toggle}>Login</Button>
       </NavItem>
       <Modal
@@ -67,34 +67,34 @@ const AuthModal = (props) => {
           )}
 
 
-        {signup === false ? 
+        {/* {signup === false ? 
         <div><Login updateToken={props.updateToken} open={open} setOpen={setOpen}/></div>
         :  <div style={{display: 'none'}}><Login updateToken={props.updateToken} open={open} setOpen={setOpen}/></div> }
         
 
         {signup === false ? <p><a href="#" onClick={signupOpen}>Create New Account</a><div style={{display: 'none'}}><Create updateToken={props.updateToken} open={open} setOpen={setOpen} /></div></p> : 
-        <Create updateToken={props.updateToken} open={open} setOpen={setOpen} /> }
+        <Create updateToken={props.updateToken} open={open} setOpen={setOpen} /> } */}
 
-//           {signup === false ? (
-//             <div>
-//               <a href="#" onClick={signupOpen}>
-//                 Create New Account
-//               </a>
-//               <div style={{ display: "none" }}>
-//                 <Create
-//                   updateToken={props.updateToken}
-//                   open={open}
-//                   setOpen={setOpen}
-//                 />
-//               </div>
-//             </div>
-//           ) : (
-//             <Create
-//               updateToken={props.updateToken}
-//               open={open}
-//               setOpen={setOpen}
-//             />
-//           )}
+        {signup === false ? (
+          <div>
+            <a href="#" onClick={signupOpen}>
+              Create New Account
+            </a>
+            <div style={{ display: "none" }}>
+              <Create
+                updateToken={props.updateToken}
+                open={open}
+                setOpen={setOpen}
+              />
+            </div>
+            </div>
+            ) : (
+              <Create
+                updateToken={props.updateToken}
+                open={open}
+                setOpen={setOpen}
+              />
+        )}
 
         </ModalBody>
       </Modal>

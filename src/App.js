@@ -63,18 +63,15 @@ function App() {
         updateToken={updateToken}
         clearToken={clearToken}
         token={sessionToken}
-      /> */}
+      /> 
 
       {loggedInVsOut()}
-<<<<<<< HEAD
-=======
 
       <div id="heroIntro">
         <p className="intro">BEAST : MODE</p>
         <p className="subIntro">Prepare Yourself</p>
       </div>
 
->>>>>>> 99cc772b817333e5d0a281d712d5cb77c7ddb95d
       <Footer />
     </div>
   );

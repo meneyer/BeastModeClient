@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+// import TextField from '@material-ui/core/TextField';
+// import Button from '@material-ui/core/Button';
+import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 
 const Create = (props) => {
     const [success, setSuccess] = useState("");
@@ -17,7 +18,7 @@ const Create = (props) => {
         }
         let R = new RegExp(/[^@]+@[^@]+\.[^@]+/g);
 
-        //TODO ---WORK ON THIS REGEX!
+        //Might not need this Regex, the form may handle it.
         if (!R.test(email)) {
             alert("Must use valid email address");
             return;
@@ -43,18 +44,20 @@ const Create = (props) => {
 
     return ( 
         <div>
-            <form >
-                <label>Create New Account</label><br />
-                <TextField required id="email outlined-required" label="email" variant="outlined" onChange={(e) => setEmail(e.target.value)}
-                        name="email" value={email}/>
-                <br/>
-                <TextField required id="password outlined-required" type="password" label="password" variant="outlined" onChange={(e) => setPassword(e.target.value)}
-                        name="password" value={password}/>
-                <br/>
-                <Button variant="contained" color="primary" onClick={handleSubmit}>           
-                Submit
-                </Button>
-            </form>
+            <Form>
+                <Label><h3>Create New Account</h3></Label>
+                <FormGroup>
+                    <Label for="email">Email</Label>
+                    <Input type="email" name="email" id="createEmail" placeholder="" onChange={(e) => {
+                        setEmail(e.target.value) 
+                        localStorage.setItem('beastEmail', e.target.value)}}  value={email}/>
+                </FormGroup>
+                <FormGroup>
+                    <Label for="password">Password</Label>
+                    <Input type="password" name="password" id="createPassword" placeholder="" onChange={(e) => setPassword(e.target.value)} value={password}/>
+                </FormGroup>
+                <Button  color="primary" onClick={handleSubmit}>Submit</Button>
+            </Form>
             <p>{success}</p>
         </div>
      );

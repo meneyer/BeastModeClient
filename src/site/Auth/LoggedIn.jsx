@@ -4,7 +4,7 @@ import EventInfo from "../Events/EventInfo";
 const LoggedIn = (props) => {
   return (
     <div>
-      <p className="placeholder">Hello from LoggedIn</p>
+      <p className="placeholder"></p>
       <EventInfo token={props.token} />
     </div>
   );

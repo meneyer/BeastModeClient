@@ -67,11 +67,12 @@ function App() {
         token={sessionToken}
       /> 
 
-      {loggedInVsOut()}
+      
 
-      <div id="heroIntro">
+      {/* <div id="heroIntro">
         <p className="intro">Prepare.Yourself</p>
-      </div>
+      </div> */}
+      {loggedInVsOut()}
 
       <Footer />
     </div>

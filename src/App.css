@@ -13,6 +13,51 @@ FONTS --> Russo One & Open Sans
 
 #root {
   color: white;
+  min-height: 100vh;
+}
+
+body {
+  background-color: #1D2323;
+}
+
+#calendar {
+  color: black;
+  background-color: #a8c553;
+  min-width: 340px;
+  width: 90%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin:auto;
+}
+
+.columnHeader {
+  height: 40px;
+  background-color:#453054;
+  color: white;
+  margin:auto;
+  padding-left: 10px;
+  min-width: 340px;
+}
+.columnHeader h2 {
+  font-size: 1.4em;
+  line-height: 40px;
+}
+
+#loggedInPage {
+  padding-bottom: 40px;
+}
+
+#displayMessages, #displayEvents {
+  background-color: lightgray;
+  width: 90%;
+  margin: auto;
+  min-height: 500px;
+  padding: 20px;
+  color: #1D2323;
+  min-width: 340px;
 }
 
 #loggedIn {
@@ -24,10 +69,13 @@ FONTS --> Russo One & Open Sans
   display: inline-block;
   font-size: .9em;
   height: 38px;
-  line-height: 38px;
+  line-height: 35px;
   /* padding-top: 10px; */
 }
 
+#table {
+  background-color:white;
+}
 
 /* ------------ */
 #navBar {
@@ -39,6 +87,7 @@ FONTS --> Russo One & Open Sans
 
 #footer {
   background-color: #a8c553;
+  height: 35px;
 }
 
 #heroIntro {

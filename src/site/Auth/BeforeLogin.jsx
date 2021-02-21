@@ -13,7 +13,10 @@ import Image4 from "../assets/Megs2.jpg";
 
 const BeforeLogin = () => {
   return (
-
+    <>
+    <div id="heroIntro">
+        <p className="intro">Prepare.Yourself</p>
+    </div>
     <MDBContainer>
       <MDBCarousel
         activeItem={1}
@@ -48,7 +51,7 @@ const BeforeLogin = () => {
         </MDBCarouselInner>
       </MDBCarousel>
     </MDBContainer>
-
+    </>
   );
 };
 

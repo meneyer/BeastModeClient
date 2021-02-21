@@ -30,6 +30,7 @@ let events = [ {
 
 const LoggedIn = (props) => {
   return (
+
     <div id="loggedInPage">
       <div id="heroIntro">
         <p className="intro">Prepare.Yourself</p>
@@ -58,11 +59,16 @@ const LoggedIn = (props) => {
           
         </Row>
       </Container>
+      </div>
       
       
       
-      
-    </div>
+
+//     <div>
+//       <p className="placeholder"></p>
+//       <EventInfo token={props.token} />
+
+//     </div>
   );
 };
 

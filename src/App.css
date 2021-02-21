@@ -59,6 +59,10 @@ FONTS --> Russo One & Open Sans
   font-family: Open Sans;
 }
 
+.popover {
+  min-width: 450px;
+}
+
 
 /* Custom CSS is above this line*/
 .App {

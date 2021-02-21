@@ -47,11 +47,12 @@ const EventInfo = (props) => {
       
       <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} fetchEventInfo={fetchEventInfo} />
       
+      {/* <EventUpdate token={props.token} /> */}
+      {updateRace ? <EventUpdate updateEvent={updateEvent} token={props.token} updateOff={updateOff}  fetchEventInfo={fetchEventInfo}/> : <></>}
+      
       <EventCreate token={props.token} fetchEventInfo = {fetchEventInfo}/>
       {/* <EventCreate token={props.token} /> */}
 
-      {/* <EventUpdate token={props.token} /> */}
-      {updateRace ? <EventUpdate updateEvent={updateEvent} token={props.token} updateOff={updateOff}  fetchEventInfo={fetchEventInfo}/> : <></>}
       
     </div>
   );

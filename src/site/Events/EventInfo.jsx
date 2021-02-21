@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import {} from 'reactstrap';
 import EventCreate from "./EventCreate";
 import EventUpdate from "./EventUpdate";
-import EventDelete from "./EventDelete";
+import EventTableAndDelete from "./EventTableAndDelete";
 
 const EventInfo = (props) => {
   const [events, setEvents] = useState([]);
+  const [updateRace, setUpdateRace] = useState(false);
+  const [updateEvent, setUpdateEvent] = useState({});
 
   const fetchEventInfo = () => {
     fetch("http://localhost:3000/events/", {
@@ -22,18 +24,35 @@ const EventInfo = (props) => {
       });
   };
 
+  const editEvent = (eventInfoUpdate) => {
+    setUpdateEvent(eventInfoUpdate);
+    console.log(eventInfoUpdate)
+  }
+
+  const updateOn = () => {
+    setUpdateRace(true);
+  }
+
+  const updateOff = () => {
+    setUpdateRace(false);
+  }
+
   useEffect(() => {
     fetchEventInfo();
   }, []);
 
   return (
     <div>
-      <p className="placeholder">Hello from Event Info</p>
-
+      <p className="placeholder"></p>
+      
+      <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} fetchEventInfo={fetchEventInfo} />
+      
       <EventCreate token={props.token} fetchEventInfo = {fetchEventInfo}/>
-      <EventUpdate token={props.token} />
-      <EventDelete token={props.token} />
-      <h1>Enter Your Event Info Here!</h1>
+      {/* <EventCreate token={props.token} /> */}
+
+      {/* <EventUpdate token={props.token} /> */}
+      {updateRace ? <EventUpdate updateEvent={updateEvent} token={props.token} updateOff={updateOff}  fetchEventInfo={fetchEventInfo}/> : <></>}
+      
     </div>
   );
 };

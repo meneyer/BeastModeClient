@@ -78,7 +78,11 @@ body {
   background-color: white;
 }
 
-/* ------------ */
+.popover {
+  min-width: 450px;
+}
+
+/* Landing page section*/
 #navBar {
   background-color: #453054;
   align-items: center;
@@ -108,6 +112,7 @@ body {
   font-family: Open Sans;
 }
 
+/* Carousel settings */
 .h1-responsive {
   margin-bottom: 600px;
   font-size: 4em;
@@ -115,9 +120,7 @@ body {
   color: #1d2323;
 }
 
-.popover {
-  min-width: 450px;
-}
+/* Landing page END */
 
 /* Custom CSS is above this line*/
 .App {

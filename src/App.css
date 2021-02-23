@@ -85,12 +85,19 @@ FONTS --> Russo One & Open Sans
   display: flex;
 }
 
+#userLoginBtn {
+  font-family: Open Sans;
+  color: #1d2323;
+  background-color: #a8c553;
+}
+
 #logo {
   height: 40px;
   width: 30px;
 }
 
 #footer {
+  color: #1d2323;
   font-family: Open Sans;
   background-color: #a8c553;
   height: 35px;

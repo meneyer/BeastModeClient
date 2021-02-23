@@ -16,10 +16,6 @@ FONTS --> Russo One & Open Sans
   min-height: 100vh;
 }
 
-body {
-  background-color: #1d2323;
-}
-
 #calendar {
   color: black;
   background-color: #a8c553;

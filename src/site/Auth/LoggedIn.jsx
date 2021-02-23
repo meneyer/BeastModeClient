@@ -1,5 +1,6 @@
 import React from "react";
 import EventInfo from "../Events/EventInfo";
+import MessagesIndex from "../messages/MessagesIndex"
 import { Calendar, momentLocalizer } from 'react-big-calendar'
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
@@ -36,6 +37,8 @@ const LoggedIn = (props) => {
         <p className="intro">Prepare.Yourself</p>
       </div>
       <p className="placeholder">Hello from LoggedIn</p>
+
+    </div>
       <Container>
         
         <Row>
@@ -54,14 +57,14 @@ const LoggedIn = (props) => {
             <h2>Message Board</h2>
           </div>
           <div id="displayMessages">
-          <DisplayMessages /></div>
+          <MessagesIndex token={props.token}/>
+//           <DisplayMessages />
+    </div>
           </Col>
           
         </Row>
       </Container>
       </div>
-      
-      
       
 
 //     <div>

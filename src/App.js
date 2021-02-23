@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import LoggedIn from "./site/Auth/LoggedIn";
 import BeforeLogIn from "./site/Auth/BeforeLogin";
 import Footer from "./site/Footer";
-// import background from "./assets/Megs1.jpg";
+import background from "./site/assets/mud_background.jpg";
 
 function App() {
   // app.get('/*', function(req, res) {
@@ -47,27 +47,22 @@ function App() {
   };
 
   return (
-
     <div
       class="bg_image"
       style={{
-        // backgroundImage: `url(${background})`,
-        // background: "linear-gradient(to left, #393e46, #222831)",
-        backgroundColor: "#1d2323",
+        backgroundImage: `url(${background})`,
+        // backgroundColor: "#1d2323",  // This color is a good fit if the image is too much
         backgroundSize: "cover",
         height: "100vh",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
       }}
     >
-
       <NavigationBar
         updateToken={updateToken}
         clearToken={clearToken}
         token={sessionToken}
-      /> 
-
-      
+      />
 
       {/* <div id="heroIntro">
         <p className="intro">Prepare.Yourself</p>

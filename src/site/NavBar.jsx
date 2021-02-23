@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-// import Button from '@material-ui/core/Button';
-// import * as Mui from '@material-ui/core';
 import {
   Collapse,
   Navbar,
@@ -12,6 +10,7 @@ import {
   NavbarText,
   Button,
 } from "reactstrap";
+import Logo from "./assets/BeastLogo.png";
 import AuthModal from "./Auth/AuthModal";
 
 const NavigationBar = (props) => {
@@ -40,38 +39,38 @@ const NavigationBar = (props) => {
   //   setSignup(false);
   // }
   const displayEmail = (email) => {
-      setEmail(localStorage.getItem('beastEmail'));
-  }
+    setEmail(localStorage.getItem("beastEmail"));
+  };
 
   return (
     <div>
       <Navbar className="shadow p-2 mb-5 bg-body" id="navBar" dark expand="md">
-        <NavbarBrand className="brandName">BEAST : MODE</NavbarBrand>
+        <NavbarBrand className="brandName">
+          <img src={Logo} id="logo" alt="logo" />
+          BEAST : MODE
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            
-              {props.token === "" ? (
-                <NavItem className="btn-group">
+            {props.token === "" ? (
+              <NavItem className="btn-group">
                 <AuthModal
                   updateToken={props.updateToken}
                   open={open}
-                  setOpen={setOpen} displayEmail={displayEmail}
-                /></NavItem>
-              ) : ( <NavItem id="loggedIn" disabled> 
-              {email === "" ? <p>Logged In</p> :
-                <p>Welcome, {email}</p> }</NavItem>
-              )}
-              <NavItem>
+                  setOpen={setOpen}
+                  displayEmail={displayEmail}
+                />
+              </NavItem>
+            ) : (
+              <NavItem id="loggedIn" disabled>
+                {email === "" ? <p>Logged In</p> : <p>Welcome, {email}</p>}
+              </NavItem>
+            )}
+            <NavItem>
               {props.token === "" ? (
                 ""
               ) : (
-                <Button
-                  
-                  onClick={props.clearToken}
-                >
-                  Logout
-                </Button>
+                <Button onClick={props.clearToken}>Logout</Button>
               )}
             </NavItem>
           </Nav>

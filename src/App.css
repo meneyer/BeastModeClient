@@ -16,10 +16,6 @@ FONTS --> Russo One & Open Sans
   min-height: 100vh;
 }
 
-body {
-  background-color: #1D2323;
-}
-
 #calendar {
   color: black;
   background-color: #a8c553;
@@ -30,14 +26,14 @@ body {
   height: auto;
   display: flex;
   justify-content: center;
-  margin:auto;
+  margin: auto;
 }
 
 .columnHeader {
   height: 40px;
-  background-color:#453054;
+  background-color: #453054;
   color: white;
-  margin:auto;
+  margin: auto;
   padding-left: 10px;
   min-width: 340px;
 }
@@ -50,13 +46,14 @@ body {
   padding-bottom: 40px;
 }
 
-#displayMessages, #displayEvents {
+#displayMessages,
+#displayEvents {
   background-color: lightgray;
   width: 90%;
   margin: auto;
   min-height: 500px;
   padding: 20px;
-  color: #1D2323;
+  color: #1d2323;
   min-width: 340px;
 }
 
@@ -65,27 +62,43 @@ body {
   padding-right: 15px;
   padding-top: 0px;
   padding-bottom: 0px;
-  vertical-align: middle; 
+  vertical-align: middle;
   display: inline-block;
-  font-size: .9em;
+  font-size: 0.9em;
   height: 38px;
   line-height: 35px;
   /* padding-top: 10px; */
 }
 
 #table {
-  background-color:white;
+  background-color: white;
 }
 
-/* ------------ */
+.popover {
+  min-width: 450px;
+}
+
+/* Landing page section*/
 #navBar {
   background-color: #453054;
   align-items: center;
   display: flex;
-  
+}
+
+#userLoginBtn {
+  font-family: Open Sans;
+  color: #1d2323;
+  background-color: #a8c553;
+}
+
+#logo {
+  height: 40px;
+  width: 30px;
 }
 
 #footer {
+  color: #1d2323;
+  font-family: Open Sans;
   background-color: #a8c553;
   height: 35px;
 }
@@ -105,13 +118,18 @@ body {
   color: #ffff;
   font-size: 20px;
   margin-left: 5px;
-  font-family: Open Sans;
+  font-family: Russo One;
 }
 
-.popover {
-  min-width: 450px;
+/* Carousel settings */
+.h1-responsive {
+  margin-bottom: 600px;
+  font-size: 4em;
+  font-family: Russo One;
+  color: #1d2323;
 }
 
+/* Landing page END */
 
 /* Custom CSS is above this line*/
 .App {

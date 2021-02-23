@@ -1,35 +1,43 @@
 import React, {useState, useEffect} from 'react';
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap'
+import MessageCreate from './MessagesCreate';
+import MessagesEdit from './MessagesEdit';
 
-const MessageBoard = (props) => {
-    const {
-        buttonLabel,
-        className
-    } = props;
+const MessageIndex= (props) => {
+    // const {
+    //     buttonLabel,
+    //     className
+    // } = props;
     
-    const [modal, setModal = useState(false);
+    // const [modal, setModal = useState(false);
     
-    const toggle = () => setModal(!modal);
+    // const toggle = () => setModal(!modal);
 
     return (
         <div>
-        <Button color='danger' onClick={toggle}>{buttonLabel}</Button>
-        <Modal isOpen={modal} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }}
-        toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-        <ModalBody>
-          llit anim id est laborum.
-        </ModalBody>
-        <ModalFooter>
-          <Button color="primary" onClick={toggle}>All Messages</Button>{' '}
-          <Button color="secondary" onClick={toggle}>Return</Button>
-        </ModalFooter>
-      </Modal>
+          <p className="placeholder">Hello from Message Index</p>
+
+        <h2>Hello from message Index</h2>
+        <MessageCreate>Message Heressss</MessageCreate>
+        <MessagesEdit>Message Edit Here</MessagesEdit>
+
+      {/* //   <Button color='danger' onClick={toggle}>{buttonLabel}</Button>
+      //   <Modal isOpen={modal} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }} */}
+      {/* //   toggle={toggle} className={className}>
+      //   <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+      //   <ModalBody>
+      //     llit anim id est laborum.
+      //   </ModalBody>
+      //   <ModalFooter>
+      //     <Button color="primary" onClick={toggle}>All Messages</Button>{' '}
+      //     <Button color="secondary" onClick={toggle}>Return</Button>
+      //   </ModalFooter>
+      // </Modal> */}
     </div>
     );
 }
 
-export default ModalExample;
+export default MessageIndex;
 
 
 // import React, {useState, useEffect} from 'react';

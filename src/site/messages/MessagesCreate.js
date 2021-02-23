@@ -1,93 +1,70 @@
-import React, {useState, useEffect} from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import React, {useState} from 'react';
+import {Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-// const MessageBoard = (props) => {
+const MessagesCreate = (props) => {
 
-//     const [name, setName] =useState('');
-//     const [raceName, setRaceName] = useState('');
-//     const [message, setMessage] =useState('');
+    const [name, setName] =useState('');
+    const [raceName, setRaceName] = useState('');
+    const [message, setMessage] =useState('');
 
-//     const handleSubmit =(e) => {
+    const handleSubmit =(e) => {
+      e.preventDefault();
+      fetch('http://localhost:3000/messageboard/create', {
+        method: "POST",
+        body: JSON.stringify({
+          messageboard: {
+            name: name, 
+            raceName: raceName, 
+            message: message, }
+          }),
+        headers: new Headers({
+          'Content-Type': 'application/json',
+          'Authorization': props.token
+        })
+      }) .then((res) => res.json())
+      .then((logData) => {
+        console.log(logData)
+        setName('');
+        setRaceName('');
+        setMessage('');
+        props.fetchMessages();
+  
+      })
         
-//     }
+    }
 
-
-// }import React from 'react';
-
-
-const Example = (props) => {
   return (
-    <Form>
-      <FormGroup>
-        <Label for="exampleEmail">Email</Label>
-        <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
-      </FormGroup>
-      <FormGroup>
-        <Label for="examplePassword">Password</Label>
-        <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
-      </FormGroup>
-      <FormGroup>
-        <Label for="exampleSelect">Select</Label>
-        <Input type="select" name="select" id="exampleSelect">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </Input>
-      </FormGroup>
-      <FormGroup>
-        <Label for="exampleSelectMulti">Select Multiple</Label>
-        <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </Input>
-      </FormGroup>
-      <FormGroup>
-        <Label for="exampleText">Text Area</Label>
-        <Input type="textarea" name="text" id="exampleText" />
-      </FormGroup>
-      <FormGroup>
-        <Label for="exampleFile">File</Label>
-        <Input type="file" name="file" id="exampleFile" />
-        <FormText color="muted">
-          This is some placeholder block-level help text for the above input.
-          It's a bit lighter and easily wraps to a new line.
-        </FormText>
-      </FormGroup>
-      <FormGroup tag="fieldset">
-        <legend>Radio Buttons</legend>
-        <FormGroup check>
-          <Label check>
-            <Input type="radio" name="radio1" />{' '}
-            Option one is this and that—be sure to include why it's great
-          </Label>
-        </FormGroup>
-        <FormGroup check>
-          <Label check>
-            <Input type="radio" name="radio1" />{' '}
-            Option two can be something else and selecting it will deselect option one
-          </Label>
-        </FormGroup>
-        <FormGroup check disabled>
-          <Label check>
-            <Input type="radio" name="radio1" disabled />{' '}
-            Option three is disabled
-          </Label>
-        </FormGroup>
-      </FormGroup>
-      <FormGroup check>
-        <Label check>
-          <Input type="checkbox" />{' '}
-          Check me out
-        </Label>
-      </FormGroup>
-      <Button>Submit</Button>
-    </Form>
+   <div>
+   <Container>
+   <h1>Post Your Messages Here</h1>
+   <Row>
+     <Col>
+     <Form onSubmit={handleSubmit}>
+       <FormGroup>
+         <Label htmlFor="Name">Your Name</Label>
+         <Input name="Name" value={name} placeholder="Who are you?" onChange={(e) =>setName(e.target.value)}/>
+       </FormGroup>
+
+       <FormGroup>
+         <Label htmlFor="RaceName">Race Your Attending</Label>
+         <Input name = "RaceName" value={raceName} placeholder = "Spartan Race, Savage Race, Tough Mudder, Rugged Maniac, etc." onChange={(e)=>setRaceName(e.target.value)}/>
+       </FormGroup>
+
+       <FormGroup>
+         <Label htmlFor="Message">What's on your Mind?</Label>
+         <Input name = "Message" value={message} 
+         placeholder = "Messages are shared by everyone" onChange={(e) => setMessage(e.target.value)}/>
+
+       </FormGroup>
+       <Button type="submit">Send us your message</Button>
+     </Form>
+     </Col>
+   </Row>
+   </Container>
+
+</div>
+
   );
 }
 
-export default Example;
+export default MessagesCreate;

@@ -95,6 +95,7 @@ body {
 }
 
 #footer {
+  font-family: Open Sans;
   background-color: #a8c553;
   height: 35px;
 }
@@ -114,7 +115,7 @@ body {
   color: #ffff;
   font-size: 20px;
   margin-left: 5px;
-  font-family: Open Sans;
+  font-family: Russo One;
 }
 
 /* Carousel settings */

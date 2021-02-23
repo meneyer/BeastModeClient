@@ -47,6 +47,7 @@ const NavigationBar = (props) => {
       <Navbar className="shadow p-2 mb-5 bg-body" id="navBar" dark expand="md">
         <NavbarBrand className="brandName">
           <img src={Logo} id="logo" alt="logo" />
+          BEAST : MODE
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

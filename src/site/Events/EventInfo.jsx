@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import {} from 'reactstrap';
 import EventCreate from "./EventCreate";
-import EventUpdate from "./EventUpdate";
+// import EventUpdate from "./EventUpdate";
 import EventTableAndDelete from "./EventTableAndDelete";
-
+import LoggedIn from "../Auth/LoggedIn";
+import BeforeLogIn from "../Auth/BeforeLogin";
 const EventInfo = (props) => {
   const [events, setEvents] = useState([]);
   const [updateRace, setUpdateRace] = useState(false);
@@ -41,16 +42,20 @@ const EventInfo = (props) => {
     fetchEventInfo();
   }, []);
 
+//Below: Had to wrap the entire events display in a ternary so that you wouldn't see it if you were'e loggedin with a token -Ginger
+
   return (
-    <div>
+    <div>{ props.token === localStorage.getItem("token") ? <div>
       <p className="placeholder"></p>
       
-      <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} fetchEventInfo={fetchEventInfo} />
+      {/* <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} fetchEventInfo={fetchEventInfo} /> */}
+
+      <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} updateOff={updateOff} fetchEventInfo={fetchEventInfo} updateRace={updateRace} updateEvent={updateEvent}/>
       
       {/* <EventUpdate token={props.token} /> */}
-      {updateRace ? <EventUpdate updateEvent={updateEvent} token={props.token} updateOff={updateOff}  fetchEventInfo={fetchEventInfo}/> : <></>}
+      {/* {updateRace ? <EventUpdate updateEvent={updateEvent} token={props.token} updateOff={updateOff}  fetchEventInfo={fetchEventInfo}/> : <></>} */}
       
-      <EventCreate token={props.token} fetchEventInfo = {fetchEventInfo}/>
+      <EventCreate token={props.token} fetchEventInfo = {fetchEventInfo}/> </div> : <BeforeLogIn /> }
       {/* <EventCreate token={props.token} /> */}
 
       

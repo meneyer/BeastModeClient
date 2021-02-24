@@ -17,6 +17,7 @@ FONTS --> Russo One & Open Sans
   min-height: 100vh;
 }
 
+
 /* NanBar Section */
 #navBar {
   background-color: #453054;
@@ -132,6 +133,7 @@ FONTS --> Russo One & Open Sans
   margin: auto;
 }
 
+
 #loggedIn {
   padding-left: 15px;
   padding-right: 15px;
@@ -152,10 +154,27 @@ FONTS --> Russo One & Open Sans
   margin: auto;
   padding-left: 10px;
   min-width: 340px;
+  /* -webkit-box-shadow: 0 0 10px black;
+  box-shadow: 0 0 15px black; */
+  z-index: 5;
 }
 .columnHeader h2 {
   font-size: 1.4em;
   line-height: 40px;
+}
+
+#calendar {
+  color: black;
+  background-color: #a8c553;
+  min-width: 340px;
+  width: 90%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  /* box-shadow: 0 0 0px black, 0 0 10px -3px black, 0 0 10px black, 0 0 10px -3px black; */
 }
 
 #loggedInPage {
@@ -181,7 +200,83 @@ FONTS --> Russo One & Open Sans
   min-width: 450px;
 }
 
+
 /* Logged in END */
+
+/* Landing page section*/
+#navBar {
+  background-color: #453054;
+  align-items: center;
+  display: flex;
+}
+
+#userLoginBtn {
+  font-family: Open Sans;
+  color: #1d2323;
+  background-color: #a8c553;
+}
+
+#eventBtn, #mbBtn, #logoutBtn, #homeBtn {
+  font-family: Open Sans;
+  color: #1d2323;
+  background-color: #a8c553;
+  
+  margin-right: 10px;
+}
+
+#logo {
+  height: 40px;
+  width: 30px;
+}
+
+#footer {
+  color: #1d2323;
+  font-family: Open Sans;
+  background-color: #a8c553;
+  height: 35px;
+}
+
+#heroIntro {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.intro {
+  color: #a8c553;
+  font-size: 3em;
+  font-family: Russo One;
+}
+
+.brandName {
+  color: #ffff;
+  font-size: 20px;
+  margin-left: 5px;
+  font-family: Russo One;
+}
+
+/* Carousel settings */
+.h1-responsive {
+  margin-bottom: 600px;
+  font-size: 4em;
+  font-family: Russo One;
+  color: #1d2323;
+}
+
+#table {
+  color: black;
+  background-color: #a8c553;
+  /* min-width: 340px; */
+  /* width: 90%; */
+  /* padding-top: 20px; */
+  /* padding-bottom: 20px; */
+  /* height: auto; */
+  /* display: flex;
+  justify-content: center;
+  margin: auto; */
+}
+
+/* Landing page END */
+
 
 /* Custom CSS is above this line*/
 .App {

@@ -31,6 +31,12 @@ FONTS --> Russo One & Open Sans
   background-color: #a8c553;
 }
 
+#userLoginBtn:hover,
+#logoutBtn:hover {
+  color: #ffffff;
+  /* background-color: #1d2323; */
+}
+
 #logo {
   height: 40px;
   width: 30px;

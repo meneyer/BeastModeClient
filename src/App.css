@@ -11,81 +11,21 @@ FONTS --> Russo One & Open Sans
   font-size: 25px;
 }
 
+/* What is this for? */
 #root {
   color: white;
   min-height: 100vh;
 }
 
-#calendar {
-  color: black;
-  background-color: #a8c553;
-  min-width: 340px;
-  width: 90%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  margin: auto;
-}
-
-.columnHeader {
-  height: 40px;
-  background-color: #453054;
-  color: white;
-  margin: auto;
-  padding-left: 10px;
-  min-width: 340px;
-}
-.columnHeader h2 {
-  font-size: 1.4em;
-  line-height: 40px;
-}
-
-#loggedInPage {
-  padding-bottom: 40px;
-}
-
-#displayMessages,
-#displayEvents {
-  background-color: lightgray;
-  width: 90%;
-  margin: auto;
-  min-height: 500px;
-  padding: 20px;
-  color: #1d2323;
-  min-width: 340px;
-}
-
-#loggedIn {
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  vertical-align: middle;
-  display: inline-block;
-  font-size: 0.9em;
-  height: 38px;
-  line-height: 35px;
-  /* padding-top: 10px; */
-}
-
-#table {
-  background-color: white;
-}
-
-.popover {
-  min-width: 450px;
-}
-
-/* Landing page section*/
+/* NanBar Section */
 #navBar {
   background-color: #453054;
   align-items: center;
   display: flex;
 }
 
-#userLoginBtn {
+#userLoginBtn,
+#logoutBtn {
   font-family: Open Sans;
   color: #1d2323;
   background-color: #a8c553;
@@ -96,29 +36,26 @@ FONTS --> Russo One & Open Sans
   width: 30px;
 }
 
-#footer {
-  color: #1d2323;
-  font-family: Open Sans;
-  background-color: #a8c553;
-  height: 35px;
-}
-
-#heroIntro {
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.intro {
-  color: #a8c553;
-  font-size: 3em;
-  font-family: Russo One;
-}
-
 .brandName {
   color: #ffff;
   font-size: 20px;
   margin-left: 5px;
   font-family: Russo One;
+}
+
+.loggedIn {
+  font-family: Open Sans;
+}
+
+/* NavBar END */
+
+/* Landing page section*/
+
+#footer {
+  color: #1d2323;
+  font-family: Open Sans;
+  background-color: #a8c553;
+  height: 35px;
 }
 
 /* Modal Styling */
@@ -159,8 +96,79 @@ FONTS --> Russo One & Open Sans
   font-family: Russo One;
   color: #1d2323;
 }
-
 /* Landing page END */
+/* Logged in Section */
+
+.userIntro {
+  color: #ffffff;
+  text-align: center;
+  font-size: 2em;
+  font-family: Russo One;
+}
+
+#calendar {
+  color: black;
+  background-color: #a8c553;
+  min-width: 340px;
+  width: 90%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+#loggedIn {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 0.9em;
+  height: 38px;
+  line-height: 35px;
+  /* padding-top: 10px; */
+}
+
+.columnHeader {
+  height: 40px;
+  background-color: #453054;
+  color: white;
+  margin: auto;
+  padding-left: 10px;
+  min-width: 340px;
+}
+.columnHeader h2 {
+  font-size: 1.4em;
+  line-height: 40px;
+}
+
+#loggedInPage {
+  padding-bottom: 40px;
+}
+
+#displayMessages,
+#displayEvents {
+  background-color: lightgray;
+  width: 90%;
+  margin: auto;
+  min-height: 500px;
+  padding: 20px;
+  color: #1d2323;
+  min-width: 340px;
+}
+
+#table {
+  background-color: white;
+}
+
+.popover {
+  min-width: 450px;
+}
+
+/* Logged in END */
 
 /* Custom CSS is above this line*/
 .App {

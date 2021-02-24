@@ -32,8 +32,8 @@ let events = [
 const LoggedIn = (props) => {
   return (
     <div id="loggedInPage">
-      <div id="heroIntro">
-        <p className="intro">Prepare.Yourself</p>
+      <div>
+        <p className="userIntro">Prepare.Yourself</p>
       </div>
       <Container>
         <Row>
@@ -59,7 +59,7 @@ const LoggedIn = (props) => {
             </div>
             <div id="displayMessages">
               <MessagesIndex token={props.token} />
-              // <DisplayMessages />
+              <DisplayMessages />
             </div>
           </Col>
         </Row>

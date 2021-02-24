@@ -70,7 +70,9 @@ const NavigationBar = (props) => {
               {props.token === "" ? (
                 ""
               ) : (
-                <Button onClick={props.clearToken}>Logout</Button>
+                <Button id="logoutBtn" onClick={props.clearToken}>
+                  Logout
+                </Button>
               )}
             </NavItem>
           </Nav>

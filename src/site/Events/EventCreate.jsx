@@ -40,12 +40,14 @@ const EventCreate = (props) => {
     return (
         <div>
             <Container>
-                        <h2>It's almost RACE DAY!</h2>
-                        <h4>Enter your details below</h4>
+                <div className="columnHeader" style={{ width: "90%"}}><h2>Enter Your Race Details</h2></div>           
+                {/* <h2>It's almost RACE DAY!</h2>
+                <h4>Enter your details below</h4> */}
                 <Row>
                     <Col>
-                        <Form onSubmit={handleSubmit}> 
+                        <Form onSubmit={handleSubmit} > 
                         <FormGroup>
+                            <br />
                                 <Label htmlFor="raceName">Race Name</Label>
                                 <Input name = "raceName" value={raceName} placeholder = "Spartan Race, Savage Race, Tough Mudder, Rugged Maniac, etc." onChange={(e) =>setRaceName(e.target.value)}/>
                                {/* <FormText> </FormText> */}
@@ -77,8 +79,8 @@ const EventCreate = (props) => {
 
                             <FormGroup>
                                 <Label htmlFor="packList">Packing List</Label>
-                                <Input type="textarea" name = "packList" value={packList} placeholder = "Trashbags, Towels, Racing Shoes, Gels, Hydration Pack, Salt, Cash, ID, Race Confirmation Number, etc." onChange={(e) =>setPackList(e.target.value)}/>
-                                {/* <FormText> </FormText> */}
+                                <Input type="textarea" name = "packList" maxlength="1000" value={packList} placeholder = "Trashbags, Towels, Racing Shoes, Gels, Hydration Pack, Salt, Cash, ID, Race Confirmation Number, etc.  (Maximum Length = 1000 characters)" onChange={(e) =>setPackList(e.target.value)}/>
+                                {/* <FormText></FormText> */}
                             </FormGroup>
 
                             <FormGroup>
@@ -89,11 +91,11 @@ const EventCreate = (props) => {
 
                             <FormGroup>
                                 <Label htmlFor="travelPlan">Travel Plans</Label>
-                                <Input type="textarea" name = "travelPlan" placeholder = "General Travel Plans - Flight Details, Transportation to the Venue, Team Meet-ups, Favorite Restaraunts, Sites Seeing Opportunities, etc." value={travelPlan} onChange={(e) =>setTravelPlan(e.target.value)}/> 
+                                <Input type="textarea" maxlength="1500" name = "travelPlan" placeholder = "General Travel Plans - Flight Details, Transportation to the Venue, Team Meet-ups, Favorite Restaraunts, Sites Seeing Opportunities, etc.  (Maximum Length = 1500 characters)" value={travelPlan} onChange={(e) =>setTravelPlan(e.target.value)}/> 
                                 {/* <FormText> </FormText> */}
                             </FormGroup>
 
-                            <Button type="submit">Submit Your Event Details</Button>
+                            <Button color="primary" type="submit">Submit Your Event Details</Button>
                         </Form>
                     </Col>
                 </Row>

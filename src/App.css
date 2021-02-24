@@ -143,6 +143,19 @@ FONTS --> Russo One & Open Sans
   color: #1d2323;
 }
 
+#table {
+  color: black;
+  background-color: #a8c553;
+  /* min-width: 340px; */
+  /* width: 90%; */
+  /* padding-top: 20px; */
+  /* padding-bottom: 20px; */
+  /* height: auto; */
+  /* display: flex;
+  justify-content: center;
+  margin: auto; */
+}
+
 /* Landing page END */
 
 /* Custom CSS is above this line*/

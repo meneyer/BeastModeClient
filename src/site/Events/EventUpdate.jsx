@@ -3,6 +3,8 @@ import { Container, Form, FormGroup, FormText, Label, Input, Button, Popover, Po
 
 const EventUpdate = (props) => {
 
+    console.log(props.updateEvent)
+
     const [editRaceName, setEditRaceName] = useState(props.updateEvent.raceName);
     const [editLocation, setEditLocation] = useState(props.updateEvent.location);
     const [editLength, setEditLength] = useState(props.updateEvent.length);
@@ -24,22 +26,24 @@ const EventUpdate = (props) => {
         })
         .then((res) => {
             props.fetchEventInfo();
-            props.updateOff();
+            // props.updateOff();
+            props.toggle();
         })
     }
 
-    const [popoverOpen, setPopoverOpen] = useState(false);
+    // const [popoverOpen, setPopoverOpen] = useState(false);
 
-    const toggle = () => setPopoverOpen(!popoverOpen);
+    // const toggle = () => setPopoverOpen(!popoverOpen);
 
     return (
         <div>   
         <p className="placeholder"></p>
         <Container>  
-            <Button id="Popover1" type="button">
+            {/* <Button id="Popover1" type="button"> */}
+            {/* <Button type="button">
                 Update Your Race Details
-            </Button>
-            <Popover placement="right" isOpen={popoverOpen} target="Popover1" toggle={toggle}>
+            </Button> */}
+            <Popover placement="right" isOpen={props.popoverOpen} target="Popover1" toggle={props.toggle}>
                 <PopoverHeader>Update Your Race Details</PopoverHeader>
                 <PopoverBody>
 
@@ -86,7 +90,7 @@ const EventUpdate = (props) => {
                     <Input type="textarea" name = "travelPlan"  value={editTravelPlan} onChange={(e) =>setEditTravelPlan(e.target.value)}/>  
                 </FormGroup>
 
-                <Button type="submit">Update Your Event Details!</Button>
+                <Button color="primary" type="submit">Update Your Event Details!</Button>
             </Form>
                 </PopoverBody>
             </Popover>

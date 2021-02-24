@@ -16,6 +16,24 @@ FONTS --> Russo One & Open Sans
   min-height: 100vh;
 }
 
+
+
+.columnHeader {
+  height: 40px;
+  background-color: #453054;
+  color: white;
+  margin: auto;
+  padding-left: 10px;
+  min-width: 340px;
+  /* -webkit-box-shadow: 0 0 10px black;
+  box-shadow: 0 0 15px black; */
+  z-index: 5;
+}
+.columnHeader h2 {
+  font-size: 1.4em;
+  line-height: 40px;
+}
+
 #calendar {
   color: black;
   background-color: #a8c553;
@@ -27,19 +45,7 @@ FONTS --> Russo One & Open Sans
   display: flex;
   justify-content: center;
   margin: auto;
-}
-
-.columnHeader {
-  height: 40px;
-  background-color: #453054;
-  color: white;
-  margin: auto;
-  padding-left: 10px;
-  min-width: 340px;
-}
-.columnHeader h2 {
-  font-size: 1.4em;
-  line-height: 40px;
+  /* box-shadow: 0 0 0px black, 0 0 10px -3px black, 0 0 10px black, 0 0 10px -3px black; */
 }
 
 #loggedInPage {

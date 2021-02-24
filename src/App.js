@@ -56,8 +56,10 @@ function App() {
         backgroundImage: `url(${background})`,
         // backgroundColor: "#1d2323",  // This color is a good fit if the image is too much
         backgroundSize: "cover",
+
+       
         backgroundAttachment: "fixed",
-        height: "100vh",
+
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
       }}

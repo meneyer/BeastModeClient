@@ -19,9 +19,7 @@ const LoggedIn = (props) => {
       <BeforeLogIn updateToken={props.updateToken} loggedInVsOut={props.loggedInVsOut}/>}
       </div>
 
-
   );
 };
 
 export default LoggedIn;
-

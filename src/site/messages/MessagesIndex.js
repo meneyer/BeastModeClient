@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap'
 import MessageCreate from './MessagesCreate';
 import MessagesEdit from './MessagesEdit';
+import BeforeLogIn from "../Auth/BeforeLogin";
 
 const MessageIndex= (props) => {
     // const {
@@ -13,8 +14,13 @@ const MessageIndex= (props) => {
     
     // const toggle = () => setModal(!modal);
 
+    //Below: Had to wrap the entire events display in a ternary so that you wouldn't see it if you were'e loggedin with a token - Ginger
+
     return (
+      
+
         <div>
+          { props.token === localStorage.getItem("token") ? <div>
           <p className="placeholder">Hello from Message Index</p>
 
         <h2>Hello from message Index</h2>
@@ -32,7 +38,8 @@ const MessageIndex= (props) => {
       //     <Button color="primary" onClick={toggle}>All Messages</Button>{' '}
       //     <Button color="secondary" onClick={toggle}>Return</Button>
       //   </ModalFooter>
-      // </Modal> */}
+      // </Modal> */} 
+      </div> : <BeforeLogIn /> }
     </div>
     );
 }

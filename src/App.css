@@ -91,6 +91,14 @@ FONTS --> Russo One & Open Sans
   background-color: #a8c553;
 }
 
+#eventBtn, #mbBtn, #logoutBtn, #homeBtn {
+  font-family: Open Sans;
+  color: #1d2323;
+  background-color: #a8c553;
+  
+  margin-right: 10px;
+}
+
 #logo {
   height: 40px;
   width: 30px;

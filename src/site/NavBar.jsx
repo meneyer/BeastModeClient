@@ -12,6 +12,10 @@ import {
 } from "reactstrap";
 import Logo from "./assets/BeastLogo.png";
 import AuthModal from "./Auth/AuthModal";
+import {Route, Link, Switch} from "react-router-dom";
+import LoggedIn from "./Auth/LoggedIn";
+import EventInfo from "./Events/EventInfo";
+import MessagesIndex from "./messages/MessagesIndex";
 
 const NavigationBar = (props) => {
   const [open, setOpen] = useState(false);
@@ -51,6 +55,7 @@ const NavigationBar = (props) => {
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
+
           <Nav className="ml-auto" navbar>
             {props.token === "" ? (
               <NavItem className="btn-group">
@@ -66,6 +71,31 @@ const NavigationBar = (props) => {
                 {email === "" ? <p>Logged In</p> : <p>Welcome, {email}</p>}
               </NavItem>
             )}
+
+            <NavItem>
+              {props.token === "" ? (
+                ""
+              ) : (<Link to="/">
+                <Button  id="homeBtn">Home</Button></Link>
+              )}
+            </NavItem>
+
+            <NavItem>
+              {props.token === "" ? (
+                ""
+              ) : (<Link to="/events">
+                <Button  id="eventBtn">Events</Button></Link>
+              )}
+            </NavItem>
+
+            <NavItem>
+              {props.token === "" ? (
+                ""
+              ) : (<Link to="/messageboard">
+                <Button id="mbBtn">Message Board</Button></Link>
+              )}
+            </NavItem>
+
             <NavItem>
               {props.token === "" ? (
                 ""
@@ -73,9 +103,17 @@ const NavigationBar = (props) => {
                 <Button onClick={props.clearToken}>Logout</Button>
               )}
             </NavItem>
+
           </Nav>
         </Collapse>
       </Navbar>
+      <div >
+            <Switch>
+                <Route exact path = "/"><LoggedIn token={props.token}/></Route>
+                <Route exact path = "/events"><EventInfo token={props.token} /></Route>
+                <Route exact path = "/messageboard"><MessagesIndex token={props.token}/></Route>
+            </Switch>
+        </div>
     </div>
   );
 };

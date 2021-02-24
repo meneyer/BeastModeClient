@@ -35,8 +35,6 @@ const LoggedIn = (props) => {
       <div id="heroIntro">
         <p className="intro">Prepare.Yourself</p>
       </div>
-      <p className="placeholder">Hello from LoggedIn</p>
-
       <Container>
         <Row>
           <Col md="6">

@@ -46,7 +46,7 @@ const AuthModal = (props) => {
         external={externalCloseBtn}
       >
         {/* <ModalHeader>Modal title</ModalHeader> */}
-        <ModalBody>
+        <ModalBody className="modalBody">
           {signup === false ? (
             <div>
               <Login
@@ -79,7 +79,7 @@ const AuthModal = (props) => {
 
           {signup === false ? (
             <div>
-              <a href="#" onClick={signupOpen}>
+              <a id="createAccLink" href="#" onClick={signupOpen}>
                 Create New Account
               </a>
               <div style={{ display: "none" }}>

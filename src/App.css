@@ -121,6 +121,37 @@ FONTS --> Russo One & Open Sans
   font-family: Russo One;
 }
 
+/* Modal Styling */
+.modalBody {
+  background-color: #a8c553;
+}
+
+.modalTitle {
+  font-family: Russo One;
+}
+
+.modalLabel {
+  font-family: Open Sans;
+}
+
+.modalBtn {
+  background-color: #453054;
+}
+
+.modalBtn:hover {
+  background-color: #1d2323;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+#createAccLink {
+  font-family: Russo One;
+  font-size: 20px;
+  margin-left: 130px;
+  color: #1d2323;
+}
+
+/* Modal End */
 /* Carousel settings */
 .h1-responsive {
   margin-bottom: 600px;

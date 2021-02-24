@@ -38,7 +38,7 @@ const LoggedIn = (props) => {
       <Container>
         <Row>
           <Col md="6">
-            <div className="columnHeader" style={{ width: "90%" }}>
+            <div className="columnHeader">
               <h2>Calendar</h2>
             </div>
             <EventCalendar />
@@ -54,7 +54,7 @@ const LoggedIn = (props) => {
           </Col>
 
           <Col md="6">
-            <div className="columnHeader" style={{ width: "90%" }}>
+            <div className="columnHeader">
               <h2>Message Board</h2>
             </div>
             <div id="displayMessages">
@@ -65,12 +65,6 @@ const LoggedIn = (props) => {
         </Row>
       </Container>
     </div>
-
-    //     <div>
-    //       <p className="placeholder"></p>
-    //       <EventInfo token={props.token} />
-
-    //     </div>
   );
 };
 

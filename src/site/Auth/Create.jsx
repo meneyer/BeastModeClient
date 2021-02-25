@@ -4,23 +4,27 @@ import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 const Create = (props) => {
-  const [success, setSuccess] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [nope, setNope] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
     //keeps page from reloading after submit
-    // console.log(email,password);
+
+    // password must be 5 characters or greater
     if (password.length < 5) {
-      alert("password must be at least 5 characters");
+      // alert("password must be at least 5 characters");
+      setNope("*Password must be 5 characters or more");
       return;
     }
+    //email regex
     let R = new RegExp(/[^@]+@[^@]+\.[^@]+/g);
 
     //Might not need this Regex, the form may handle it.
     if (!R.test(email)) {
-      alert("Must use valid email address");
+      // alert("Must use valid email address");
+      setNope("*Must use valid email address");
       return;
     }
 
@@ -36,7 +40,7 @@ const Create = (props) => {
       .then((data) => {
         props.updateToken(data.sessionToken);
         console.log("Account created!");
-        setSuccess("Account Created!");
+        setNope("");
         props.setOpen(false);
       })
       .catch((err) => console.log(err));
@@ -81,7 +85,7 @@ const Create = (props) => {
           Submit
         </Button>
       </Form>
-      <p>{success}</p>
+      <p>{nope}</p>
     </div>
   );
 };

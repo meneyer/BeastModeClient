@@ -8,6 +8,7 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 // import {container, row, col} from 'bootstrap'
 import {Container, Row, Col} from 'reactstrap'
 import DisplayMessages from "../MessageBoard/DisplayMessages";
+import EventDisplay from "../Events/EventDisplay";
 
 
 const localizer = momentLocalizer(moment);
@@ -51,7 +52,7 @@ const Dashboard = (props) => {
               <EventCalendar />
               <div className="columnHeader" style={{ width: "90%", "marginTop": "40px"}}><h2>Upcoming Events</h2></div>
               <div id="displayEvents">
-                <EventInfo token={props.token} />
+                <EventDisplay token={props.token} />
               </div>
             </Col>
             

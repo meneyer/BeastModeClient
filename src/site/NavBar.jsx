@@ -19,10 +19,11 @@ import MessagesIndex from "./messages/MessagesIndex";
 
 const NavigationBar = (props) => {
   const [open, setOpen] = useState(false);
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
   // navbar collapses
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+  let email = localStorage.getItem('beastEmail');
 
   // const [signup, setSignup] = useState(false);
 
@@ -42,9 +43,9 @@ const NavigationBar = (props) => {
   // const signupClosed =() => {
   //   setSignup(false);
   // }
-  const displayEmail = (email) => {
-    setEmail(localStorage.getItem("beastEmail"));
-  };
+  // const displayEmail = (email) => {
+  //   setEmail(localStorage.getItem("beastEmail"));
+  // };
 
   return (
     <div>
@@ -63,36 +64,36 @@ const NavigationBar = (props) => {
                   updateToken={props.updateToken}
                   open={open}
                   setOpen={setOpen}
-                  displayEmail={displayEmail}
+                  
                 />
               </NavItem>
             ) : (
               <NavItem id="loggedIn" disabled>
-                {email === "" ? <p>Logged In</p> : <p>Welcome, {email}</p>}
+                {email === "" ? <p>Logged In</p> : <p>Welcome {email}</p>}
               </NavItem>
             )}
 
             <NavItem>
               {props.token === "" ? (
                 ""
-              ) : (<Link to="/">
-                <Button  id="homeBtn">Home</Button></Link>
+              ) : (<Link to="/"  style={{ textDecoration: 'none' }}>
+                <div  id="homeBtn" >Home</div></Link>
               )}
             </NavItem>
 
             <NavItem>
               {props.token === "" ? (
                 ""
-              ) : (<Link to="/events">
-                <Button  id="eventBtn">Events</Button></Link>
+              ) : (<Link to="/events" style={{ textDecoration: 'none' }}>
+                <div  id="eventBtn">Events</div></Link>
               )}
             </NavItem>
 
             <NavItem>
               {props.token === "" ? (
                 ""
-              ) : (<Link to="/messageboard">
-                <Button id="mbBtn">Message Board</Button></Link>
+              ) : (<Link to="/messageboard" style={{ textDecoration: 'none' }}>
+                <div id="mbBtn">Message Board</div></Link>
               )}
             </NavItem>
 
@@ -100,9 +101,9 @@ const NavigationBar = (props) => {
               {props.token === "" ? (
                 ""
               ) : (
-                <Button id="logoutBtn" onClick={props.clearToken}>
+                <div id="logoutBtn" onClick={props.clearToken}>
                   Logout
-                </Button>
+                </div>
               )}
             </NavItem>
 

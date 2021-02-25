@@ -19,7 +19,7 @@ const MessageIndex= (props) => {
     return (
       
 
-        <div>
+        <div id="messagesIndex">
           { props.token === localStorage.getItem("token") ? <div>
           <p className="placeholder">Hello from Message Index</p>
 

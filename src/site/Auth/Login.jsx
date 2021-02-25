@@ -6,6 +6,7 @@ const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState("");
+  const [nope, setNope] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,9 +25,14 @@ const Login = (props) => {
         props.updateToken(data.sessionToken);
         console.log("User logged in!");
         setSuccess("Logged In!");
+        setNope("");
         props.setOpen(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => 
+        {console.log(err)
+        setNope("*Not a valid email/password combination")
+      });
+      //TODO: Add error message to user if unable to login?
   };
 
   return (
@@ -67,6 +73,7 @@ const Login = (props) => {
         <Button className="modalBtn" onClick={handleSubmit}>
           Submit
         </Button>
+        <p>{nope}</p>
       </Form>
     </div>
   );

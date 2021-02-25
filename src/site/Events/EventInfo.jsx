@@ -45,7 +45,7 @@ const EventInfo = (props) => {
 //Below: Had to wrap the entire events display in a ternary so that you wouldn't see it if you were'e loggedin with a token -Ginger
 
   return (
-    <div>{ props.token === localStorage.getItem("token") ? <div>
+    <div style= {{paddingBottom: "50px"}}>{ props.token === localStorage.getItem("token") ? <div>
       <p className="placeholder"></p>
       
       {/* <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} fetchEventInfo={fetchEventInfo} /> */}

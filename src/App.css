@@ -11,9 +11,160 @@ FONTS --> Russo One & Open Sans
   font-size: 25px;
 }
 
+/* What is this for? */
 #root {
   color: white;
   min-height: 100vh;
+}
+
+
+/* NanBar Section */
+#navBar {
+  background-color: #453054;
+  align-items: center;
+  display: flex;
+}
+
+#messagesIndex {
+  min-height: 100vh;
+}
+
+#userLoginBtn {
+  font-family: Open Sans;
+  color: #1d2323;
+  background-color: #a8c553;
+}
+
+#userLoginBtn:hover {
+  color: #ffffff;
+  /* background-color: #1d2323; */
+}
+
+#logo {
+  height: 40px;
+  width: 30px;
+}
+
+.brandName {
+  color: #ffff;
+  font-size: 20px;
+  margin-left: 5px;
+  font-family: Russo One;
+}
+
+.loggedIn {
+  font-family: Open Sans;
+}
+
+/* NavBar END */
+
+/* Landing page section*/
+
+#footer {
+  color: #1d2323;
+  font-family: Open Sans;
+  background-color: #a8c553;
+  height: 35px;
+}
+
+/* Modal Styling */
+.modalBody {
+  background-color: #a8c553;
+}
+
+.modalTitle {
+  font-family: Russo One;
+}
+
+.modalLabel {
+  font-family: Open Sans;
+}
+
+.modalBtn {
+  background-color: #453054;
+}
+
+.modalBtn:hover {
+  background-color: #1d2323;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+#createAccLink {
+  font-family: Russo One;
+  font-size: 20px;
+  margin-left: 130px;
+  color: #1d2323;
+}
+
+/* Modal End */
+/* Carousel settings */
+.h1-responsive {
+  margin-bottom: 600px;
+  font-size: 4em;
+  font-family: Russo One;
+  color: #1d2323;
+}
+/* Landing page END */
+/* Logged in Section */
+
+.userIntro {
+  color: #ffffff;
+  text-align: center;
+  font-size: 2em;
+  font-family: Russo One;
+}
+
+.columnHeader {
+  border-radius: 15px 15px 0 0;
+  text-align: center;
+  font-family: Russo One;
+  width: 90%;
+}
+
+#calendar {
+  border-radius: 0 0 15px 15px;
+  font-family: Open Sans;
+  color: #453054;
+  background-color: #a8c553;
+  min-width: 340px;
+  width: 90%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+
+#loggedIn {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 0.9em;
+  height: 42px;
+  line-height: 42px;
+  /* padding-top: 10px; */
+}
+
+.columnHeader {
+  height: 40px;
+  background-color: #453054;
+  color: white;
+  margin: auto;
+  padding-left: 10px;
+  min-width: 340px;
+  /* -webkit-box-shadow: 0 0 10px black;
+  box-shadow: 0 0 15px black; */
+  z-index: 5;
+}
+.columnHeader h2 {
+  font-size: 1.4em;
+  line-height: 40px;
 }
 
 #calendar {
@@ -27,19 +178,7 @@ FONTS --> Russo One & Open Sans
   display: flex;
   justify-content: center;
   margin: auto;
-}
-
-.columnHeader {
-  height: 40px;
-  background-color: #453054;
-  color: white;
-  margin: auto;
-  padding-left: 10px;
-  min-width: 340px;
-}
-.columnHeader h2 {
-  font-size: 1.4em;
-  line-height: 40px;
+  /* box-shadow: 0 0 0px black, 0 0 10px -3px black, 0 0 10px black, 0 0 10px -3px black; */
 }
 
 #loggedInPage {
@@ -55,19 +194,14 @@ FONTS --> Russo One & Open Sans
   padding: 20px;
   color: #1d2323;
   min-width: 340px;
+  margin-bottom: 20px;
 }
 
-#loggedIn {
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  vertical-align: middle;
-  display: inline-block;
-  font-size: 0.9em;
-  height: 38px;
-  line-height: 35px;
-  /* padding-top: 10px; */
+#singleEvent {
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 10px 10px 10px 10px;
+  border-radius: 4px;
 }
 
 #table {
@@ -77,6 +211,9 @@ FONTS --> Russo One & Open Sans
 .popover {
   min-width: 450px;
 }
+
+
+/* Logged in END */
 
 /* Landing page section*/
 #navBar {
@@ -89,6 +226,26 @@ FONTS --> Russo One & Open Sans
   font-family: Open Sans;
   color: #1d2323;
   background-color: #a8c553;
+}
+
+#eventBtn, #mbBtn, #logoutBtn, #homeBtn {
+  font-family: Open Sans;
+  color: #1d2323;
+  background-color: #a8c553;
+  margin-right: 10px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 2px;
+  box-shadow: 0 0 10px #1d2323;
+  margin-top:5px;
+}
+
+#logoutBtn:hover {
+  cursor: pointer;
+}
+
+#eventBtn:hover, #mbBtn:hover, #logoutBtn:hover, #homeBtn:hover {
+  
+  color: white;
 }
 
 #logo {
@@ -112,6 +269,7 @@ FONTS --> Russo One & Open Sans
   color: #a8c553;
   font-size: 3em;
   font-family: Russo One;
+  text-shadow: 0 0 10px #1d2323;
 }
 
 .brandName {
@@ -129,7 +287,21 @@ FONTS --> Russo One & Open Sans
   color: #1d2323;
 }
 
+#table {
+  color: black;
+  background-color: #a8c553;
+  /* min-width: 340px; */
+  /* width: 90%; */
+  /* padding-top: 20px; */
+  /* padding-bottom: 20px; */
+  /* height: auto; */
+  /* display: flex;
+  justify-content: center;
+  margin: auto; */
+}
+
 /* Landing page END */
+
 
 /* Custom CSS is above this line*/
 .App {
@@ -168,5 +340,14 @@ FONTS --> Russo One & Open Sans
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .intro {
+    font-size: 2.2em;
+  }
+  #calendar {
+    margin-left: 0px;
   }
 }

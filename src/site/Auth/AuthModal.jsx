@@ -46,14 +46,14 @@ const AuthModal = (props) => {
         external={externalCloseBtn}
       >
         {/* <ModalHeader>Modal title</ModalHeader> */}
-        <ModalBody>
+        <ModalBody className="modalBody">
           {signup === false ? (
             <div>
               <Login
                 updateToken={props.updateToken}
                 open={open}
                 setOpen={setOpen}
-                displayEmail={props.displayEmail}
+                
               />
             </div>
           ) : (
@@ -62,7 +62,7 @@ const AuthModal = (props) => {
                 updateToken={props.updateToken}
                 open={open}
                 setOpen={setOpen}
-                displayEmail={props.displayEmail}
+                
               />
             </div>
           )}
@@ -79,7 +79,7 @@ const AuthModal = (props) => {
 
           {signup === false ? (
             <div>
-              <a href="#" onClick={signupOpen}>
+              <a id="createAccLink" href="#" onClick={signupOpen}>
                 Create New Account
               </a>
               <div style={{ display: "none" }}>

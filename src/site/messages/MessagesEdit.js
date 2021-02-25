@@ -10,3 +10,8 @@ const MessagesEdit = (props) => {
 }
 
 export default MessagesEdit;
+
+// edit button grab on modal
+// Fetch message Get
+// create the update method calling on update endpoint
+// base of index card on on click to 

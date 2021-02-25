@@ -13,3 +13,6 @@ const DisplayMessages = (props) => {
 }
  
 export default DisplayMessages;
+
+// pass mapping of every message, build a div or card, name, race, email, message
+// Make calls for updates and displays message object

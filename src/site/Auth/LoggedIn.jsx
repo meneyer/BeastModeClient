@@ -38,7 +38,7 @@ const LoggedIn = (props) => {
       </div>
       <p className="placeholder">Hello from LoggedIn</p>
 
-    </div>
+
       <Container>
         
         <Row>

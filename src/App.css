@@ -57,8 +57,16 @@ FONTS --> Russo One & Open Sans
 
 #mainPageBG {
   background-image: url(./site/assets/mud_background.jpg);
-  height: 100vh;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#loggedInBG {
+  background-image: url(./site/assets/mud_background.jpg);
   background-attachment: fixed;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -183,10 +191,6 @@ FONTS --> Russo One & Open Sans
   /* box-shadow: 0 0 0px black, 0 0 10px -3px black, 0 0 10px black, 0 0 10px -3px black; */
 }
 
-#loggedInPage {
-  padding-bottom: 40px;
-}
-
 #displayMessages,
 #displayEvents {
   background-color: lightgray;
@@ -223,7 +227,6 @@ FONTS --> Russo One & Open Sans
 
 #eventBtn,
 #mbBtn,
-#logoutBtn,
 #homeBtn {
   font-family: Open Sans;
   color: #1d2323;

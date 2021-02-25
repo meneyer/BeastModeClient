@@ -12,7 +12,7 @@ import {
 } from "reactstrap";
 import Logo from "./assets/BeastLogo.png";
 import AuthModal from "./Auth/AuthModal";
-import {Route, Link, Switch} from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import LoggedIn from "./Auth/LoggedIn";
 import EventInfo from "./Events/EventInfo";
 import MessagesIndex from "./messages/MessagesIndex";
@@ -48,14 +48,13 @@ const NavigationBar = (props) => {
 
   return (
     <div>
-      <Navbar className="shadow p-2 mb-5 bg-body" id="navBar" dark expand="md">
+      <Navbar className="bg-body" id="navBar" dark expand="md">
         <NavbarBrand className="brandName">
           <img src={Logo} id="logo" alt="logo" />
           BEAST : MODE
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-
           <Nav className="ml-auto" navbar>
             {props.token === "" ? (
               <NavItem className="btn-group">
@@ -75,24 +74,30 @@ const NavigationBar = (props) => {
             <NavItem>
               {props.token === "" ? (
                 ""
-              ) : (<Link to="/">
-                <Button  id="homeBtn">Home</Button></Link>
+              ) : (
+                <Link to="/">
+                  <Button id="homeBtn">Home</Button>
+                </Link>
               )}
             </NavItem>
 
             <NavItem>
               {props.token === "" ? (
                 ""
-              ) : (<Link to="/events">
-                <Button  id="eventBtn">Events</Button></Link>
+              ) : (
+                <Link to="/events">
+                  <Button id="eventBtn">Events</Button>
+                </Link>
               )}
             </NavItem>
 
             <NavItem>
               {props.token === "" ? (
                 ""
-              ) : (<Link to="/messageboard">
-                <Button id="mbBtn">Message Board</Button></Link>
+              ) : (
+                <Link to="/messageboard">
+                  <Button id="mbBtn">Message Board</Button>
+                </Link>
               )}
             </NavItem>
 
@@ -105,17 +110,22 @@ const NavigationBar = (props) => {
                 </Button>
               )}
             </NavItem>
-
           </Nav>
         </Collapse>
       </Navbar>
-      <div >
-            <Switch>
-                <Route exact path = "/"><LoggedIn token={props.token}/></Route>
-                <Route exact path = "/events"><EventInfo token={props.token} /></Route>
-                <Route exact path = "/messageboard"><MessagesIndex token={props.token}/></Route>
-            </Switch>
-        </div>
+      <div>
+        <Switch>
+          <Route exact path="/">
+            <LoggedIn token={props.token} />
+          </Route>
+          <Route exact path="/events">
+            <EventInfo token={props.token} />
+          </Route>
+          <Route exact path="/messageboard">
+            <MessagesIndex token={props.token} />
+          </Route>
+        </Switch>
+      </div>
     </div>
   );
 };

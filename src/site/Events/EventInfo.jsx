@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {} from 'reactstrap';
+import {} from "reactstrap";
 import EventCreate from "./EventCreate";
 // import EventUpdate from "./EventUpdate";
 import EventTableAndDelete from "./EventTableAndDelete";
@@ -27,38 +27,47 @@ const EventInfo = (props) => {
 
   const editEvent = (eventInfoUpdate) => {
     setUpdateEvent(eventInfoUpdate);
-    console.log(eventInfoUpdate)
-  }
+    console.log(eventInfoUpdate);
+  };
 
   const updateOn = () => {
     setUpdateRace(true);
-  }
+  };
 
   const updateOff = () => {
     setUpdateRace(false);
-  }
+  };
 
   useEffect(() => {
     fetchEventInfo();
   }, []);
 
-//Below: Had to wrap the entire events display in a ternary so that you wouldn't see it if you were'e loggedin with a token -Ginger
+  //Below: Had to wrap the entire events display in a ternary so that you wouldn't see it if you weren't logged in with a token -Ginger
 
   return (
-    <div>{ props.token === localStorage.getItem("token") ? <div>
-      <p className="placeholder"></p>
-      
-      {/* <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} fetchEventInfo={fetchEventInfo} /> */}
-
-      <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} updateOff={updateOff} fetchEventInfo={fetchEventInfo} updateRace={updateRace} updateEvent={updateEvent}/>
-      
-      {/* <EventUpdate token={props.token} /> */}
-      {/* {updateRace ? <EventUpdate updateEvent={updateEvent} token={props.token} updateOff={updateOff}  fetchEventInfo={fetchEventInfo}/> : <></>} */}
-      
-      <EventCreate token={props.token} fetchEventInfo = {fetchEventInfo}/> </div> : <BeforeLogIn /> }
+    <div style={{ backgroundColor: "blue" }}>
+      {props.token === localStorage.getItem("token") ? (
+        <div>
+          <p className="placeholder"></p>
+          {/* <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} fetchEventInfo={fetchEventInfo} /> */}
+          <EventTableAndDelete
+            token={props.token}
+            events={events}
+            editEvent={editEvent}
+            updateOn={updateOn}
+            updateOff={updateOff}
+            fetchEventInfo={fetchEventInfo}
+            updateRace={updateRace}
+            updateEvent={updateEvent}
+          />
+          {/* <EventUpdate token={props.token} /> */}
+          {/* {updateRace ? <EventUpdate updateEvent={updateEvent} token={props.token} updateOff={updateOff}  fetchEventInfo={fetchEventInfo}/> : <></>} */}
+          <EventCreate token={props.token} fetchEventInfo={fetchEventInfo} />{" "}
+        </div>
+      ) : (
+        <BeforeLogIn />
+      )}
       {/* <EventCreate token={props.token} /> */}
-
-      
     </div>
   );
 };

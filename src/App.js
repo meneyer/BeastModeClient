@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import LoggedIn from "./site/Auth/LoggedIn";
 import BeforeLogIn from "./site/Auth/BeforeLogin";
 import Footer from "./site/Footer";
-import background from "./site/assets/mud_background.jpg";
+// import background from "./site/assets/mud_background.jpg";
 import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
@@ -48,7 +48,7 @@ function App() {
   };
 
   return (
-    <div id="mainPageBG">
+    <div>
       <Router>
         <NavigationBar
           updateToken={updateToken}
@@ -57,10 +57,7 @@ function App() {
         />
       </Router>
 
-      {/* <div id="heroIntro">
-        <p className="intro">Prepare.Yourself</p>
-      </div> 
-    {loggedInVsOut()} */}
+      {loggedInVsOut()}
 
       <Footer />
     </div>

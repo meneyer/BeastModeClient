@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import {} from 'reactstrap';
+import React, { useState } from "react";
+import {} from "reactstrap";
 
 const MessagesEdit = (props) => {
-    return (
-        <div>
-            <p className="placeholder">Hello from Message Edit</p>
-        </div>
-    );
-}
+  return (
+    <div style={{ backgroundColor: "cornflowerblue" }}>
+      <p className="placeholder">Hello from Message Edit</p>
+    </div>
+  );
+};
 
 export default MessagesEdit;

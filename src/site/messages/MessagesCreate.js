@@ -1,7 +1,20 @@
-import React, {useState} from 'react';
-import {Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import React, { useState } from "react";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  FormText,
+} from "reactstrap";
 
 const MessagesCreate = (props) => {
+  const [name, setName] = useState("");
+  const [raceName, setRaceName] = useState("");
+  const [message, setMessage] = useState("");
 
     const [name, setName] =useState('');
     const [email,setEmail] =useState('');
@@ -30,13 +43,13 @@ const MessagesCreate = (props) => {
         setEmail('');
         setRaceName('');
         setMessage('');
+
         props.fetchMessages();
-  
-      })
-        
-    }
+      });
+  };
 
   return (
+
    <div>
    <Container>
    <h1>Post Your Messages Here</h1>
@@ -70,9 +83,33 @@ const MessagesCreate = (props) => {
    </Row>
    </Container>
 
-</div>
 
+              <FormGroup>
+                <Label htmlFor="RaceName">Race Your Attending</Label>
+                <Input
+                  name="RaceName"
+                  value={raceName}
+                  placeholder="Spartan Race, Savage Race, Tough Mudder, Rugged Maniac, etc."
+                  onChange={(e) => setRaceName(e.target.value)}
+                />
+              </FormGroup>
+
+              <FormGroup>
+                <Label htmlFor="Message">What's on your Mind?</Label>
+                <Input
+                  name="Message"
+                  value={message}
+                  placeholder="Messages are shared by everyone"
+                  onChange={(e) => setMessage(e.target.value)}
+                />
+              </FormGroup>
+              <Button type="submit">Send us your message</Button>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
-}
+};
 
 export default MessagesCreate;

@@ -22,10 +22,18 @@ const fetchMessages = () => {
       });
   };
 
-    //Below: Had to wrap the entire events display in a ternary so that you wouldn't see it if you were'e loggedin with a token - Ginger
+
+  // const [modal, setModal = useState(false);
+
 
     return (
 
+
+  //Below: Had to wrap the entire events display in a ternary so that you wouldn't see it if you were'e loggedin with a token - Ginger
+
+  return (
+    <div style={{ backgroundColor: "darkgoldenrod" }}>
+      {props.token === localStorage.getItem("token") ? (
         <div>
  
         <div id="messagesIndex">
@@ -37,7 +45,7 @@ const fetchMessages = () => {
     
       {/* //   <Button color='danger' onClick={toggle}>{buttonLabel}</Button>
       //   <Modal isOpen={modal} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }} */}
-      {/* //   toggle={toggle} className={className}>
+          {/* //   toggle={toggle} className={className}>
       //   <ModalHeader toggle={toggle}>Modal title</ModalHeader>
       //   <ModalBody>
       //     llit anim id est laborum.
@@ -46,10 +54,14 @@ const fetchMessages = () => {
       //     <Button color="primary" onClick={toggle}>All Messages</Button>{' '}
       //     <Button color="secondary" onClick={toggle}>Return</Button>
       //   </ModalFooter>
-      // </Modal> */} 
-      </div> : <BeforeLogIn /> }
+      // </Modal> */}
+      </div>
+      ) : (
+        <BeforeLogIn />
+      )}
     </div>
-    );
-}
+  );
+};
+
 
 export default Messages;

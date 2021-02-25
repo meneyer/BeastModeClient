@@ -17,7 +17,6 @@ FONTS --> Russo One & Open Sans
   min-height: 100vh;
 }
 
-
 /* NanBar Section */
 #navBar {
   background-color: #453054;
@@ -59,6 +58,22 @@ FONTS --> Russo One & Open Sans
 /* NavBar END */
 
 /* Landing page section*/
+
+#mainPageBG {
+  background-image: url(./site/assets/mud_background.jpg);
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#loggedInBG {
+  background-image: url(./site/assets/mud_background.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 #footer {
   color: #1d2323;
@@ -137,7 +152,6 @@ FONTS --> Russo One & Open Sans
   margin: auto;
 }
 
-
 #loggedIn {
   padding-left: 15px;
   padding-right: 15px;
@@ -181,10 +195,6 @@ FONTS --> Russo One & Open Sans
   /* box-shadow: 0 0 0px black, 0 0 10px -3px black, 0 0 10px black, 0 0 10px -3px black; */
 }
 
-#loggedInPage {
-  padding-bottom: 40px;
-}
-
 #displayMessages,
 #displayEvents {
   background-color: lightgray;
@@ -212,7 +222,6 @@ FONTS --> Russo One & Open Sans
   min-width: 450px;
 }
 
-
 /* Logged in END */
 
 /* Landing page section*/
@@ -228,7 +237,9 @@ FONTS --> Russo One & Open Sans
   background-color: #a8c553;
 }
 
-#eventBtn, #mbBtn, #logoutBtn, #homeBtn {
+#eventBtn,
+#mbBtn,
+#homeBtn {
   font-family: Open Sans;
   color: #1d2323;
   background-color: #a8c553;
@@ -301,7 +312,6 @@ FONTS --> Russo One & Open Sans
 }
 
 /* Landing page END */
-
 
 /* Custom CSS is above this line*/
 .App {

@@ -4,10 +4,8 @@ import React, { useState, useEffect } from "react";
 import LoggedIn from "./site/Auth/LoggedIn";
 import BeforeLogIn from "./site/Auth/BeforeLogin";
 import Footer from "./site/Footer";
-import background from "./site/assets/mud_background.jpg";
-import {
-  BrowserRouter as Router,
-} from "react-router-dom";
+// import background from "./site/assets/mud_background.jpg";
+import { BrowserRouter as Router } from "react-router-dom";
 
 
 function App() {
@@ -44,27 +42,14 @@ function App() {
 
   const loggedInVsOut = () => {
     return sessionToken === localStorage.getItem("token") ? (
-      <LoggedIn token={sessionToken} loggedInVsOut={loggedInVsOut}/>
+      <LoggedIn token={sessionToken} loggedInVsOut={loggedInVsOut} />
     ) : (
-      <BeforeLogIn updateToken={updateToken} loggedInVsOut={loggedInVsOut}/>
+      <BeforeLogIn updateToken={updateToken} loggedInVsOut={loggedInVsOut} />
     );
   };
 
   return (
-    <div
-      className="bg_image"
-      style={{
-        backgroundImage: `url(${background})`,
-        // backgroundColor: "#1d2323",  // This color is a good fit if the image is too much
-        backgroundSize: "cover",
-
-       
-        backgroundAttachment: "fixed",
-
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      }}
-    >
+    <div>
       <Router>
         <NavigationBar
           updateToken={updateToken}
@@ -73,10 +58,7 @@ function App() {
         />
       </Router>
 
-      {/* <div id="heroIntro">
-        <p className="intro">Prepare.Yourself</p>
-      </div> 
-    {loggedInVsOut()} */}
+      {loggedInVsOut()}
 
       <Footer />
     </div>

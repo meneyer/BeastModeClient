@@ -4,27 +4,30 @@ import {Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText } f
 const MessagesCreate = (props) => {
 
     const [name, setName] =useState('');
+    const [email,setEmail] =useState('');
     const [raceName, setRaceName] = useState('');
     const [message, setMessage] =useState('');
 
     const handleSubmit =(e) => {
       e.preventDefault();
+      console.log(props.token);
       fetch('http://localhost:3000/messageboard/create', {
         method: "POST",
         body: JSON.stringify({
           messageboard: {
             name: name, 
+            email: email,
             raceName: raceName, 
-            message: message, }
-          }),
-        headers: new Headers({
-          'Content-Type': 'application/json',
-          'Authorization': props.token
+            message: message }}),
+            headers: new Headers({
+              'Content-Type': 'application/json',
+              'Authorization': props.token
         })
       }) .then((res) => res.json())
       .then((logData) => {
         console.log(logData)
         setName('');
+        setEmail('');
         setRaceName('');
         setMessage('');
         props.fetchMessages();
@@ -41,9 +44,14 @@ const MessagesCreate = (props) => {
      <Col>
      <Form onSubmit={handleSubmit}>
        <FormGroup>
-         <Label htmlFor="Name">Your Name</Label>
-         <Input name="Name" value={name} placeholder="Who are you?" onChange={(e) =>setName(e.target.value)}/>
+         <Label htmlFor="name">Your Name</Label>
+         <Input name="name" value={name} placeholder="Who are you?" onChange={(e) =>setName(e.target.value)}/>
        </FormGroup>
+
+        <FormGroup>
+       <Label for="email">Email</Label>
+       <Input type="email" name="email" id="email" placeholder="" onChange={(e) => setEmail(e.target.value)}/>
+        </FormGroup>
 
        <FormGroup>
          <Label htmlFor="RaceName">Race Your Attending</Label>

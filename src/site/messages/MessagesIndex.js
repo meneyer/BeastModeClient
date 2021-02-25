@@ -26,18 +26,16 @@ const fetchMessages = () => {
   // const [modal, setModal = useState(false);
 
 
-    return (
+
 
 
   //Below: Had to wrap the entire events display in a ternary so that you wouldn't see it if you were'e loggedin with a token - Ginger
 
   return (
-    <div style={{ backgroundColor: "darkgoldenrod" }}>
-      {props.token === localStorage.getItem("token") ? (
-        <div>
- 
-        <div id="messagesIndex">
-          { props.token === localStorage.getItem("token") ? <div>
+
+        <div id="messagesIndex" style={{ backgroundColor: "darkgoldenrod" }}>
+          { props.token === localStorage.getItem("token") ? 
+          <div>
           <p className="placeholder">Hello from Message Index</p>
 
          <MessagesEdit>test</MessagesEdit>
@@ -56,7 +54,7 @@ const fetchMessages = () => {
       //   </ModalFooter>
       // </Modal> */}
       </div>
-      ) : (
+       : (
         <BeforeLogIn />
       )}
     </div>

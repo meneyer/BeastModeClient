@@ -29,51 +29,6 @@ let events = [
   },
 ];
 
-const Dashboard = (props) => {
-  return (
-    <div>
-      <div id="heroIntro">
-        <p className="intro">Prepare.Yourself</p>
-      </div>
-
-      <Container>
-        <Row>
-          <Col md="6">
-            <div className="columnHeader" style={{ width: "90%" }}>
-              <h2>Calendar</h2>
-            </div>
-            <EventCalendar />
-            <div
-              className="columnHeader"
-              style={{ width: "90%", marginTop: "40px" }}
-            >
-              <h2>Upcoming Events</h2>
-            </div>
-            <div id="displayEvents">
-              <EventInfo token={props.token} />
-            </div>
-          </Col>
-
-          <Col md="6">
-            <div className="columnHeader" style={{ width: "90%" }}>
-              <h2>Message Board</h2>
-            </div>
-            <div id="displayMessages">
-              <MessagesIndex token={props.token} />
-              <DisplayMessages />
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </div>
-
-    //     <div>
-    //       <p className="placeholder"></p>
-    //       <EventInfo token={props.token} />
-
-    //     </div>
-  );
-};
 
 const Dashboard = (props) => {
     return ( 

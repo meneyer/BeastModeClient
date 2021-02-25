@@ -57,8 +57,8 @@ function App() {
           token={sessionToken}
         />
       </Router>
-
-      {loggedInVsOut()}
+{/* 
+      {loggedInVsOut()} */}
 
       <Footer />
     </div>

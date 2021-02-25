@@ -48,7 +48,7 @@ const EventInfo = (props) => {
 
   return (
 
-    <div style= {{paddingBottom: "50px"}}>{ props.token === localStorage.getItem("token") ? <div>
+    <div style= {{paddingBottom: "50px", backgroundColor: "blueviolet"}}>{ props.token === localStorage.getItem("token") ? <div>
       <p className="placeholder"></p>
       
       <Resources />

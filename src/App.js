@@ -7,6 +7,7 @@ import Footer from "./site/Footer";
 // import background from "./site/assets/mud_background.jpg";
 import { BrowserRouter as Router } from "react-router-dom";
 
+
 function App() {
   // app.get('/*', function(req, res) {
   //   res.sendFile(path.join(__dirname, 'path/to/your/index.html'), function(err) {

@@ -5,6 +5,7 @@ import Dashboard from "./Dashboard";
 
 const LoggedIn = (props) => {
   return (
+
     <div id="loggedInBG">
       {props.token === localStorage.getItem("token") ? (
         <Dashboard token={props.token} loggedInVsOut={props.loggedInVsOut} />
@@ -15,6 +16,7 @@ const LoggedIn = (props) => {
         />
       )}
     </div>
+
   );
 };
 

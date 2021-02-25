@@ -53,7 +53,7 @@ const AuthModal = (props) => {
                 updateToken={props.updateToken}
                 open={open}
                 setOpen={setOpen}
-                displayEmail={props.displayEmail}
+                
               />
             </div>
           ) : (
@@ -62,7 +62,7 @@ const AuthModal = (props) => {
                 updateToken={props.updateToken}
                 open={open}
                 setOpen={setOpen}
-                displayEmail={props.displayEmail}
+                
               />
             </div>
           )}

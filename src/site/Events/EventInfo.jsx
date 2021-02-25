@@ -5,6 +5,8 @@ import EventCreate from "./EventCreate";
 import EventTableAndDelete from "./EventTableAndDelete";
 import LoggedIn from "../Auth/LoggedIn";
 import BeforeLogIn from "../Auth/BeforeLogin";
+import Resources from "../Resources/Resources"
+
 const EventInfo = (props) => {
   const [events, setEvents] = useState([]);
   const [updateRace, setUpdateRace] = useState(false);
@@ -48,13 +50,15 @@ const EventInfo = (props) => {
     <div>{ props.token === localStorage.getItem("token") ? <div>
       <p className="placeholder"></p>
       
+      <Resources />
+
       {/* <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} fetchEventInfo={fetchEventInfo} /> */}
 
       <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} updateOff={updateOff} fetchEventInfo={fetchEventInfo} updateRace={updateRace} updateEvent={updateEvent}/>
       
       {/* <EventUpdate token={props.token} /> */}
       {/* {updateRace ? <EventUpdate updateEvent={updateEvent} token={props.token} updateOff={updateOff}  fetchEventInfo={fetchEventInfo}/> : <></>} */}
-      
+          
       <EventCreate token={props.token} fetchEventInfo = {fetchEventInfo}/> </div> : <BeforeLogIn /> }
       {/* <EventCreate token={props.token} /> */}
 

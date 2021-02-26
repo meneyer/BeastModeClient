@@ -29,54 +29,51 @@ let events = [
   },
 ];
 
-
 const Dashboard = (props) => {
-    return ( 
-        <div id="loggedInPage">
-        <div id="heroIntro">
-          <p className="intro">Prepare.Yourself</p>
-        </div>
-        <p className="placeholder"></p>
-  
-     
-        <Container>
-          
-          <Row>
-  
-            <Col md="6">
-              <div className="columnHeader" style={{ width: "90%"}}>
-                <h2>Calendar</h2>
-              </div>
-              <EventCalendar />
-              <div className="columnHeader" style={{ width: "90%", "marginTop": "40px"}}><h2>Upcoming Events</h2></div>
-              <div id="displayEvents">
-                <EventDisplay token={props.token} />
-              </div>
-            </Col>
-            
-            <Col md="6">
-              <div className="columnHeader" style={{width: "90%"}}>
-                <h2>Message Board</h2>
-              </div>
-              <div id="displayMessages">
-                <MessagesIndex token={props.token}/>
-                <DisplayMessages />
-              </div>
-            </Col>
-            
-          </Row>
-        </Container>
-        </div>
-        
-  
-  //     <div>
-  //       <p className="placeholder"></p>
-  //       <EventInfo token={props.token} />
-  
-  //     </div>
-     );
-}
- 
+  return (
+    <div id="loggedInPage">
+      <div id="heroIntro">
+        <p className="intro">Prepare.Yourself</p>
+      </div>
+      <p className="placeholder"></p>
+      <Container>
+        <Row>
+          <Col md="6">
+            <div className="columnHeader" style={{ width: "90%" }}>
+              <h2>Calendar</h2>
+            </div>
+            <EventCalendar />
+            <div
+              className="columnHeader"
+              style={{ width: "90%", marginTop: "40px" }}
+            >
+              <h2>Upcoming Events</h2>
+            </div>
+            <div id="displayEvents">
+              <EventDisplay token={props.token} />
+            </div>
+          </Col>
+          <Col md="6">
+            <div className="columnHeader" style={{ width: "90%" }}>
+              <h2>Message Board</h2>
+            </div>
+            <div id="displayMessages">
+              <MessagesIndex token={props.token} />
+              <DisplayMessages />
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </div>
+
+    //     <div>
+    //       <p className="placeholder"></p>
+    //       <EventInfo token={props.token} />
+
+    //     </div>
+  );
+};
+
 export default Dashboard;
 
 const EventCalendar = (props) => (

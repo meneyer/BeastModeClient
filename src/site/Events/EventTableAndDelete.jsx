@@ -1,5 +1,10 @@
+
+import React, {useState} from "react";
+import {Table, Container, Button, Row, Col, UncontrolledPopover, PopoverHeader, PopoverBody, Collapse} from 'reactstrap';
+
 import React, { useState } from "react";
 import { Table, Container, Button, Row, Col } from "reactstrap";
+
 import EventUpdate from "./EventUpdate";
 
 const EventTableAndDelete = (props) => {
@@ -16,10 +21,29 @@ const EventTableAndDelete = (props) => {
     }).then(() => props.fetchEventInfo());
   };
 
+  const PopoverContent = (props) => {
+    const [isOpen, setIsOpen] = useState(false);
+      return (
+        <>
+    <PopoverHeader>Click below to Confirm Delete of this event</PopoverHeader>
+      <PopoverBody>
+        <Button color="danger" onClick={() => {setIsOpen(!isOpen); {deleteEvent(props.eventInfoUpdate)}}}>Confirm Delete</Button>
+        <Collapse isOpen={isOpen} onEntered={props.confirmDelete} onExited={props.confirmDelete}>
+          Click to Confirm Delete
+        </Collapse>
+      </PopoverBody>
+      </>
+      );
+  }
+
+
+  
+  
+
   const eventMap = () => {
     return props.events.map((eventInfoUpdate, index) => {
-      return (
-        // <div>
+
+      return(  
 
         <tr key={index}>
           <th scope="row">{eventInfoUpdate.id}</th>
@@ -28,8 +52,6 @@ const EventTableAndDelete = (props) => {
           <td>{eventInfoUpdate.length}</td>
           <td>{eventInfoUpdate.date}</td>
           <td>{eventInfoUpdate.startTime}</td>
-          {/* </tr>
-          <tr key={index}> */}
           <td>{eventInfoUpdate.packList}</td>
           <td>{eventInfoUpdate.lodging}</td>
           <td>{eventInfoUpdate.travelPlan}</td>
@@ -62,21 +84,29 @@ const EventTableAndDelete = (props) => {
 
             {props.updateRace ? <EventUpdate updateEvent={props.updateEvent} token={props.token} updateOff={props.updateOff}  fetchEventInfo={props.fetchEventInfo} popoverOpen={popoverOpen} toggle={toggle} /> : <></>} */}
 
-            <Button
-              color="danger"
-              onClick={() => {
-                deleteEvent(eventInfoUpdate);
-              }}
-            >
+            
+            <div className="text-center">
+              <Button color="danger" id="DeleteButtonOne" type="button">
               Delete
             </Button>
+
+            <UncontrolledPopover trigger="legacy" placement="top" target="DeleteButtonOne">
+              {({ confirmDelete }) => (
+                <PopoverContent confirmDelete={confirmDelete} eventInfoUpdate={eventInfoUpdate} />
+              )}
+            </UncontrolledPopover>
+          </div>
+
+            {/* <Button color="danger" onClick={() => {deleteEvent(eventInfoUpdate)}}>Delete</Button> */}
+
+            {/* <Button color="danger" onClick={() => {deleteEvent(eventInfoUpdate)}}>Delete</Button> */}
+
           </td>
         </tr>
+      )
+    })
+  }
 
-        // </div>
-      );
-    });
-  };
 
   return (
     <div>
@@ -111,5 +141,6 @@ const EventTableAndDelete = (props) => {
     </div>
   );
 };
+// }
 
 export default EventTableAndDelete;

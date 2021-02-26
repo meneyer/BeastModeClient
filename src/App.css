@@ -1,4 +1,6 @@
 /* Custom items for website
+THERE STYLE SECTIONS FOR EACH PAGE, PLACE YOUR CUSTOM CSS IN THESE SECTIONS
+
 PURPLE --> #453054
 GREEN --> #A8C553
 WHITE --> #ffff
@@ -11,7 +13,7 @@ FONTS --> Russo One & Open Sans
   font-size: 25px;
 }
 
-/* What is this for? */
+/* Base level CSS */
 #root {
   color: white;
   min-height: 100vh;
@@ -332,6 +334,18 @@ FONTS --> Russo One & Open Sans
   justify-content: center;
   margin: auto; */
 }
+/* Event Section END */
+
+/* Message Page Style */
+#messagesIndex {
+  background-image: url(./site/assets/mud_background.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Message Section END */
 
 /* Custom CSS is above this line*/
 .App {

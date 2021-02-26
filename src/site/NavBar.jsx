@@ -23,7 +23,7 @@ const NavigationBar = (props) => {
   // navbar collapses
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
-  let email = localStorage.getItem('beastEmail');
+  let email = localStorage.getItem("beastEmail");
 
   // const [signup, setSignup] = useState(false);
 
@@ -63,7 +63,6 @@ const NavigationBar = (props) => {
                   updateToken={props.updateToken}
                   open={open}
                   setOpen={setOpen}
-                  
                 />
               </NavItem>
             ) : (
@@ -75,30 +74,10 @@ const NavigationBar = (props) => {
             <NavItem>
               {props.token === "" ? (
                 ""
-
-              ) : (<Link to="/"  style={{ textDecoration: 'none' }}>
-                <div  id="homeBtn" >Home</div></Link>
-
-              )}
-            </NavItem>
-
-            <NavItem>
-              {props.token === "" ? (
-                ""
-
-              ) : (<Link to="/events" style={{ textDecoration: 'none' }}>
-                <div  id="eventBtn">Events</div></Link>
-
-              )}
-            </NavItem>
-
-            <NavItem>
-              {props.token === "" ? (
-                ""
-
-              ) : (<Link to="/messageboard" style={{ textDecoration: 'none' }}>
-                <div id="mbBtn">Message Board</div></Link>
-
+              ) : (
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <div id="homeBtn">Home</div>
+                </Link>
               )}
             </NavItem>
 
@@ -106,9 +85,31 @@ const NavigationBar = (props) => {
               {props.token === "" ? (
                 ""
               ) : (
-                <div id="logoutBtn" onClick={props.clearToken}>
-                  Logout
-                </div>
+                <Link to="/events" style={{ textDecoration: "none" }}>
+                  <div id="eventBtn">Events</div>
+                </Link>
+              )}
+            </NavItem>
+
+            <NavItem>
+              {props.token === "" ? (
+                ""
+              ) : (
+                <Link to="/messageboard" style={{ textDecoration: "none" }}>
+                  <div id="mbBtn">Message Board</div>
+                </Link>
+              )}
+            </NavItem>
+
+            <NavItem>
+              {props.token === "" ? (
+                ""
+              ) : (
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <div id="logoutBtn" onClick={props.clearToken}>
+                    Logout
+                  </div>
+                </Link>
               )}
             </NavItem>
           </Nav>

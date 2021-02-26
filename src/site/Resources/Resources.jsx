@@ -1,17 +1,27 @@
-import React from 'react';
-import {Container,  CardColumns, Card, Button, CardImg, CardTitle, CardText, CardDeck,
-    CardSubtitle, CardBody} from 'reactstrap';
+import React from "react";
+import {
+  Container,
+  CardColumns,
+  Card,
+  Button,
+  CardImg,
+  CardTitle,
+  CardText,
+  CardDeck,
+  CardSubtitle,
+  CardBody,
+} from "reactstrap";
 
 const Resources = () => {
-    return (
-        <div>
-            <h2>Weather Info</h2>
+  return (
+    <div>
+      <h2>Weather Info</h2>
 
-            <h2>Local Restraunts</h2>
+      <h2>Local Restraunts</h2>
 
-            <h2>Nearby Hotels</h2>
+      <h2>Nearby Hotels</h2>
 
-            <h2>Grocery, Drug, Sporting Goods Stores?</h2>
+      <h2>Grocery, Drug, Sporting Goods Stores?</h2>
 
             <h2>Find Your Next Race!</h2>
             <Container>
@@ -63,6 +73,8 @@ const Resources = () => {
                     </CardBody>
                 </Card>
                 {/* <Card>
+
+
                     <CardImg top width="100%" src="/assets/256x186.svg" alt="Card image cap" />
                     <CardBody>
                     <CardTitle tag="h5" className="text-primary" >Race</CardTitle>
@@ -71,15 +83,16 @@ const Resources = () => {
                     <Button class="btn btn-secondary btn-lg" a href="#" target="blank"> Race</Button>
                     </CardBody>
                 </Card> */}
-                {/* </CardDeck> */}
+          {/* </CardDeck> */}
+        </CardColumns>
+      </Container>
 
-            </CardColumns>
-            </Container>
-
-            <h2>Other Helpful Links (Door Dash, Uber, MudRunGuide, Obstacle Course Racing Media, etc.)</h2>
-
-        </div>
-    );
-}
+      <h2>
+        Other Helpful Links (Door Dash, Uber, MudRunGuide, Obstacle Course
+        Racing Media, etc.)
+      </h2>
+    </div>
+  );
+};
 
 export default Resources;

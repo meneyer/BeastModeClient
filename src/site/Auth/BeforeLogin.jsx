@@ -16,7 +16,7 @@ import Image4 from "../assets/Megs2.png";
 const CarouselPage = () => {
   return (
     <div id="mainPageBG">
-      <MDBContainer>
+      <MDBContainer id="carouselCont">
         <MDBCarousel
           activeItem={1}
           length={4}
@@ -24,7 +24,7 @@ const CarouselPage = () => {
           showIndicators={false}
           className="z-depth-1"
         >
-          <MDBCarouselInner>
+          <MDBCarouselInner id="carouselInner">
             <MDBCarouselItem itemId="1">
               <MDBView>
                 <img className="d-block w-100" src={Image1} alt="First slide" />

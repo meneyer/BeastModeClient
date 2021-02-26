@@ -308,6 +308,17 @@ FONTS --> Russo One & Open Sans
   font-family: Russo One;
   color: #1d2323;
 }
+/* Landing page END */
+
+/* Event Info Styles */
+
+#eventInfoBG {
+  background-image: url(./site/assets/mud_background.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 #table {
   color: black;
@@ -321,8 +332,6 @@ FONTS --> Russo One & Open Sans
   justify-content: center;
   margin: auto; */
 }
-
-/* Landing page END */
 
 /* Custom CSS is above this line*/
 .App {

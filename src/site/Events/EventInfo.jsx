@@ -5,7 +5,7 @@ import EventCreate from "./EventCreate";
 import EventTableAndDelete from "./EventTableAndDelete";
 import LoggedIn from "../Auth/LoggedIn";
 import BeforeLogIn from "../Auth/BeforeLogin";
-import Resources from "../Resources/Resources"
+import Resources from "../Resources/Resources";
 
 const EventInfo = (props) => {
   const [events, setEvents] = useState([]);
@@ -47,20 +47,28 @@ const EventInfo = (props) => {
   //Below: Had to wrap the entire events display in a ternary so that you wouldn't see it if you weren't logged in with a token -Ginger
 
   return (
-
-    <div style= {{paddingBottom: "50px", backgroundColor: "blueviolet"}}>{ props.token === localStorage.getItem("token") ? <div>
-      <p className="placeholder"></p>
-      
-      <Resources />
-
-      {/* <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} fetchEventInfo={fetchEventInfo} /> */}
-
-      <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} updateOff={updateOff} fetchEventInfo={fetchEventInfo} updateRace={updateRace} updateEvent={updateEvent}/>
-      
-      {/* <EventUpdate token={props.token} /> */}
-      {/* {updateRace ? <EventUpdate updateEvent={updateEvent} token={props.token} updateOff={updateOff}  fetchEventInfo={fetchEventInfo}/> : <></>} */}
-          
-      <EventCreate token={props.token} fetchEventInfo = {fetchEventInfo}/> </div> : <BeforeLogIn /> }
+    <div id="eventInfoBG" style={{ paddingBottom: "50px" }}>
+      {props.token === localStorage.getItem("token") ? (
+        <div>
+          <Resources />
+          {/* <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} fetchEventInfo={fetchEventInfo} /> */}
+          <EventTableAndDelete
+            token={props.token}
+            events={events}
+            editEvent={editEvent}
+            updateOn={updateOn}
+            updateOff={updateOff}
+            fetchEventInfo={fetchEventInfo}
+            updateRace={updateRace}
+            updateEvent={updateEvent}
+          />
+          {/* <EventUpdate token={props.token} /> */}
+          {/* {updateRace ? <EventUpdate updateEvent={updateEvent} token={props.token} updateOff={updateOff}  fetchEventInfo={fetchEventInfo}/> : <></>} */}
+          <EventCreate token={props.token} fetchEventInfo={fetchEventInfo} />{" "}
+        </div>
+      ) : (
+        <BeforeLogIn />
+      )}
 
       {/* <EventCreate token={props.token} /> */}
     </div>

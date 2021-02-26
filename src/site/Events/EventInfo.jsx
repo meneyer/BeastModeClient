@@ -5,7 +5,6 @@ import EventCreate from "./EventCreate";
 import EventTableAndDelete from "./EventTableAndDelete";
 import LoggedIn from "../Auth/LoggedIn";
 import BeforeLogIn from "../Auth/BeforeLogin";
-import Resources from "../Resources/Resources"
 
 const EventInfo = (props) => {
   const [events, setEvents] = useState([]);
@@ -50,8 +49,6 @@ const EventInfo = (props) => {
 
     <div style= {{paddingBottom: "50px", backgroundColor: "blueviolet"}}>{ props.token === localStorage.getItem("token") ? <div>
       <p className="placeholder"></p>
-      
-      <Resources />
 
       {/* <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} fetchEventInfo={fetchEventInfo} /> */}
 

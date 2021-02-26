@@ -6,11 +6,13 @@ import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 // import {container, row, col} from 'bootstrap'
 import { Container, Row, Col } from "reactstrap";
-import DisplayMessages from "../MessageBoard/DisplayMessages";
+import MessagesDisplay from "../messages/MessagesDisplay";
 import EventDisplay from "../Events/EventDisplay";
 
+moment.locale("en-GB");
 const localizer = momentLocalizer(moment);
 
+const myEventsList = {} //empty object for now
 //test array of events for now to try out calendar
 let events = [
   {
@@ -29,51 +31,67 @@ let events = [
   },
 ];
 
+// const fetchEventInfo = () => {
+//   fetch("http://localhost:3000/events/", {
+//     method: "GET",
+//     headers: new Headers({
+//       "Content-Type": "application/json",
+//       Authorization: props.token,
+//     }),
+//   })
+//     .then((res) => res.json())
+//     .then((logData) => {
+//       setEvents(logData);
+//       console.log(logData);
+//     });
+// };
+
 const Dashboard = (props) => {
-  return (
-    <div id="loggedInPage">
-      <div id="heroIntro">
-        <p className="intro">Prepare.Yourself</p>
-      </div>
-      <p className="placeholder"></p>
-      <Container>
-        <Row>
-          <Col md="6">
-            <div className="columnHeader" style={{ width: "90%" }}>
-              <h2>Calendar</h2>
-            </div>
-            <EventCalendar />
-            <div
-              className="columnHeader"
-              style={{ width: "90%", marginTop: "40px" }}
-            >
-              <h2>Upcoming Events</h2>
-            </div>
-            <div id="displayEvents">
-              <EventDisplay token={props.token} />
-            </div>
-          </Col>
-          <Col md="6">
-            <div className="columnHeader" style={{ width: "90%" }}>
-              <h2>Message Board</h2>
-            </div>
-            <div id="displayMessages">
-              <MessagesIndex token={props.token} />
-              <DisplayMessages />
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </div>
-
-    //     <div>
-    //       <p className="placeholder"></p>
-    //       <EventInfo token={props.token} />
-
-    //     </div>
-  );
-};
-
+    return ( 
+        <div id="loggedInPage">
+        <div id="heroIntro">
+          <p className="intro">Prepare.Yourself</p>
+        </div>
+        <p className="placeholder"></p>
+  
+     
+        <Container>
+          
+          <Row>
+  
+            <Col md="6">
+              <div className="columnHeader" style={{ width: "90%"}}>
+                <h2>Calendar</h2>
+              </div>
+              <EventCalendar />
+              <div className="columnHeader" style={{ width: "90%", "marginTop": "40px"}}><h2>Upcoming Events</h2></div>
+              <div id="displayEvents">
+                <EventDisplay token={props.token} />
+              </div>
+            </Col>
+            
+            <Col md="6">
+              <div className="columnHeader" style={{width: "90%"}}>
+                <h2>Message Board</h2>
+              </div>
+              <div id="displayMessages">
+                <MessagesDisplay token={props.token}/>
+              </div>
+            </Col>
+            
+          </Row>
+        </Container>
+        </div>
+        
+  
+  //     <div>
+  //       <p className="placeholder"></p>
+  //       <EventInfo token={props.token} />
+  
+  //     </div>
+     );
+}
+ 
 export default Dashboard;
 
 const EventCalendar = (props) => (

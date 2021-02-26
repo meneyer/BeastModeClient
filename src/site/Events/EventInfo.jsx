@@ -44,12 +44,13 @@ const EventInfo = (props) => {
     fetchEventInfo();
   }, []);
 
+
   //Below: Had to wrap the entire events display in a ternary so that you wouldn't see it if you weren't logged in with a token -Ginger
 
   return (
 
 
-    <div style= {{paddingBottom: "50px", backgroundColor: "blueviolet"}}>{ props.token === localStorage.getItem("token") ? <div>
+    <div style= {{paddingBottom: "50px", backgroundColor: "blueviolet"}}> { props.token === localStorage.getItem("token") ? <div>
       <p className="placeholder"></p>
 
       {/* <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} fetchEventInfo={fetchEventInfo} /> */}
@@ -86,6 +87,7 @@ const EventInfo = (props) => {
 
 
       {/* <EventCreate token={props.token} /> */}
+    </div>
     </div>
   );
 };

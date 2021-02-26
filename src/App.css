@@ -212,6 +212,7 @@ FONTS --> Russo One & Open Sans
   background-color: white;
   padding: 10px 10px 10px 10px;
   border-radius: 4px;
+  box-shadow: 0 0 10px darkslategray;
 }
 
 #table {
@@ -239,7 +240,7 @@ FONTS --> Russo One & Open Sans
 
 #eventBtn,
 #mbBtn,
-#homeBtn {
+#homeBtn, #logoutBtn, #rsBtn {
   font-family: Open Sans;
   color: #1d2323;
   background-color: #a8c553;
@@ -264,10 +265,8 @@ FONTS --> Russo One & Open Sans
   box-shadow: 0 0 10px #1d2323;
 }
 
-#eventBtn:hover,
-#mbBtn:hover,
-#logoutBtn:hover,
-#homeBtn:hover {
+#eventBtn:hover, #mbBtn:hover, #logoutBtn:hover, #homeBtn:hover, #rsBtn:hover {
+  
   color: white;
   box-shadow: 0 0 10px #1d2323;
 }

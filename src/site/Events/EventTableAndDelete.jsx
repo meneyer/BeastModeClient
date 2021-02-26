@@ -2,9 +2,6 @@
 import React, {useState} from "react";
 import {Table, Container, Button, Row, Col, UncontrolledPopover, PopoverHeader, PopoverBody, Collapse} from 'reactstrap';
 
-import React, { useState } from "react";
-import { Table, Container, Button, Row, Col } from "reactstrap";
-
 import EventUpdate from "./EventUpdate";
 
 const EventTableAndDelete = (props) => {

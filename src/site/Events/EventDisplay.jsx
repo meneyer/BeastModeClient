@@ -36,12 +36,12 @@ const EventDisplay = (props) => {
               <span><i>{eventInfoUpdate.date}</i></span><br/>
               <span><b>Length:<br/></b>{eventInfoUpdate.length}</span><br/>
 
-              <span><b>Start:</b><br/>{eventInfoUpdate.startTime}</span><br/>
+              <span><b>Start time:</b><br/>{eventInfoUpdate.startTime}</span><br/>
               {/* </tr>
               <tr key={index}> */}
-              <span><b>Pack list:</b> <br/>{eventInfoUpdate.packList}</span><br/>
+              {/* <span><b>Pack list:</b> <br/>{eventInfoUpdate.packList}</span><br/>
               <span><b>Lodging: </b><br/>{eventInfoUpdate.lodging}</span><br/>
-              <span><b>Travel Plan: </b><br/>{eventInfoUpdate.travelPlan}</span><br/>
+              <span><b>Travel Plan: </b><br/>{eventInfoUpdate.travelPlan}</span><br/> */}
               </div>
             </div>
             

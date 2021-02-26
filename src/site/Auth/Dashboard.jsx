@@ -6,11 +6,13 @@ import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 // import {container, row, col} from 'bootstrap'
 import { Container, Row, Col } from "reactstrap";
-import DisplayMessages from "../MessageBoard/DisplayMessages";
+import MessagesDisplay from "../messages/MessagesDisplay";
 import EventDisplay from "../Events/EventDisplay";
 
+moment.locale("en-GB");
 const localizer = momentLocalizer(moment);
 
+const myEventsList = {} //empty object for now
 //test array of events for now to try out calendar
 let events = [
   {
@@ -29,6 +31,20 @@ let events = [
   },
 ];
 
+// const fetchEventInfo = () => {
+//   fetch("http://localhost:3000/events/", {
+//     method: "GET",
+//     headers: new Headers({
+//       "Content-Type": "application/json",
+//       Authorization: props.token,
+//     }),
+//   })
+//     .then((res) => res.json())
+//     .then((logData) => {
+//       setEvents(logData);
+//       console.log(logData);
+//     });
+// };
 
 const Dashboard = (props) => {
     return ( 
@@ -59,8 +75,7 @@ const Dashboard = (props) => {
                 <h2>Message Board</h2>
               </div>
               <div id="displayMessages">
-                <MessagesIndex token={props.token}/>
-                <DisplayMessages />
+                <MessagesDisplay token={props.token}/>
               </div>
             </Col>
             

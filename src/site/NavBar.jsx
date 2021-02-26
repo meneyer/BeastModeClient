@@ -16,6 +16,7 @@ import { Route, Link, Switch } from "react-router-dom";
 import LoggedIn from "./Auth/LoggedIn";
 import EventInfo from "./Events/EventInfo";
 import MessagesIndex from "./messages/MessagesIndex";
+import Resources from "./Resources/Resources";
 
 const NavigationBar = (props) => {
   const [open, setOpen] = useState(false);
@@ -105,6 +106,17 @@ const NavigationBar = (props) => {
             <NavItem>
               {props.token === "" ? (
                 ""
+
+              ) : (<Link to="/resources" style={{ textDecoration: 'none' }}>
+                <div id="rsBtn">Resources</div></Link>
+
+              )}
+            </NavItem>
+
+
+            <NavItem>
+              {props.token === "" ? (
+                ""
               ) : (
                 <div id="logoutBtn" onClick={props.clearToken}>
                   Logout
@@ -124,6 +136,9 @@ const NavigationBar = (props) => {
           </Route>
           <Route exact path="/messageboard">
             <MessagesIndex token={props.token} />
+          </Route>
+          <Route exact path="/resources">
+            <Resources token={props.token} />
           </Route>
         </Switch>
       </div>

@@ -5,7 +5,8 @@ import EventCreate from "./EventCreate";
 import EventTableAndDelete from "./EventTableAndDelete";
 import LoggedIn from "../Auth/LoggedIn";
 import BeforeLogIn from "../Auth/BeforeLogin";
-import Resources from "../Resources/Resources"
+import Resources from "../Resources/Resources";
+
 
 const EventInfo = (props) => {
   const [events, setEvents] = useState([]);
@@ -43,6 +44,7 @@ const EventInfo = (props) => {
   useEffect(() => {
     fetchEventInfo();
   }, []);
+
 
   //Below: Had to wrap the entire events display in a ternary so that you wouldn't see it if you weren't logged in with a token -Ginger
 

@@ -1,4 +1,6 @@
 /* Custom items for website
+THERE STYLE SECTIONS FOR EACH PAGE, PLACE YOUR CUSTOM CSS IN THESE SECTIONS
+
 PURPLE --> #453054
 GREEN --> #A8C553
 WHITE --> #ffff
@@ -11,7 +13,7 @@ FONTS --> Russo One & Open Sans
   font-size: 25px;
 }
 
-/* What is this for? */
+/* Base level CSS */
 #root {
   color: white;
   min-height: 100vh;
@@ -61,7 +63,7 @@ FONTS --> Russo One & Open Sans
 
 #mainPageBG {
   background-image: url(./site/assets/mud_background.jpg);
-  height: 100%;
+  height: 90vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -114,12 +116,21 @@ FONTS --> Russo One & Open Sans
 
 /* Modal End */
 /* Carousel settings */
+#carouselCont {
+  padding-top: 2%;
+}
+
+#carouselInner {
+  box-shadow: 5px 5px 40px #000000;
+}
+
 .h1-responsive {
   margin-bottom: 600px;
   font-size: 4em;
   font-family: Russo One;
   color: #1d2323;
 }
+
 /* Landing page END */
 /* Logged in Section */
 
@@ -150,6 +161,7 @@ FONTS --> Russo One & Open Sans
   display: flex;
   justify-content: center;
   margin: auto;
+  box-shadow: 5px 5px 40px #000000;
 }
 
 #loggedIn {
@@ -181,23 +193,10 @@ FONTS --> Russo One & Open Sans
   line-height: 40px;
 }
 
-#calendar {
-  color: black;
-  background-color: #a8c553;
-  min-width: 340px;
-  width: 90%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  /* box-shadow: 0 0 0px black, 0 0 10px -3px black, 0 0 10px black, 0 0 10px -3px black; */
-}
-
 #displayMessages,
 #displayEvents {
-  background-color: lightgray;
+  border-radius: 0 0 15px 15px;
+  background-color: #a8c553;
   width: 90%;
   margin: auto;
   min-height: 500px;
@@ -205,6 +204,7 @@ FONTS --> Russo One & Open Sans
   color: #1d2323;
   min-width: 340px;
   margin-bottom: 20px;
+  box-shadow: 5px 5px 40px #000000;
 }
 
 #singleEvent {
@@ -246,17 +246,30 @@ FONTS --> Russo One & Open Sans
   margin-right: 10px;
   padding: 5px 10px 5px 10px;
   border-radius: 2px;
-  box-shadow: 0 0 10px #1d2323;
-  margin-top:5px;
+  margin-top: 5px;
+}
+
+#logoutBtn {
+  font-family: Open Sans;
+  color: #1d2323;
+  background-color: #797979;
+  margin-right: 10px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 2px;
+  margin-top: 5px;
 }
 
 #logoutBtn:hover {
   cursor: pointer;
+  box-shadow: 0 0 10px #1d2323;
 }
 
-#eventBtn:hover, #mbBtn:hover, #logoutBtn:hover, #homeBtn:hover {
-  
+#eventBtn:hover,
+#mbBtn:hover,
+#logoutBtn:hover,
+#homeBtn:hover {
   color: white;
+  box-shadow: 0 0 10px #1d2323;
 }
 
 #logo {
@@ -297,6 +310,17 @@ FONTS --> Russo One & Open Sans
   font-family: Russo One;
   color: #1d2323;
 }
+/* Landing page END */
+
+/* Event Info Styles */
+
+#eventInfoBG {
+  background-image: url(./site/assets/mud_background.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 #table {
   color: black;
@@ -310,8 +334,18 @@ FONTS --> Russo One & Open Sans
   justify-content: center;
   margin: auto; */
 }
+/* Event Section END */
 
-/* Landing page END */
+/* Message Page Style */
+#messagesIndex {
+  background-image: url(./site/assets/mud_background.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Message Section END */
 
 /* Custom CSS is above this line*/
 .App {

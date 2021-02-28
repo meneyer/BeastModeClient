@@ -69,6 +69,10 @@ FONTS --> Russo One & Open Sans
   background-position: center;
 }
 
+#loggedInPage {
+  padding-bottom: 40px;
+}
+
 #loggedInBG {
   background-image: url(./site/assets/mud_background.jpg);
   background-attachment: fixed;

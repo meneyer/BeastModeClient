@@ -215,6 +215,7 @@ FONTS --> Russo One & Open Sans
   box-shadow: 0 0 10px darkslategray;
 }
 
+/*EventTableAndDelete*/
 #table {
   background-color: white;
 }
@@ -345,6 +346,25 @@ FONTS --> Russo One & Open Sans
 }
 
 /* Message Section END */
+
+/*Resources*/
+#resourcesButton {
+  background-color: #A8C553;
+  color:  #453054;
+  font-weight: bold;
+  border-radius: 5%;
+  display: flex;
+  justify-content: center; 
+}
+
+#raceFinderBackground{
+  background-color: #453054;
+  border: 2px solid #ffffff;
+}
+
+#raceFinderCards{
+  border: 2px solid #ffffff;;
+}
 
 /* Custom CSS is above this line*/
 .App {

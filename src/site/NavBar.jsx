@@ -58,7 +58,7 @@ const NavigationBar = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            {props.token === "" ? (
+            {props.token != localStorage.getItem("token") ? (
               <NavItem className="btn-group">
                 <AuthModal
                   updateToken={props.updateToken}
@@ -73,7 +73,7 @@ const NavigationBar = (props) => {
             )}
 
             <NavItem>
-              {props.token === "" ? (
+              {props.token != localStorage.getItem("token") ? (
                 ""
               ) : (
                 <Link to="/" style={{ textDecoration: "none" }}>
@@ -83,7 +83,7 @@ const NavigationBar = (props) => {
             </NavItem>
 
             <NavItem>
-              {props.token === "" ? (
+              {props.token != localStorage.getItem("token") ? (
                 ""
               ) : (
                 <Link to="/events" style={{ textDecoration: "none" }}>
@@ -93,7 +93,7 @@ const NavigationBar = (props) => {
             </NavItem>
 
             <NavItem>
-              {props.token === "" ? (
+              {props.token != localStorage.getItem("token") ? (
                 ""
               ) : (
                 <Link to="/messageboard" style={{ textDecoration: "none" }}>
@@ -103,7 +103,7 @@ const NavigationBar = (props) => {
             </NavItem>
 
             <NavItem>
-              {props.token === "" ? (
+              {props.token != localStorage.getItem("token") ? (
                 ""
 
               ) : (<Link to="/resources" style={{ textDecoration: 'none' }}>
@@ -114,7 +114,7 @@ const NavigationBar = (props) => {
 
 
             <NavItem>
-              {props.token === "" ? (
+              {props.token != localStorage.getItem("token") ? (
                 ""
               ) : (
                 <Link to="/" style={{ textDecoration: "none" }}>

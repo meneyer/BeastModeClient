@@ -1,5 +1,5 @@
 
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {Table, Container, Button, Row, Col, UncontrolledPopover, PopoverHeader, PopoverBody, Collapse} from 'reactstrap';
 
 import EventUpdate from "./EventUpdate";
@@ -33,6 +33,10 @@ const EventTableAndDelete = (props) => {
       );
   }
 
+
+  useEffect(() => {
+    eventMap();}, [props.events]
+  )
 
   
   

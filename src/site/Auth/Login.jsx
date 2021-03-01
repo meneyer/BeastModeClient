@@ -5,17 +5,14 @@ import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [success, setSuccess] = useState("");
   const [nope, setNope] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(email,password);
     //keeps page from reloading after submit
     fetch("http://localhost:3000/user/login", {
       method: "POST",
       body: JSON.stringify({ user: { email: email, password: password } }),
-      //changed password to passwordhash
       headers: new Headers({
         "Content-Type": "application/json",
       }),
@@ -23,16 +20,21 @@ const Login = (props) => {
       .then((response) => response.json())
       .then((data) => {
         props.updateToken(data.sessionToken);
+        if (data.sessionToken === undefined) {
+          //if localstorage token is not returned means login failed 502 bad gateway
+          setNope("*Not a valid username/password combination");
+          return;
+        } else {
+        console.log(data.sessionToken);
         console.log("User logged in!");
-        setSuccess("Logged In!");
         setNope("");
-        props.setOpen(false);
+        props.setOpen(false);}
       })
       .catch((err) => 
         {console.log(err)
-        setNope("*Not a valid email/password combination")
+        //if .catch happens, means there is no email address matching. 500 error.
+        setNope("*User does not exist, Please create new account")
       });
-      //TODO: Add error message to user if unable to login?
   };
 
   return (

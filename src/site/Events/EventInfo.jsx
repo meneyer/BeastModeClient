@@ -44,9 +44,7 @@ const EventInfo = (props) => {
     fetchEventInfo();
   }, []);
 
-
   //Below: Had to wrap the entire events display in a ternary so that you wouldn't see it if you weren't logged in with a token -Ginger
-
   return (
 
 
@@ -54,8 +52,8 @@ const EventInfo = (props) => {
       <p className="placeholder"></p>
 
       {/* <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} fetchEventInfo={fetchEventInfo} /> */}
-
-      <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} updateOff={updateOff} fetchEventInfo={fetchEventInfo} updateRace={updateRace} updateEvent={updateEvent}/>
+      {events !== undefined ? 
+      <EventTableAndDelete token={props.token} events={events} editEvent={editEvent} updateOn={updateOn} updateOff={updateOff} fetchEventInfo={fetchEventInfo} updateRace={updateRace} updateEvent={updateEvent}/> : ""}
       
       {/* <EventUpdate token={props.token} /> */}
       {/* {updateRace ? <EventUpdate updateEvent={updateEvent} token={props.token} updateOff={updateOff}  fetchEventInfo={fetchEventInfo}/> : <></>} */}

@@ -8,6 +8,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import { Container, Row, Col } from "reactstrap";
 import MessagesDisplay from "../messages/MessagesDisplay";
 import EventDisplay from "../Events/EventDisplay";
+import CalendarComp from "./CalendarComp";
 
 moment.locale("en-GB");
 const localizer = momentLocalizer(moment);
@@ -63,7 +64,8 @@ const Dashboard = (props) => {
               <div className="columnHeader" style={{ width: "90%"}}>
                 <h2>Calendar</h2>
               </div>
-              <EventCalendar />
+              {/* <EventCalendar /> */}
+              <CalendarComp token={props.token} />
               <div className="columnHeader" style={{ width: "90%", "marginTop": "40px"}}><h2>Upcoming Events</h2></div>
               <div id="displayEvents">
                 <EventDisplay token={props.token} />

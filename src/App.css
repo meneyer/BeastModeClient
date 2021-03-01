@@ -69,6 +69,10 @@ FONTS --> Russo One & Open Sans
   background-position: center;
 }
 
+#loggedInPage {
+  padding-bottom: 40px;
+}
+
 #loggedInBG {
   background-image: url(./site/assets/mud_background.jpg);
   background-attachment: fixed;
@@ -212,7 +216,7 @@ FONTS --> Russo One & Open Sans
   background-color: white;
   padding: 10px 10px 10px 10px;
   border-radius: 4px;
-  box-shadow: 0 0 10px darkslategray;
+  box-shadow: 0 0 10px gray;
 }
 
 /*EventTableAndDelete*/

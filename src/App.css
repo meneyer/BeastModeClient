@@ -219,6 +219,10 @@ FONTS --> Russo One & Open Sans
   box-shadow: 0 0 10px gray;
 }
 
+#singleEvent:hover {
+  box-shadow: 0 0 20px rgb(44, 44, 44);
+}
+
 /*EventTableAndDelete*/
 #table {
   background-color: white;
@@ -245,7 +249,9 @@ FONTS --> Russo One & Open Sans
 
 #eventBtn,
 #mbBtn,
-#homeBtn, #logoutBtn, #rsBtn {
+#homeBtn,
+#logoutBtn,
+#rsBtn {
   font-family: Open Sans;
   color: #1d2323;
   background-color: #a8c553;
@@ -270,8 +276,11 @@ FONTS --> Russo One & Open Sans
   box-shadow: 0 0 10px #1d2323;
 }
 
-#eventBtn:hover, #mbBtn:hover, #logoutBtn:hover, #homeBtn:hover, #rsBtn:hover {
-  
+#eventBtn:hover,
+#mbBtn:hover,
+#logoutBtn:hover,
+#homeBtn:hover,
+#rsBtn:hover {
   color: white;
   box-shadow: 0 0 10px #1d2323;
 }
@@ -353,21 +362,21 @@ FONTS --> Russo One & Open Sans
 
 /*Resources*/
 #resourcesButton {
-  background-color: #A8C553;
-  color:  #453054;
+  background-color: #a8c553;
+  color: #453054;
   font-weight: bold;
   border-radius: 5%;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
 }
 
-#raceFinderBackground{
+#raceFinderBackground {
   background-color: #453054;
   border: 2px solid #ffffff;
 }
 
-#raceFinderCards{
-  border: 2px solid #ffffff;;
+#raceFinderCards {
+  border: 2px solid #ffffff;
 }
 
 /* Custom CSS is above this line*/

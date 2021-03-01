@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {
   Container,
   CardColumns,
@@ -18,20 +18,31 @@ const Resources = () => {
   const apiKey = "a9095404d4c44ef1b3e232722212702"
   // let zipCode = 46240
   const [zipCode, setZipCode ] = useState('');
- 
+  const [weather, setWeather] = useState({});
+  let obj = {}
+
   const fetchWeather =() => {
-  fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${zipCode}&days=5`)
-  .then((res) => res.json())
-  .then((json) => {
-    console.log(json)
-  })
-  }
+    fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${zipCode}&days=5`)
+    .then((res) => res.json())
+    .then((json) => {
+      console.log(json.current.condition.text);
+      console.log(json);
+      setWeather(json)
+      obj=json;
+      // console.log(json.forecast.forecastday[1].day.condition)
+    })
+    }
+
+    function displayWeather() {
+      // return props.weather.forecast.forecastday.length >0 ? props.weather.forecast.forecastday.map(weather => <h2>{weather}</h2>) : null
+      console.log("displayWeather", obj) 
+      return weather.forecast != undefined ? weather.forecast.forecastday.map(weather => <h2>{weather.day}</h2>) : null
+      }
 
   const handleSubmit = (event) => {
     event.preventDefault();
     fetchWeather();
-  }
-  
+  } 
 
 
   return (
@@ -43,7 +54,8 @@ const Resources = () => {
         <input type = "text" name ="zipcode" onChange={(e) => setZipCode(e.target.value) } required></input>
         <button className="submit">Submit</button>
       </form>
-      <WeatherResults />
+    {displayWeather()}
+      {/* <WeatherResults weather={weather} displayWeather={displayWeather} /> */}
 
       <h2>Local Restraunts</h2>
 

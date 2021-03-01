@@ -36,7 +36,7 @@ const fetchMessages = () => {
         <div id="messagesIndex" style={{ backgroundColor: "darkgoldenrod" }}>
           { props.token === localStorage.getItem("token") ? 
           <div>
-          <p className="placeholder">Hello from Message Index</p>
+          <p className="placeholder">Hello there from Message Index</p>
 
          <MessagesEdit>test</MessagesEdit>
         <MessagesCreate token={props.token} fetchMessages = {fetchMessages}/>

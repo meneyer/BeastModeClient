@@ -224,9 +224,6 @@ FONTS --> Russo One & Open Sans
 }
 
 /*EventTableAndDelete*/
-#table {
-  background-color: white;
-}
 
 .popover {
   min-width: 450px;

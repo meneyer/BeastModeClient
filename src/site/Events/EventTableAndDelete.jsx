@@ -1,6 +1,13 @@
-
-import React, {useState, useEffect} from "react";
-import {Table, Container, Button, Row, Col, UncontrolledPopover, PopoverHeader, PopoverBody, Collapse} from 'reactstrap';
+import React, { useState, useEffect } from "react";
+import {
+  Table,
+  Container,
+  Button,
+  UncontrolledPopover,
+  PopoverHeader,
+  PopoverBody,
+  Collapse,
+} from "reactstrap";
 
 import EventUpdate from "./EventUpdate";
 
@@ -20,32 +27,42 @@ const EventTableAndDelete = (props) => {
 
   const PopoverContent = (props) => {
     const [isOpen, setIsOpen] = useState(false);
-      return (
-        <>
-    <PopoverHeader>Click below to Confirm Delete of this event</PopoverHeader>
-      <PopoverBody>
-        <Button color="danger" onClick={() => {setIsOpen(!isOpen); {deleteEvent(props.eventInfoUpdate)}}}>Confirm Delete</Button>
-        <Collapse isOpen={isOpen} onEntered={props.confirmDelete} onExited={props.confirmDelete}>
-          Click to Confirm Delete
-        </Collapse>
-      </PopoverBody>
+    return (
+      <>
+        <PopoverHeader>
+          Click below to Confirm Delete of this event
+        </PopoverHeader>
+        <PopoverBody>
+          <Button
+            color="danger"
+            onClick={() => {
+              setIsOpen(!isOpen);
+              {
+                deleteEvent(props.eventInfoUpdate);
+              }
+            }}
+          >
+            Confirm Delete
+          </Button>
+          <Collapse
+            isOpen={isOpen}
+            onEntered={props.confirmDelete}
+            onExited={props.confirmDelete}
+          >
+            Click to Confirm Delete
+          </Collapse>
+        </PopoverBody>
       </>
-      );
-  }
-
+    );
+  };
 
   useEffect(() => {
-    eventMap();}, [props.events]
-  )
-
-  
-  
+    eventMap();
+  }, [props.events]);
 
   const eventMap = () => {
     return props.events.map((eventInfoUpdate, index) => {
-
-      return(  
-
+      return (
         <tr key={index}>
           <th scope="row">{eventInfoUpdate.id}</th>
           <td>{eventInfoUpdate.raceName}</td>
@@ -58,6 +75,7 @@ const EventTableAndDelete = (props) => {
           <td>{eventInfoUpdate.travelPlan}</td>
           <td>
             <Button
+              style={{ margin: "4px" }}
               color="primary"
               id="Popover1"
               onClick={() => {
@@ -85,41 +103,43 @@ const EventTableAndDelete = (props) => {
 
             {props.updateRace ? <EventUpdate updateEvent={props.updateEvent} token={props.token} updateOff={props.updateOff}  fetchEventInfo={props.fetchEventInfo} popoverOpen={popoverOpen} toggle={toggle} /> : <></>} */}
 
-            
             <div className="text-center">
               <Button color="danger" id="DeleteButtonOne" type="button">
-              Delete
-            </Button>
+                Delete
+              </Button>
 
-            <UncontrolledPopover trigger="legacy" placement="top" target="DeleteButtonOne">
-              {({ confirmDelete }) => (
-                <PopoverContent confirmDelete={confirmDelete} eventInfoUpdate={eventInfoUpdate} />
-              )}
-            </UncontrolledPopover>
-          </div>
+              <UncontrolledPopover
+                trigger="legacy"
+                placement="top"
+                target="DeleteButtonOne"
+              >
+                {({ confirmDelete }) => (
+                  <PopoverContent
+                    confirmDelete={confirmDelete}
+                    eventInfoUpdate={eventInfoUpdate}
+                  />
+                )}
+              </UncontrolledPopover>
+            </div>
 
             {/* <Button color="danger" onClick={() => {deleteEvent(eventInfoUpdate)}}>Delete</Button> */}
 
             {/* <Button color="danger" onClick={() => {deleteEvent(eventInfoUpdate)}}>Delete</Button> */}
-
           </td>
         </tr>
-      )
-    })
-  }
-
+      );
+    });
+  };
 
   return (
     <div>
-      {/* <h1 className="placeholder">CURRENT RACES</h1> */}
       <Container>
         {/* <Col md="9"> */}
-        <div className="columnHeader" style={{ width: "90%" }}>
+        <div className="columnHeader" style={{ width: "100%" }}>
           <h2>Current Races</h2>
         </div>
         {/* </Col> */}
-        <Table bordered hover id="table">
-          {/* <Table bordered className="text-white"> */}
+        <Table responsive bordered hover id="table">
           <thead>
             <tr>
               <th>#</th>
@@ -133,10 +153,7 @@ const EventTableAndDelete = (props) => {
               <th>Travel Plans</th>
             </tr>
           </thead>
-          <tbody>
-            {eventMap()}
-            {/* {props.updateRace ? <EventUpdate updateEvent={props.updateEvent} token={props.token} updateOff={props.updateOff}  fetchEventInfo={props.fetchEventInfo} popoverOpen={popoverOpen} toggle={toggle} /> : <></>} */}
-          </tbody>
+          <tbody>{eventMap()}</tbody>
         </Table>
       </Container>
     </div>

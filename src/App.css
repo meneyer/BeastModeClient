@@ -356,7 +356,14 @@ table.table-bordered > tbody > tr > td {
   background-color: #453054;
 }
 
-.updateBtn:hover {
+.eventSubmitBtn {
+  font-family: Open Sans;
+  color: white;
+  background-color: #453054;
+}
+
+.updateBtn:hover,
+.eventSubmitBtn:hover {
   background-color: #a8c553;
   color: #453054;
 }

@@ -178,9 +178,9 @@ const EventCreate = (props) => {
               </FormGroup>
 
               <Button
+                className="eventSubmitBtn"
                 style={{ margin: "20px" }}
                 outline
-                color="primary"
                 type="submit"
               >
                 Submit Your Event Details

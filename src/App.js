@@ -4,7 +4,9 @@ import React, { useState, useEffect } from "react";
 import LoggedIn from "./site/Auth/LoggedIn";
 import BeforeLogIn from "./site/Auth/BeforeLogin";
 import Footer from "./site/Footer";
-import background from "./assets/Megs1.jpg";
+// import background from "./site/assets/mud_background.jpg";
+import { BrowserRouter as Router } from "react-router-dom";
+
 
 function App() {
   // app.get('/*', function(req, res) {
@@ -40,37 +42,23 @@ function App() {
 
   const loggedInVsOut = () => {
     return sessionToken === localStorage.getItem("token") ? (
-      <LoggedIn token={sessionToken} />
+      <LoggedIn token={sessionToken} loggedInVsOut={loggedInVsOut} />
     ) : (
-      <BeforeLogIn updateToken={updateToken} />
+      <BeforeLogIn updateToken={updateToken} loggedInVsOut={loggedInVsOut} />
     );
   };
 
   return (
-
-    <div
-      class="bg_image"
-      style={{
-        backgroundImage: `url(${background})`,
-        backgroundSize: "cover",
-        height: "100vh",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      }}
-    >
-
-      <NavigationBar
-        updateToken={updateToken}
-        clearToken={clearToken}
-        token={sessionToken}
-      />
-
-      {loggedInVsOut()}
-
-      <div id="heroIntro">
-        <p className="intro">BEAST : MODE</p>
-        <p className="subIntro">Prepare Yourself</p>
-      </div>
+    <div>
+      <Router>
+        <NavigationBar
+          updateToken={updateToken}
+          clearToken={clearToken}
+          token={sessionToken}
+        />
+      </Router>
+{/* 
+      {loggedInVsOut()} */}
 
       <Footer />
     </div>

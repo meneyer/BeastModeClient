@@ -36,10 +36,9 @@ const AuthModal = (props) => {
   );
   return (
     <>
-      <NavItem className="btn-group">
-        {/* <Button>Register</Button> */}
-        <Button onClick={toggle}>Login</Button>
-      </NavItem>
+      <Button id="userLoginBtn" onClick={toggle}>
+        Create User / Login
+      </Button>
       <Modal
         isOpen={modal}
         toggle={toggle}
@@ -47,13 +46,14 @@ const AuthModal = (props) => {
         external={externalCloseBtn}
       >
         {/* <ModalHeader>Modal title</ModalHeader> */}
-        <ModalBody>
+        <ModalBody className="modalBody">
           {signup === false ? (
             <div>
               <Login
                 updateToken={props.updateToken}
                 open={open}
                 setOpen={setOpen}
+                
               />
             </div>
           ) : (
@@ -62,12 +62,14 @@ const AuthModal = (props) => {
                 updateToken={props.updateToken}
                 open={open}
                 setOpen={setOpen}
+                
               />
             </div>
           )}
 
+          {/* GINGER MODAL */}
 
-        {/* {signup === false ? 
+          {/* {signup === false ? 
         <div><Login updateToken={props.updateToken} open={open} setOpen={setOpen}/></div>
         :  <div style={{display: 'none'}}><Login updateToken={props.updateToken} open={open} setOpen={setOpen}/></div> }
         
@@ -75,9 +77,9 @@ const AuthModal = (props) => {
         {signup === false ? <p><a href="#" onClick={signupOpen}>Create New Account</a><div style={{display: 'none'}}><Create updateToken={props.updateToken} open={open} setOpen={setOpen} /></div></p> : 
         <Create updateToken={props.updateToken} open={open} setOpen={setOpen} /> } */}
 
-           {signup === false ? (
+          {signup === false ? (
             <div>
-              <a href="#" onClick={signupOpen}>
+              <a id="createAccLink" href="#" onClick={signupOpen}>
                 Create New Account
               </a>
               <div style={{ display: "none" }}>
@@ -85,6 +87,7 @@ const AuthModal = (props) => {
                   updateToken={props.updateToken}
                   open={open}
                   setOpen={setOpen}
+                  displayEmail={props.displayEmail}
                 />
               </div>
             </div>
@@ -93,9 +96,9 @@ const AuthModal = (props) => {
               updateToken={props.updateToken}
               open={open}
               setOpen={setOpen}
+              displayEmail={props.displayEmail}
             />
           )}
-
         </ModalBody>
       </Modal>
     </>

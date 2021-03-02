@@ -1,18 +1,39 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 
-//This Component is for Displaying Message Board posts on the main LoggedIn.jsx page
+import MessagesIndex from "../messages/MessagesIndex";
 
 const DisplayMessages = (props) => {
-    return ( 
-        <div>
-            Hello From MessageBoard
+    const [messages, setMessages] = useState([]);
 
-            <p>Do we like the light gray or green background?</p>
+    const fetchMessages = () => {
+        fetch("http://localhost:3000/messageboard/messages", {
+        method: "GET",
+        headers: new Headers({
+          'Content-Type': 'application/json',
+           Authorization: props.token,
+            }),
+        })
+        .then((response) => response.json())
+            .then((json) => {
+                setMessages(json.results);
+                console.log(json.results);
+                console.log("MESSAGE fetch")
+            });
+    };
+    
+    // useEffect(() => {
+    //     fetchMessages();
+    // }, []);
+
+    // const DisplayMessages = (props) => {
+    //     return messages.map([])
+
+    return (
+        <div>
+          {/* <button onclick={fetchMessages()}>Get Messages</button> */}
+          <MessagesIndex>Posts</MessagesIndex>
         </div>
-     );
-}
+      );
+    };
  
 export default DisplayMessages;
-
-// pass mapping of every message, build a div or card, name, race, email, message
-// Make calls for updates and displays message object

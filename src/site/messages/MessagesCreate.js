@@ -49,7 +49,7 @@ const MessagesCreate = (props) => {
 
    <div>
    <Container>
-   <h1>Post Your Messages Here</h1>
+   <h1>Post Your Message Here</h1>
    <Row>
      <Col>
      <Form onSubmit={handleSubmit}>

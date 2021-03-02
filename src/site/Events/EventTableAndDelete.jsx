@@ -30,7 +30,7 @@ const EventTableAndDelete = (props) => {
     return (
       <>
         <PopoverHeader>
-          Are you sure you want to delete this event? (This cannot be undone)
+          Are you sure you want to delete this event? (This CANNOT be undone)
         </PopoverHeader>
         <PopoverBody>
           <Button

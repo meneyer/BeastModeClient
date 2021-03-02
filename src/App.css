@@ -333,6 +333,7 @@ FONTS --> Russo One & Open Sans
 }
 
 #table {
+  border-radius: 0 0 15px 15px;
   font-family: Open Sans;
   color: #453054;
   background-color: #a8c553;
@@ -357,6 +358,17 @@ table.table-bordered > tbody > tr > td {
 
 .updateBtn:hover {
   background-color: #a8c553;
+  color: #453054;
+}
+
+#eventForm {
+  border-radius: 0 0 15px 15px;
+  background-color: #a8c553;
+  box-shadow: 5px 5px 40px #000000;
+}
+
+.eventLabel {
+  font-family: Russo One;
   color: #453054;
 }
 

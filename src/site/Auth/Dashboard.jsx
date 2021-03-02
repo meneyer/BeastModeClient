@@ -53,7 +53,6 @@ const Dashboard = (props) => {
       <div id="heroIntro">
         <p className="intro">Prepare.Yourself</p>
       </div>
-      <p className="placeholder"></p>
 
       <Container>
         <Row>

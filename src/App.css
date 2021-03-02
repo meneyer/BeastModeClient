@@ -219,10 +219,11 @@ FONTS --> Russo One & Open Sans
   box-shadow: 0 0 10px gray;
 }
 
-/*EventTableAndDelete*/
-#table {
-  background-color: white;
+#singleEvent:hover {
+  box-shadow: 0 0 20px rgb(44, 44, 44);
 }
+
+/*EventTableAndDelete*/
 
 .popover {
   min-width: 450px;
@@ -245,7 +246,9 @@ FONTS --> Russo One & Open Sans
 
 #eventBtn,
 #mbBtn,
-#homeBtn, #logoutBtn, #rsBtn {
+#homeBtn,
+#logoutBtn,
+#rsBtn {
   font-family: Open Sans;
   color: #1d2323;
   background-color: #a8c553;
@@ -270,8 +273,11 @@ FONTS --> Russo One & Open Sans
   box-shadow: 0 0 10px #1d2323;
 }
 
-#eventBtn:hover, #mbBtn:hover, #logoutBtn:hover, #homeBtn:hover, #rsBtn:hover {
-  
+#eventBtn:hover,
+#mbBtn:hover,
+#logoutBtn:hover,
+#homeBtn:hover,
+#rsBtn:hover {
   color: white;
   box-shadow: 0 0 10px #1d2323;
 }
@@ -327,17 +333,45 @@ FONTS --> Russo One & Open Sans
 }
 
 #table {
-  color: black;
+  border-radius: 0 0 15px 15px;
+  font-family: Open Sans;
+  color: #453054;
   background-color: #a8c553;
-  /* min-width: 340px; */
-  /* width: 90%; */
-  /* padding-top: 20px; */
-  /* padding-bottom: 20px; */
-  /* height: auto; */
-  /* display: flex;
-  justify-content: center;
-  margin: auto; */
+  box-shadow: 5px 5px 40px #000000;
 }
+
+table.table-bordered > thead > tr > th {
+  border: none;
+}
+table.table-bordered > tbody > tr > td {
+  border: 1px solid #453054;
+}
+
+.tableBtn {
+  font-family: Open Sans;
+  margin: 5px;
+}
+
+.updateBtn {
+  background-color: #453054;
+}
+
+.updateBtn:hover {
+  background-color: #a8c553;
+  color: #453054;
+}
+
+#eventForm {
+  border-radius: 0 0 15px 15px;
+  background-color: #a8c553;
+  box-shadow: 5px 5px 40px #000000;
+}
+
+.eventLabel {
+  font-family: Russo One;
+  color: #453054;
+}
+
 /* Event Section END */
 
 /* Message Page Style */
@@ -353,21 +387,21 @@ FONTS --> Russo One & Open Sans
 
 /*Resources*/
 #resourcesButton {
-  background-color: #A8C553;
-  color:  #453054;
+  background-color: #a8c553;
+  color: #453054;
   font-weight: bold;
   border-radius: 5%;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
 }
 
-#raceFinderBackground{
+#raceFinderBackground {
   background-color: #453054;
   border: 2px solid #ffffff;
 }
 
-#raceFinderCards{
-  border: 2px solid #ffffff;;
+#raceFinderCards {
+  border: 2px solid #ffffff;
 }
 
 /* Custom CSS is above this line*/

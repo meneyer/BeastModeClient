@@ -60,17 +60,17 @@ const EventCreate = (props) => {
   return (
     <div>
       <Container>
-        <div className="columnHeader" style={{ width: "90%" }}>
+        <div className="columnHeader" style={{ width: "100%" }}>
           <h2>Enter Your Race Details</h2>
         </div>
-        {/* <h2>It's almost RACE DAY!</h2>
-                <h4>Enter your details below</h4> */}
-        <Row>
+        <Row id="eventForm">
           <Col>
             <Form onSubmit={handleSubmit}>
               <FormGroup>
                 <br />
-                <Label htmlFor="raceName">Race Name</Label>
+                <Label className="eventLabel" htmlFor="raceName">
+                  Race Name
+                </Label>
                 <Input
                   name="raceName"
                   value={raceName}
@@ -81,7 +81,9 @@ const EventCreate = (props) => {
               </FormGroup>
 
               <FormGroup>
-                <Label htmlFor="location">Race Location</Label>
+                <Label className="eventLabel" htmlFor="location">
+                  Race Location
+                </Label>
                 <Input
                   name="location"
                   value={location}
@@ -92,7 +94,9 @@ const EventCreate = (props) => {
               </FormGroup>
 
               <FormGroup>
-                <Label htmlFor="length">Race Length</Label>
+                <Label className="eventLabel" htmlFor="length">
+                  Race Length
+                </Label>
                 <Input
                   name="length"
                   value={length}
@@ -103,7 +107,9 @@ const EventCreate = (props) => {
               </FormGroup>
 
               <FormGroup>
-                <Label htmlFor="date">Date of Race</Label>
+                <Label className="eventLabel" htmlFor="date">
+                  Date of Race
+                </Label>
                 <Input
                   name="date"
                   type="date"
@@ -115,7 +121,9 @@ const EventCreate = (props) => {
               </FormGroup>
 
               <FormGroup>
-                <Label htmlFor="Race Start Time">Start Time</Label>
+                <Label className="eventLabel" htmlFor="Race Start Time">
+                  Start Time
+                </Label>
                 <Input
                   name="startTime"
                   type="time"
@@ -127,7 +135,9 @@ const EventCreate = (props) => {
               </FormGroup>
 
               <FormGroup>
-                <Label htmlFor="packList">Packing List</Label>
+                <Label className="eventLabel" htmlFor="packList">
+                  Packing List
+                </Label>
                 <Input
                   type="textarea"
                   name="packList"
@@ -140,7 +150,9 @@ const EventCreate = (props) => {
               </FormGroup>
 
               <FormGroup>
-                <Label htmlFor="lodging">Lodging Plans</Label>
+                <Label className="eventLabel" htmlFor="lodging">
+                  Lodging Plans
+                </Label>
                 <Input
                   name="lodging"
                   value={lodging}
@@ -151,19 +163,26 @@ const EventCreate = (props) => {
               </FormGroup>
 
               <FormGroup>
-                <Label htmlFor="travelPlan">Travel Plans</Label>
+                <Label className="eventLabel" htmlFor="travelPlan">
+                  Travel Plans
+                </Label>
                 <Input
                   type="textarea"
                   maxLength="1500"
                   name="travelPlan"
-                  placeholder="General Travel Plans - Flight Details, Transportation to the Venue, Team Meet-ups, Favorite Restaraunts, Sites Seeing Opportunities, etc.  (Maximum Length = 1500 characters)"
+                  placeholder="General Travel Plans - Flight Details, Transportation to the Venue, Team Meet-ups, Favorite Restaurants, Sites Seeing Opportunities, etc.  (Maximum Length = 1500 characters)"
                   value={travelPlan}
                   onChange={(e) => setTravelPlan(e.target.value)}
                 />
                 {/* <FormText> </FormText> */}
               </FormGroup>
 
-              <Button color="primary" type="submit">
+              <Button
+                style={{ margin: "20px" }}
+                outline
+                color="primary"
+                type="submit"
+              >
                 Submit Your Event Details
               </Button>
             </Form>

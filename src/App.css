@@ -333,17 +333,33 @@ FONTS --> Russo One & Open Sans
 }
 
 #table {
-  color: black;
+  font-family: Open Sans;
+  color: #453054;
   background-color: #a8c553;
-  /* min-width: 340px; */
-  /* width: 90%; */
-  /* padding-top: 20px; */
-  /* padding-bottom: 20px; */
-  /* height: auto; */
-  /* display: flex;
-  justify-content: center;
-  margin: auto; */
+  box-shadow: 5px 5px 40px #000000;
 }
+
+table.table-bordered > thead > tr > th {
+  border: none;
+}
+table.table-bordered > tbody > tr > td {
+  border: 1px solid #453054;
+}
+
+.tableBtn {
+  font-family: Open Sans;
+  margin: 5px;
+}
+
+.updateBtn {
+  background-color: #453054;
+}
+
+.updateBtn:hover {
+  background-color: #a8c553;
+  color: #453054;
+}
+
 /* Event Section END */
 
 /* Message Page Style */

@@ -30,10 +30,11 @@ const EventTableAndDelete = (props) => {
     return (
       <>
         <PopoverHeader>
-          Click below to Confirm Delete of this event
+          Are you sure you want to delete this event? (This cannot be undone)
         </PopoverHeader>
         <PopoverBody>
           <Button
+            outline
             color="danger"
             onClick={() => {
               setIsOpen(!isOpen);
@@ -64,7 +65,9 @@ const EventTableAndDelete = (props) => {
     return props.events.map((eventInfoUpdate, index) => {
       return (
         <tr key={index}>
-          <th scope="row">{eventInfoUpdate.id}</th>
+          <th style={{ border: "none" }} scope="row">
+            {eventInfoUpdate.id}
+          </th>
           <td>{eventInfoUpdate.raceName}</td>
           <td>{eventInfoUpdate.location}</td>
           <td>{eventInfoUpdate.length}</td>
@@ -73,10 +76,9 @@ const EventTableAndDelete = (props) => {
           <td>{eventInfoUpdate.packList}</td>
           <td>{eventInfoUpdate.lodging}</td>
           <td>{eventInfoUpdate.travelPlan}</td>
-          <td>
+          <div>
             <Button
-              style={{ margin: "4px" }}
-              color="primary"
+              className="tableBtn updateBtn"
               id="Popover1"
               onClick={() => {
                 props.editEvent(eventInfoUpdate);
@@ -104,7 +106,12 @@ const EventTableAndDelete = (props) => {
             {props.updateRace ? <EventUpdate updateEvent={props.updateEvent} token={props.token} updateOff={props.updateOff}  fetchEventInfo={props.fetchEventInfo} popoverOpen={popoverOpen} toggle={toggle} /> : <></>} */}
 
             <div className="text-center">
-              <Button color="danger" id="DeleteButtonOne" type="button">
+              <Button
+                className="tableBtn deleteBtn"
+                color="danger"
+                id="DeleteButtonOne"
+                type="button"
+              >
                 Delete
               </Button>
 
@@ -125,7 +132,7 @@ const EventTableAndDelete = (props) => {
             {/* <Button color="danger" onClick={() => {deleteEvent(eventInfoUpdate)}}>Delete</Button> */}
 
             {/* <Button color="danger" onClick={() => {deleteEvent(eventInfoUpdate)}}>Delete</Button> */}
-          </td>
+          </div>
         </tr>
       );
     });
@@ -133,7 +140,8 @@ const EventTableAndDelete = (props) => {
 
   return (
     <div>
-      <Container>
+      {/* <h1 className="placeholder">CURRENT RACES</h1> */}
+      <Container style={{ padding: "20px" }}>
         {/* <Col md="9"> */}
         <div className="columnHeader" style={{ width: "100%" }}>
           <h2>Current Races</h2>
@@ -142,7 +150,7 @@ const EventTableAndDelete = (props) => {
         <Table responsive bordered hover id="table">
           <thead>
             <tr>
-              <th>#</th>
+              <th>Entry #</th>
               <th>Race Name</th>
               <th>Location</th>
               <th>Length</th>
@@ -153,7 +161,10 @@ const EventTableAndDelete = (props) => {
               <th>Travel Plans</th>
             </tr>
           </thead>
-          <tbody>{eventMap()}</tbody>
+          <tbody>
+            {eventMap()}
+            {/* {props.updateRace ? <EventUpdate updateEvent={props.updateEvent} token={props.token} updateOff={props.updateOff}  fetchEventInfo={props.fetchEventInfo} popoverOpen={popoverOpen} toggle={toggle} /> : <></>} */}
+          </tbody>
         </Table>
       </Container>
     </div>

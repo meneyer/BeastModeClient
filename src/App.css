@@ -392,8 +392,18 @@ table.table-bordered > tbody > tr > td {
 
 /* Message Section END */
 
-/*Resources*/
-#resourcesButton {
+/*Resources Page*/
+
+.resourceTitle {
+  font-family: Russo One;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  text-shadow: 5px 5px 40px #000000;
+}
+
+.resourcesButton {
+  font-family: Open Sans;
   background-color: #a8c553;
   color: #453054;
   font-weight: bold;
@@ -402,14 +412,29 @@ table.table-bordered > tbody > tr > td {
   justify-content: center;
 }
 
-#raceFinderBackground {
+.resourcesButton:hover {
   background-color: #453054;
+  color: #a8c553;
+}
+
+.resourceCardTitle {
+  color: #a8c553;
+  text-decoration: underline;
+  text-align: center;
+  font-family: Russo One;
+}
+
+.raceFinderBackground {
+  background-color: #453054;
+  border: 2px solid #ffffff;
+  box-shadow: 5px 5px 40px #000000;
+}
+
+.raceFinderCards {
   border: 2px solid #ffffff;
 }
 
-#raceFinderCards {
-  border: 2px solid #ffffff;
-}
+/* Resource Section END */
 
 /* Custom CSS is above this line*/
 .App {

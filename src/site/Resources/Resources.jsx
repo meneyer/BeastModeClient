@@ -16,13 +16,10 @@ import YelpResults from "./YelpResults";
 const Resources = () => {
   return (
 
-    <div id="eventInfoBG">
-      <h2 className="resourceTitle">
-        Enter the Race Location's Zip Code to see the Local Weather!
-      </h2>
+    <div id="eventInfoBG">      
 
       <Container  style={{ padding: "20px" }}>
-      <h2>Enter the Race Location's Zip Code to Check out the Local Weather!</h2>
+      <h2 className="resourceTitle">Enter the Race Location's Zip Code to Check out the Local Weather!</h2>
       <WeatherResults />
       <br />
       <YelpResults />

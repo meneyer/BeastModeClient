@@ -1,3 +1,482 @@
+/* Custom items for website
+THERE STYLE SECTIONS FOR EACH PAGE, PLACE YOUR CUSTOM CSS IN THESE SECTIONS
+
+PURPLE --> #453054
+GREEN --> #A8C553
+WHITE --> #ffff
+FONTS --> Russo One & Open Sans
+*/
+
+/* All placeholder text should use classname='placeholder' */
+.placeholder {
+  color: white;
+  font-size: 25px;
+}
+
+/* Base level CSS */
+#root {
+  color: white;
+  min-height: 100vh;
+}
+
+/* NanBar Section */
+#navBar {
+  background-color: #453054;
+  align-items: center;
+  display: flex;
+}
+
+#messagesIndex {
+  min-height: 100vh;
+}
+
+#userLoginBtn {
+  font-family: Open Sans;
+  color: #1d2323;
+  background-color: #a8c553;
+}
+
+#userLoginBtn:hover {
+  color: #ffffff;
+  /* background-color: #1d2323; */
+}
+
+#logo {
+  height: 40px;
+  width: 30px;
+}
+
+.brandName {
+  color: #ffff;
+  font-size: 20px;
+  margin-left: 5px;
+  font-family: Russo One;
+}
+
+.loggedIn {
+  font-family: Open Sans;
+}
+
+/* NavBar END */
+
+/* Landing page section*/
+
+#mainPageBG {
+  background-image: url(./site/assets/mud_background.jpg);
+  height: 90vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#loggedInPage {
+  padding-bottom: 40px;
+  display: block;
+  margin: auto;
+}
+
+#loggedInBG {
+  background-image: url(./site/assets/mud_background.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#footer {
+  color: #1d2323;
+  font-family: Open Sans;
+  background-color: #a8c553;
+  height: 35px;
+}
+
+/* Modal Styling */
+.modalBody {
+  background-color: #a8c553;
+}
+
+.modalTitle {
+  font-family: Russo One;
+}
+
+.modalLabel {
+  font-family: Open Sans;
+}
+
+.modalBtn {
+  background-color: #453054;
+}
+
+.modalBtn:hover {
+  background-color: #1d2323;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+#createAccLink {
+  font-family: Russo One;
+  font-size: 20px;
+  margin-left: 130px;
+  color: #1d2323;
+}
+
+/* Modal End */
+/* Carousel settings */
+#carouselCont {
+  padding-top: 2%;
+}
+
+#carouselInner {
+  box-shadow: 5px 5px 40px #000000;
+}
+
+.h1-responsive {
+  margin-bottom: 600px;
+  font-size: 4em;
+  font-family: Russo One;
+  color: #1d2323;
+}
+
+/* Landing page END */
+/* Logged in Section */
+
+.userIntro {
+  color: #ffffff;
+  text-align: center;
+  font-size: 2em;
+  font-family: Russo One;
+}
+
+.columnHeader {
+  border-radius: 15px 15px 0 0;
+  text-align: center;
+  font-family: Russo One;
+  width: 90%;
+  padding: 0px;
+}
+
+#calendar {
+  border-radius: 0 0 15px 15px;
+  font-family: Open Sans;
+  color: #453054;
+  background-color: #a8c553;
+  min-width: 320px;
+  width: 95%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  box-shadow: 5px 5px 40px #000000;
+  height: 450px;
+}
+
+#loggedIn {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 0.9em;
+  height: 42px;
+  line-height: 42px;
+  /* padding-top: 10px; */
+}
+
+.columnHeader {
+  height: 40px;
+  background-color: #453054;
+  color: white;
+  margin: auto;
+  padding-left: 10px;
+  min-width: 340px;
+  /* -webkit-box-shadow: 0 0 10px black;
+  box-shadow: 0 0 15px black; */
+  z-index: 5;
+}
+.columnHeader h2 {
+  font-size: 1.4em;
+  line-height: 40px;
+  margin: 0px;
+}
+
+#displayMessages,
+#displayEvents {
+  border-radius: 0 0 15px 15px;
+  background-color: #a8c553;
+  width: 90%;
+  margin: auto;
+  min-height: 500px;
+  padding: 20px;
+  color: #1d2323;
+  min-width: 340px;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 40px #000000;
+}
+
+#singleEvent {
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 10px 10px 10px 10px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px gray;
+}
+
+#singleEvent:hover {
+  box-shadow: 0 0 20px rgb(44, 44, 44);
+}
+
+/*EventTableAndDelete*/
+
+.popover {
+  min-width: 450px;
+}
+
+/* Logged in END */
+
+/* Landing page section*/
+#navBar {
+  background-color: #453054;
+  align-items: center;
+  display: flex;
+}
+
+#userLoginBtn {
+  font-family: Open Sans;
+  color: #1d2323;
+  background-color: #a8c553;
+}
+
+#eventBtn,
+#mbBtn,
+#homeBtn,
+#logoutBtn,
+#rsBtn {
+  font-family: Open Sans;
+  color: #1d2323;
+  background-color: #a8c553;
+  margin-right: 10px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 2px;
+  margin-top: 5px;
+}
+
+#logoutBtn {
+  font-family: Open Sans;
+  color: #1d2323;
+  background-color: #797979;
+  margin-right: 10px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 2px;
+  margin-top: 5px;
+}
+
+#logoutBtn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px #1d2323;
+}
+
+#eventBtn:hover,
+#mbBtn:hover,
+#logoutBtn:hover,
+#homeBtn:hover,
+#rsBtn:hover {
+  color: white;
+  box-shadow: 0 0 10px #1d2323;
+}
+
+#logo {
+  height: 40px;
+  width: 30px;
+}
+
+#footer {
+  color: #1d2323;
+  font-family: Open Sans;
+  background-color: #a8c553;
+  height: 35px;
+}
+
+#heroIntro {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.intro {
+  color: #a8c553;
+  font-size: 3em;
+  font-family: Russo One;
+  text-shadow: 0 0 10px #1d2323;
+}
+
+.brandName {
+  color: #ffff;
+  font-size: 20px;
+  margin-left: 5px;
+  font-family: Russo One;
+}
+
+/* Carousel settings */
+.h1-responsive {
+  margin-bottom: 600px;
+  font-size: 4em;
+  font-family: Russo One;
+  color: #1d2323;
+}
+/* Landing page END */
+
+/* Event Info Styles */
+
+#eventInfoBG {
+  background-image: url(./site/assets/mud_background.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#table {
+  border-radius: 0 0 15px 15px;
+  font-family: Open Sans;
+  color: #453054;
+  background-color: #a8c553;
+  box-shadow: 5px 5px 40px #000000;
+}
+
+table.table-bordered > thead > tr > th {
+  border: none;
+}
+table.table-bordered > tbody > tr > td {
+  border: 1px solid #453054;
+}
+
+.tableBtn {
+  font-family: Open Sans;
+  margin: 5px;
+}
+
+.updateBtn {
+  background-color: #453054;
+}
+
+.eventSubmitBtn {
+  font-family: Open Sans;
+  color: white;
+  background-color: #453054;
+}
+
+.updateBtn:hover,
+.eventSubmitBtn:hover {
+  background-color: #a8c553;
+  color: #453054;
+}
+
+#eventForm {
+  border-radius: 0 0 15px 15px;
+  background-color: #a8c553;
+  box-shadow: 5px 5px 40px #000000;
+}
+
+.eventLabel {
+  font-family: Russo One;
+  color: #453054;
+}
+
+/* Event Section END */
+
+/* Message Page Style */
+#messagesIndex {
+  background-image: url(./site/assets/mud_background.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Message Section END */
+
+/*Resources Page*/
+
+#zipcodeForm {
+  font-family: Open Sans;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#weatherBtn {
+  font-family: Open Sans;
+  background-color: #453054;
+}
+
+#weatherBtn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px #1d2323;
+}
+
+#locationOutput {
+  border-radius: 10px;
+  font-family: Open Sans;
+  background-color: #a9c553bd;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  text-shadow: 5px 5px 40px #000000;
+}
+
+.weatherCardText {
+  color: #453054;
+}
+
+.weatherCard {
+  background-color: white;
+}
+
+.resourceTitle {
+  font-family: Russo One;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  text-shadow: 5px 5px 40px #000000;
+}
+
+.resourcesButton {
+  font-family: Open Sans;
+  background-color: #a8c553;
+  color: #453054;
+  font-weight: bold;
+  border-radius: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.resourcesButton:hover {
+  background-color: #453054;
+  color: #a8c553;
+}
+
+.resourceCardTitle {
+  color: #a8c553;
+  text-decoration: underline;
+  text-align: center;
+  font-family: Russo One;
+}
+
+.raceFinderBackground {
+  background-color: #453054;
+  border: 2px solid #ffffff;
+  box-shadow: 5px 5px 40px #000000;
+}
+
+.raceFinderCards {
+  border: 2px solid #ffffff;
+}
+
+/* Resource Section END */
+
+/* Custom CSS is above this line*/
 .App {
   text-align: center;
 }
@@ -34,5 +513,15 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .intro {
+    font-size: 2.2em;
+  }
+  #calendar {
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }

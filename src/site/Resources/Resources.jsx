@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {
   Container,
   CardColumns,
@@ -15,35 +15,16 @@ import WeatherResults from "./WeatherResults"
 
 const Resources = () => {
 
-  const apiKey = "a9095404d4c44ef1b3e232722212702"
-  // let zipCode = 46240
-  const [zipCode, setZipCode ] = useState('');
- 
-  const fetchWeather =() => {
-  fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${zipCode}&days=5`)
-  .then((res) => res.json())
-  .then((json) => {
-    console.log(json)
-  })
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    fetchWeather();
-  }
   
 
 
   return (
     <div id="eventInfoBG">
-      <h2>Weather Info</h2>
-      
-      <form onSubmit={ (e) => handleSubmit(e)}>
-        <span>Enter Zip Code To See Weather:</span>
-        <input type = "text" name ="zipcode" onChange={(e) => setZipCode(e.target.value) } required></input>
-        <button className="submit">Submit</button>
-      </form>
+      <h2>Enter the Race Location's Zip Code to Check out the Local Weather!</h2>
+
       <WeatherResults />
+      
+      
 
       <h2>Local Restraunts</h2>
 

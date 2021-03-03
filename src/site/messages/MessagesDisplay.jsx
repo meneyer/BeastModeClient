@@ -26,7 +26,7 @@ const MessagesDisplay = (props) => {
       
       const mbMap = () => {
         //Because of .slice method will only return the most recent 10
-        return messages.slice(0,11).map((messagesInfo) => {
+        return messages.slice(0,13).map((messagesInfo) => {
           return(
             // <div>
     

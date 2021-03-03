@@ -70,7 +70,7 @@ const WeatherResults = () => {
                       <li>
                         High: {weather.forecast.forecastday[0].day.maxtemp_f}
                       </li>
-                      <li>{weather.forecast.forecastday[0].day.mintemp_f}</li>
+                      <li> Low: {weather.forecast.forecastday[0].day.mintemp_f}</li>
                       <li>
                         Maximum Wind Speed:{" "}
                         {weather.forecast.forecastday[0].day.maxwind_mph}
@@ -98,7 +98,7 @@ const WeatherResults = () => {
                       <li>
                         High: {weather.forecast.forecastday[1].day.maxtemp_f}
                       </li>
-                      <li>{weather.forecast.forecastday[1].day.mintemp_f}</li>
+                      <li> Low: {weather.forecast.forecastday[1].day.mintemp_f}</li>
                       <li>
                         Maximum Wind Speed:{" "}
                         {weather.forecast.forecastday[1].day.maxwind_mph}
@@ -126,7 +126,7 @@ const WeatherResults = () => {
                       <li>
                         High: {weather.forecast.forecastday[2].day.maxtemp_f}
                       </li>
-                      <li>{weather.forecast.forecastday[2].day.mintemp_f}</li>
+                      <li> Low: {weather.forecast.forecastday[2].day.mintemp_f}</li>
                       <li>
                         Maximum Wind Speed:{" "}
                         {weather.forecast.forecastday[2].day.maxwind_mph}

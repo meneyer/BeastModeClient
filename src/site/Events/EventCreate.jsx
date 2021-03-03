@@ -60,10 +60,10 @@ const EventCreate = (props) => {
   return (
     <div>
       <Container>
-        <div className="columnHeader" style={{ width: "100%" }}>
+        <div className="columnHeader" style={{margin: "auto", width: "100%", minWidth: "300px" }}>
           <h2>Enter Your Race Details</h2>
         </div>
-        <Row id="eventForm" style={{ width: "100%" }}>
+        <Row id="eventForm" style={{ width: "100%", marginLeft: "0" }}>
           <Col>
             <Form onSubmit={handleSubmit}>
               <FormGroup>

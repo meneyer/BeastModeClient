@@ -9,24 +9,28 @@ import {
   CardText,
   CardBody,
 } from "reactstrap";
-import WeatherResults from "./WeatherResults";
+import WeatherResults from "./WeatherResults"
+import YelpResults from "./YelpResults";
+
 
 const Resources = () => {
   return (
+
     <div id="eventInfoBG">
       <h2 className="resourceTitle">
         Enter the Race Location's Zip Code to see the Local Weather!
       </h2>
 
+      <Container  style={{ padding: "20px" }}>
+      <h2>Enter the Race Location's Zip Code to Check out the Local Weather!</h2>
       <WeatherResults />
+      <br />
+      <YelpResults />
+      <br />
 
-      <h2 className="resourceTitle">Nearby Restaurants</h2>
+      <h2>Find Your Next Race!</h2>
+        <CardColumns>           
 
-      <h2 className="resourceTitle">Nearby Hotels</h2>
-
-      <Container>
-        <h2 className="resourceTitle">Find Your Next Race!</h2>
-        <CardColumns>
           <Card>
             <CardImg
               className="raceFinderCards"
@@ -232,29 +236,73 @@ const Resources = () => {
           </Card>{" "}
           */
         </CardColumns>
-      </Container>
+        <br />
 
-      <h2 className="resourceTitle">
-        Other Helpful Links (Door Dash, Uber)
-        <ul>
-          <li>
-            <a href="https://www.doordash.com/en-US">DoorDash</a>
-          </li>
-          <li>
-            <a href="https://www.ubereats.com/">Uber Eats</a>
-          </li>
-          <li>
-            <a href="https://untappd.com/">Untappd</a>
-          </li>
-          <li>
-            <a href="https://www.uber.com/">Uber</a>
-          </li>
-          <li>
-            <a href="https://www.lyft.com/">Lyft</a>
-          </li>
-        </ul>
-      </h2>
-      <h2>Grocery, Drug, Sporting Goods Stores?</h2>
+      <h2 className="resourceTitle">Transportation & Delivery Services</h2>
+      <div>
+        <CardColumns>
+          <Card className="text-muted">        
+            <CardBody>
+                <CardTitle tag="h3">Restaurant Delivery</CardTitle>
+                {/* <CardSubtitle tag="h6">##</CardSubtitle> */}
+                <CardText>
+                  <ul>
+                    <li><Button a href="https://www.doordash.com/en-US"  target="blank">DoorDash</Button></li>
+                    <li><Button a href="https://www.ubereats.com/"  target="blank">Uber Eats</Button></li>         
+                  </ul>
+                </CardText>          
+            </CardBody>
+          </Card>
+          <Card className="text-muted">        
+            <CardBody>
+                <CardTitle tag="h3">Grocery Delivery</CardTitle>
+                {/* <CardSubtitle tag="h6">##</CardSubtitle> */}
+                <CardText>
+                  <ul>
+                    <li><Button a href="https://www.instacart.com/"  target="blank">InstaCart</Button></li>  
+                    <li><Button a href="http://www.shipt.com/"  target="blank">Shipt</Button></li>
+                  </ul>
+                </CardText>          
+            </CardBody>
+          </Card>
+          <Card className="text-muted">        
+            <CardBody>
+                <CardTitle tag="h3">Transportation</CardTitle>
+                {/* <CardSubtitle tag="h6">Need a ride?</CardSubtitle> */}
+                <CardText>
+                  <ul>
+                    <li><Button a href="https://www.lyft.com/"  target="blank">Lyft</Button></li> 
+                    <li><Button a href="https://www.uber.com/"  target="blank">Uber</Button></li>
+                  </ul>
+                </CardText>          
+            </CardBody>
+          </Card>
+          <Card className="text-muted">        
+            <CardBody>
+                <CardTitle tag="h3">Places To Stay</CardTitle>
+                {/* <CardSubtitle tag="h6">##</CardSubtitle> */}
+                <CardText>
+                  <ul>
+                    <li><Button a href="https://www.airbnb.com/"  target="blank">airbnb</Button></li>  
+                    <li><Button a href="https://www.vrbo.com/"  target="blank">Vrbo</Button></li>
+                  </ul>
+                </CardText>          
+            </CardBody>
+          </Card>
+          {/* <Card className="text-muted">        
+            <CardBody>
+                <CardTitle tag="h3">Have a drink</CardTitle>
+                <CardText>
+                  <ul>
+                    <li><Button a href="https://untappd.com/"  target="blank">Untappd</Button></li>  
+                  </ul>
+                </CardText>          
+            </CardBody>
+          </Card> */}
+        </CardColumns>
+      </div>
+      <br />
+      </Container>
     </div>
   );
 };

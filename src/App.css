@@ -71,6 +71,8 @@ FONTS --> Russo One & Open Sans
 
 #loggedInPage {
   padding-bottom: 40px;
+  display: block;
+  margin: auto;
 }
 
 #loggedInBG {
@@ -150,6 +152,7 @@ FONTS --> Russo One & Open Sans
   text-align: center;
   font-family: Russo One;
   width: 90%;
+  padding: 0px;
 }
 
 #calendar {
@@ -157,8 +160,8 @@ FONTS --> Russo One & Open Sans
   font-family: Open Sans;
   color: #453054;
   background-color: #a8c553;
-  min-width: 340px;
-  width: 90%;
+  min-width: 320px;
+  width: 95%;
   padding-top: 20px;
   padding-bottom: 20px;
   height: auto;
@@ -166,6 +169,7 @@ FONTS --> Russo One & Open Sans
   justify-content: center;
   margin: auto;
   box-shadow: 5px 5px 40px #000000;
+  height: 450px;
 }
 
 #loggedIn {
@@ -195,6 +199,7 @@ FONTS --> Russo One & Open Sans
 .columnHeader h2 {
   font-size: 1.4em;
   line-height: 40px;
+  margin: 0px;
 }
 
 #displayMessages,
@@ -517,5 +522,6 @@ table.table-bordered > tbody > tr > td {
   }
   #calendar {
     margin-left: 0px;
+    margin-right: 0px;
   }
 }

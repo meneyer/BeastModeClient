@@ -61,7 +61,7 @@ convertDate = (date) => {
       startAccessor="start"
       endAccessor="end"
       allDayAccessor="allDay"
-      style={{ height: 320, width: 320 }}
+      
     />
       </div>
     )

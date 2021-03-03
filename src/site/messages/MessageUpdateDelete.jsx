@@ -8,30 +8,28 @@ import {
     PopoverBody,
     Collapse,
   } from "reactstrap";
-  
+
 
 //This Component is for Displaying Message Board posts on the main LoggedIn.jsx page
 
 const MessageUpdateDelete= (props) => {
-    const [messages, setMessages] = useState([]);
+ 
+ const deleteMessage = () => {
+   fetch(`http://localhost:3000/messageboard/delete/:id`, {
+     method: "DELETE",
+     headers: new Headers({
+       "Content-Type": "application/json",
+       Authorization: props.token,
+   }),
+   }).then(() => props.fetchMessage());
+ };
+  
 
-    const fetchMessages = () => {
-        fetch('http://localhost:3000/messageboard/', {
-        method: "GET",
-            headers: new Headers({
-            'Content-Type': 'application/json',
-            }),
-        }) .then((res) => res.json())
-        .then((logData) => {
-            setMessages(logData);
-            console.log(logData);
-        });
-    };
 
-    //runes Message Fetch function once with component mount only
-    useEffect(() => {
-        fetchMessages();
-      }, []);
+    // //runes Message Fetch function once with component mount only
+    // useEffect(() => {
+    //     fetchMessages();
+    //   }, []);
 
       
       const mbMap = () => {
@@ -48,8 +46,10 @@ const MessageUpdateDelete= (props) => {
               <span style={{ fontSize: '1em' }}><i>{messagesInfo.email}</i></span><br/>
               <span>{messagesInfo.createdAt.slice(0,10)}</span><br/>
               //TODO: UPDATE BUTTON Here
-              //TODO: DELETE BUTTON Here
+            <Button color="danger" onClick={() =>
+            }>Delete</Button>
               </div>
+              
             </div>
 
           )
@@ -62,6 +62,7 @@ const MessageUpdateDelete= (props) => {
         <div>
           {messages !== undefined ? 
               mbMap() : ""}
+              <ButtonToggle color='danger'>danger</ButtonToggle>{''}
         </div>
      );
 } 

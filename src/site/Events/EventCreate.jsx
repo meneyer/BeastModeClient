@@ -63,7 +63,7 @@ const EventCreate = (props) => {
         <div className="columnHeader" style={{ width: "100%" }}>
           <h2>Enter Your Race Details</h2>
         </div>
-        <Row id="eventForm">
+        <Row id="eventForm" style={{ width: "100%" }}>
           <Col>
             <Form onSubmit={handleSubmit}>
               <FormGroup>

@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  NavItem,
-} from "reactstrap";
+import { Button, Modal, ModalBody } from "reactstrap";
 import Login from "./Login";
 import Create from "./Create";
 
@@ -53,7 +46,6 @@ const AuthModal = (props) => {
                 updateToken={props.updateToken}
                 open={open}
                 setOpen={setOpen}
-                
               />
             </div>
           ) : (
@@ -62,7 +54,6 @@ const AuthModal = (props) => {
                 updateToken={props.updateToken}
                 open={open}
                 setOpen={setOpen}
-                
               />
             </div>
           )}

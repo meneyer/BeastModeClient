@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import MessagesCreate from "./MessagesCreate";
 import MessagesEdit from "./MessagesEdit";
 import BeforeLogIn from "../Auth/BeforeLogin";
+import MessageUpdateDelete from "../messages/MessageUpdateDelete";
 
 const Messages = (props) => {
   const [messages, setMessages] = useState([]);
@@ -34,7 +35,10 @@ const fetchMessages = () => {
       <div id="messagesIndex" style={{ backgroundColor: "darkgoldenrod" }}>
         { props.token === localStorage.getItem("token")   ? 
           <div>
-            <p className="placeholder">Hello there from Message Index</p>
+            {/* <p className="placeholder">Hello there from Message Index</p> */}
+            <div id="displayMessages">
+              <MessageUpdateDelete token={props.token} fetchMessages = {fetchMessages}/>
+            </div>
             <MessagesEdit>test</MessagesEdit>
             <MessagesCreate token={props.token} fetchMessages = {fetchMessages}/>
 

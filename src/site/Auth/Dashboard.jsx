@@ -54,14 +54,21 @@ const Dashboard = (props) => {
         <p className="intro">Prepare.Yourself</p>
       </div>
 
-      <Container>
-        <Row>
-          <Col md="6">
-            <div className="columnHeader" style={{ width: "90%" }}>
+      <Container style={{ margin: "0px", width: "100%"}} fluid>
+        <Row style={{ margin: "auto", display: "block"}}>
+          
+          <Col sm="12" >
+            <div className="columnHeader" style={{ width: "95%" }}>
               <h2>Calendar</h2>
             </div>
             {/* <EventCalendar /> */}
             <CalendarComp token={props.token} />
+          </Col>
+          </Row>
+
+          <Row >
+          <Col md="6">
+            
             <div
               className="columnHeader"
               style={{ width: "90%", marginTop: "40px" }}
@@ -74,7 +81,7 @@ const Dashboard = (props) => {
           </Col>
 
           <Col md="6">
-            <div className="columnHeader" style={{ width: "90%" }}>
+            <div className="columnHeader" style={{ width: "90%", marginTop: "40px" }}>
               <h2>Message Board</h2>
             </div>
             <div id="displayMessages">

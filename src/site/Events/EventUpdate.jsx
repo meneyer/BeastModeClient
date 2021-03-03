@@ -43,7 +43,7 @@ const EventUpdate = (props) => {
             {/* <Button type="button">
                 Update Your Race Details
             </Button> */}
-            <Popover placement="right" isOpen={props.popoverOpen} target="Popover1" toggle={props.toggle}>
+            <Popover placement="bottom" isOpen={props.popoverOpen} target="Popover1" toggle={props.toggle}>
                 <PopoverHeader>Update Your Race Details</PopoverHeader>
                 <PopoverBody>
 

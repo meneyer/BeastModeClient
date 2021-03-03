@@ -26,7 +26,7 @@ const WeatherResults = () => {
     return (
         <div>              
             <Container>
-
+            
                 <form onSubmit={ (e) => handleSubmit(e)}>
                     <span>Zip Code:</span>
                     <input type = "text" name ="zipcode" onChange={(e) => setZipCode(e.target.value) } required></input>
@@ -48,7 +48,7 @@ const WeatherResults = () => {
                                             <li>Current Temperature: {weather.current.temp_f}</li>
                                             <li>Feels Like: {weather.current.feelslike_f}</li>
                                             <li>High: {weather.forecast.forecastday[0].day.maxtemp_f}</li>
-                                            <li>{weather.forecast.forecastday[0].day.mintemp_f}</li>
+                                            <li>Low: {weather.forecast.forecastday[0].day.mintemp_f}</li>
                                             <li>Maximum Wind Speed: {weather.forecast.forecastday[0].day.maxwind_mph}</li>
                                             <li>Average Humidity Level: {weather.forecast.forecastday[0].day.avghumidity}</li>
                                         </ul>
@@ -66,7 +66,7 @@ const WeatherResults = () => {
                                             <li>Current Temperature: {weather.current.temp_f}</li>
                                             <li>Feels Like: {weather.current.feelslike_f}</li>
                                             <li>High: {weather.forecast.forecastday[1].day.maxtemp_f}</li>
-                                            <li>{weather.forecast.forecastday[1].day.mintemp_f}</li>
+                                            <li>Low: {weather.forecast.forecastday[1].day.mintemp_f}</li>
                                             <li>Maximum Wind Speed: {weather.forecast.forecastday[1].day.maxwind_mph}</li>
                                             <li>Average Humidity Level: {weather.forecast.forecastday[1].day.avghumidity}</li>
                                         </ul>
@@ -84,7 +84,7 @@ const WeatherResults = () => {
                                             <li>Current Temperature: {weather.current.temp_f}</li>
                                             <li>Feels Like: {weather.current.feelslike_f}</li>
                                             <li>High: {weather.forecast.forecastday[2].day.maxtemp_f}</li>
-                                            <li>{weather.forecast.forecastday[2].day.mintemp_f}</li>
+                                            <li>Low: {weather.forecast.forecastday[2].day.mintemp_f}</li>
                                             <li>Maximum Wind Speed: {weather.forecast.forecastday[2].day.maxwind_mph}</li>
                                             <li>Average Humidity Level: {weather.forecast.forecastday[2].day.avghumidity}</li>
                                         </ul>

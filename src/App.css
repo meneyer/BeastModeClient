@@ -155,7 +155,6 @@ FONTS --> Russo One & Open Sans
   padding: 0px;
 }
 
-
 #calendar {
   border-radius: 0 0 15px 15px;
   font-family: Open Sans;
@@ -362,7 +361,14 @@ table.table-bordered > tbody > tr > td {
   background-color: #453054;
 }
 
-.updateBtn:hover {
+.eventSubmitBtn {
+  font-family: Open Sans;
+  color: white;
+  background-color: #453054;
+}
+
+.updateBtn:hover,
+.eventSubmitBtn:hover {
   background-color: #a8c553;
   color: #453054;
 }
@@ -391,8 +397,53 @@ table.table-bordered > tbody > tr > td {
 
 /* Message Section END */
 
-/*Resources*/
-#resourcesButton {
+/*Resources Page*/
+
+#zipcodeForm {
+  font-family: Open Sans;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#weatherBtn {
+  font-family: Open Sans;
+  background-color: #453054;
+}
+
+#weatherBtn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px #1d2323;
+}
+
+#locationOutput {
+  border-radius: 10px;
+  font-family: Open Sans;
+  background-color: #a9c553bd;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  text-shadow: 5px 5px 40px #000000;
+}
+
+.weatherCardText {
+  color: #453054;
+}
+
+.weatherCard {
+  background-color: white;
+}
+
+.resourceTitle {
+  font-family: Russo One;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  text-shadow: 5px 5px 40px #000000;
+}
+
+.resourcesButton {
+  font-family: Open Sans;
   background-color: #a8c553;
   color: #453054;
   font-weight: bold;
@@ -401,14 +452,29 @@ table.table-bordered > tbody > tr > td {
   justify-content: center;
 }
 
-#raceFinderBackground {
+.resourcesButton:hover {
   background-color: #453054;
+  color: #a8c553;
+}
+
+.resourceCardTitle {
+  color: #a8c553;
+  text-decoration: underline;
+  text-align: center;
+  font-family: Russo One;
+}
+
+.raceFinderBackground {
+  background-color: #453054;
+  border: 2px solid #ffffff;
+  box-shadow: 5px 5px 40px #000000;
+}
+
+.raceFinderCards {
   border: 2px solid #ffffff;
 }
 
-#raceFinderCards {
-  border: 2px solid #ffffff;
-}
+/* Resource Section END */
 
 /* Custom CSS is above this line*/
 .App {

@@ -48,7 +48,7 @@ const MessagesCreate = (props) => {
   };
 
   return (
-    <div>
+    <div style={{ paddingBottom: "40px"}}>
       <Container>
         <h1>Post Your Messages Here</h1>
         <Row>

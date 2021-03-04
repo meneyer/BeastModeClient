@@ -50,7 +50,7 @@ const NavigationBar = (props) => {
 
   return (
     <div>
-      <Navbar className="bg-body" id="navBar" dark expand="md">
+      <Navbar className="bg-body" id="navBar" dark expand="lg">
         <NavbarBrand className="brandName">
           <img src={Logo} id="logo" alt="logo" />
           BEAST : MODE

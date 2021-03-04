@@ -32,6 +32,12 @@ let events = [
   },
 ];
 
+let input = new Date();
+let today = `${input.getFullYear()}-${input.getMonth()}-${input.getDate()}`
+console.log(today);
+console.log(input);
+
+
 // const fetchEventInfo = () => {
 //   fetch("http://localhost:3000/events/", {
 //     method: "GET",
@@ -58,7 +64,7 @@ const Dashboard = (props) => {
         <Row style={{ margin: "auto", display: "block"}}>
           
           <Col sm="12" >
-            <div className="columnHeader" style={{ width: "95%" }}>
+            <div className="columnHeader" >
               <h2>Calendar</h2>
             </div>
             {/* <EventCalendar /> */}

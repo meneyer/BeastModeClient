@@ -9,25 +9,24 @@ import {
   CardText,
   CardBody,
 } from "reactstrap";
-import WeatherResults from "./WeatherResults"
+import WeatherResults from "./WeatherResults";
 import YelpResults from "./YelpResults";
-
+import Ragnar from "../assets/ragnar.jpg";
 
 const Resources = () => {
   return (
+    <div id="eventInfoBG">
+      <Container style={{ padding: "20px" }}>
+        <h2 className="resourceTitle">
+          Enter the Race Location's Zip Code to Check out the Local Weather!
+        </h2>
+        <WeatherResults />
+        <br />
+        <YelpResults />
+        <br />
 
-    <div id="eventInfoBG">      
-
-      <Container  style={{ padding: "20px" }}>
-      <h2 className="resourceTitle">Enter the Race Location's Zip Code to Check out the Local Weather!</h2>
-      <WeatherResults />
-      <br />
-      <YelpResults />
-      <br />
-
-      <h2>Find Your Next Race!</h2>
-        <CardColumns>           
-
+        <h2 className="resourceTitle">Find Your Next Race!</h2>
+        <CardColumns>
           <Card>
             <CardImg
               className="raceFinderCards"
@@ -148,7 +147,7 @@ const Resources = () => {
               className="raceFinderCards"
               top
               width="100%"
-              src="https://uceb300e0d1bccf0d885557c71c3.previews.dropboxusercontent.com/p/pdf_img/ABH9gDzJjlltSfBZ2ir03y17VzxiblpHuRwxfvR8hgrRf-RJr1z-y6AA1AlcTGe6XxY_7MbF9KrzqEnvLkCUDOQPZqBUpj6Cl1v898iB2YgIgYBSNlUL0mNAr6yrh84mb1Uakj-SRuXeQ4SFrlJErBnDcIckxKl3QjFPyDkBIuewkMhIZHTkwp2gtZy9Hsr2NhR3UDzLpgMG-S66ZZs0hxDLJkqO-NAhhNcFixpdMzM8HGdWIR_tFSIJK46rsZdg_nFve-jxmguG88ckCavpphUHyplfrnAMFyi58qHQfO3CGwQQ6VQ7LBMwGtQSuAluIFhlBht-sJ51YKlbZRXWBE8w/p.png?page=0&scale_percent=0"
+              src={Ragnar}
               alt="Card image cap"
             />
             <CardBody className="raceFinderBackground">
@@ -168,7 +167,7 @@ const Resources = () => {
                 href="https://www.runragnar.com/"
                 target="blank"
               >
-                OCR World Championships
+                Ragnar Relay
               </Button>
             </CardBody>
           </Card>
@@ -231,62 +230,101 @@ const Resources = () => {
               </Button>
             </CardBody>
           </Card>{" "}
-          */
         </CardColumns>
         <br />
 
-      <h2 className="resourceTitle">Transportation & Delivery Services</h2>
-      <div>
-        <CardColumns>
-          <Card className="text-muted">        
-            <CardBody>
+        <h2 className="resourceTitle">Transportation & Delivery Services</h2>
+        <div>
+          <CardColumns>
+            <Card className="text-muted">
+              <CardBody>
                 <CardTitle tag="h3">Restaurant Delivery</CardTitle>
                 {/* <CardSubtitle tag="h6">##</CardSubtitle> */}
                 <CardText>
                   <ul>
-                    <li><Button a href="https://www.doordash.com/en-US"  target="blank">DoorDash</Button></li>
-                    <li><Button a href="https://www.ubereats.com/"  target="blank">Uber Eats</Button></li>         
+                    <li>
+                      <Button
+                        a
+                        href="https://www.doordash.com/en-US"
+                        target="blank"
+                      >
+                        DoorDash
+                      </Button>
+                    </li>
+                    <li>
+                      <Button a href="https://www.ubereats.com/" target="blank">
+                        Uber Eats
+                      </Button>
+                    </li>
                   </ul>
-                </CardText>          
-            </CardBody>
-          </Card>
-          <Card className="text-muted">        
-            <CardBody>
+                </CardText>
+              </CardBody>
+            </Card>
+            <Card className="text-muted">
+              <CardBody>
                 <CardTitle tag="h3">Grocery Delivery</CardTitle>
                 {/* <CardSubtitle tag="h6">##</CardSubtitle> */}
                 <CardText>
                   <ul>
-                    <li><Button a href="https://www.instacart.com/"  target="blank">InstaCart</Button></li>  
-                    <li><Button a href="http://www.shipt.com/"  target="blank">Shipt</Button></li>
+                    <li>
+                      <Button
+                        a
+                        href="https://www.instacart.com/"
+                        target="blank"
+                      >
+                        InstaCart
+                      </Button>
+                    </li>
+                    <li>
+                      <Button a href="http://www.shipt.com/" target="blank">
+                        Shipt
+                      </Button>
+                    </li>
                   </ul>
-                </CardText>          
-            </CardBody>
-          </Card>
-          <Card className="text-muted">        
-            <CardBody>
+                </CardText>
+              </CardBody>
+            </Card>
+            <Card className="text-muted">
+              <CardBody>
                 <CardTitle tag="h3">Transportation</CardTitle>
                 {/* <CardSubtitle tag="h6">Need a ride?</CardSubtitle> */}
                 <CardText>
                   <ul>
-                    <li><Button a href="https://www.lyft.com/"  target="blank">Lyft</Button></li> 
-                    <li><Button a href="https://www.uber.com/"  target="blank">Uber</Button></li>
+                    <li>
+                      <Button a href="https://www.lyft.com/" target="blank">
+                        Lyft
+                      </Button>
+                    </li>
+                    <li>
+                      <Button a href="https://www.uber.com/" target="blank">
+                        Uber
+                      </Button>
+                    </li>
                   </ul>
-                </CardText>          
-            </CardBody>
-          </Card>
-          <Card className="text-muted">        
-            <CardBody>
+                </CardText>
+              </CardBody>
+            </Card>
+            <Card className="text-muted">
+              <CardBody>
                 <CardTitle tag="h3">Places To Stay</CardTitle>
                 {/* <CardSubtitle tag="h6">##</CardSubtitle> */}
                 <CardText>
                   <ul>
-                    <li><Button a href="https://www.airbnb.com/"  target="blank">airbnb</Button></li>  
-                    <li><Button a href="https://www.vrbo.com/"  target="blank">Vrbo</Button></li>
+                    <li>
+                      <Button a href="https://www.airbnb.com/" target="blank">
+                        airbnb
+                      </Button>
+                    </li>
+                    <li>
+                      <Button a href="https://www.vrbo.com/" target="blank">
+                        Vrbo
+                      </Button>
+                    </li>
                   </ul>
-                </CardText>          
-            </CardBody>
-          </Card>
-          {/* <Card className="text-muted">        
+                </CardText>
+              </CardBody>
+            </Card>
+            {/* <Card className="text-muted">        
             <CardBody>
                 <CardTitle tag="h3">Have a drink</CardTitle>
                 <CardText>
@@ -296,9 +334,9 @@ const Resources = () => {
                 </CardText>          
             </CardBody>
           </Card> */}
-        </CardColumns>
-      </div>
-      <br />
+          </CardColumns>
+        </div>
+        <br />
       </Container>
     </div>
   );

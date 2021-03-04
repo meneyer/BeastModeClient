@@ -153,8 +153,9 @@ FONTS --> Russo One & Open Sans
   border-radius: 15px 15px 0 0;
   text-align: center;
   font-family: Russo One;
-  width: 90%;
+  width: 95%;
   padding: 0px;
+  
 }
 
 #calendar {
@@ -162,8 +163,8 @@ FONTS --> Russo One & Open Sans
   font-family: Open Sans;
   color: #453054;
   background-color: #a8c553;
-  min-width: 320px;
   width: 95%;
+  
   padding-top: 20px;
   padding-bottom: 20px;
   height: auto;
@@ -172,6 +173,11 @@ FONTS --> Russo One & Open Sans
   margin: auto;
   box-shadow: 5px 5px 40px #000000;
   height: 450px;
+}
+#calendarInside {
+  
+  min-width: 320px;
+  width: 90%;
 }
 
 #loggedIn {
@@ -527,7 +533,37 @@ table.table-bordered > tbody > tr > td {
     font-size: 2.2em;
   }
   #calendar {
-    margin-left: 0px;
-    margin-right: 0px;
+    margin:auto;
+    width: 100%;
+  }
+  #calendarInside {
+    width: 100%;
+
+  }
+  .columnHeader {
+    /* margin-left: 0px;
+    margin-right: 0px; */
+    margin: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    min-width: 320px;
+    width: 100%;
+  }
+  .col-sm-12 {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: auto;
+  }
+  .col-md-6 {
+    padding-left: 0px;
+    padding-right:0px;
+  }
+  .container-fluid {
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto;
+  }
+  #displayEvents {
+    margin: auto;
   }
 }

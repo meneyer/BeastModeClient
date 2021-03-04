@@ -4,7 +4,7 @@ import {} from "reactstrap";
 const MessagesEdit = (props) => {
   return (
     <div style={{ backgroundColor: "cornflowerblue" }}>
-      <p className="placeholder">Hello from Message Edit</p>
+      <p className="placeholder">Hello from Message Edits</p>
     </div>
   );
 };

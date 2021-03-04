@@ -9,8 +9,8 @@ import {
   CardText,
   CardBody,
 } from "reactstrap";
+
 import WeatherResults from "./WeatherResults";
-import YelpResults from "./YelpResults";
 import spartan from "../assets/spartan.png";
 import ruggedManiac from "../assets/ruggedManiac.png";
 import toughMudder from "../assets/toughMudder.png";
@@ -18,9 +18,10 @@ import ocrwc from "../assets/ocrwc.png";
 import Ragnar from "../assets/Ragnar.png";
 import savageRace from "../assets/savageRace.png";
 import mudRunGuide from "../assets/mudRunGuide.png";
-// import Ragnar from "../assets/Ragnar.png";
+import ZomatoResults from "./ZomatoResults";
 
 const Resources = () => {
+
   return (
     <div id="eventInfoBG">
       <Container style={{ padding: "20px" }}>
@@ -32,9 +33,17 @@ const Resources = () => {
         <YelpResults />
         <br />
 
-        <h2 className="resourceTitle">Find Your Next Race!</h2>
-        <CardColumns>
-          <Card>
+    <div id="eventInfoBG">      
+
+      <Container  style={{ padding: "20px" }}>
+      <h2 className="resourceTitle">Enter the Race Location's Zip Code to Check out the Local Weather!</h2>
+      <WeatherResults />
+      <br />
+
+      <h2>Find Your Next Race!</h2>
+        <CardColumns>           
+
+         <Card>
             <CardImg
               className="raceFinderCards"
               top
@@ -249,7 +258,12 @@ const Resources = () => {
           <CardColumns style={{ display: "flex", justifyContent: "center" }}>
             <Card className="text-muted">
               <CardBody>
-                <CardTitle tag="h3">Restaurant Delivery</CardTitle>
+
+        <ZomatoResults />     
+
+      <br />
+
+                     <CardTitle tag="h3">Restaurant Delivery</CardTitle>
                 {/* <CardSubtitle tag="h6">##</CardSubtitle> */}
                 <CardText>
                   <ul className="servicesLink">

@@ -11,7 +11,14 @@ import {
 } from "reactstrap";
 import WeatherResults from "./WeatherResults";
 import YelpResults from "./YelpResults";
-import Ragnar from "../assets/ragnar.jpg";
+import spartan from "../assets/spartan.png";
+import ruggedManiac from "../assets/ruggedManiac.png";
+import toughMudder from "../assets/toughMudder.png";
+import ocrwc from "../assets/ocrwc.png";
+import Ragnar from "../assets/Ragnar.png";
+import savageRace from "../assets/savageRace.png";
+import mudRunGuide from "../assets/mudRunGuide.png";
+// import Ragnar from "../assets/Ragnar.png";
 
 const Resources = () => {
   return (
@@ -32,7 +39,7 @@ const Resources = () => {
               className="raceFinderCards"
               top
               width="100%"
-              src="https://cdn4.mudrunguide.com/wp-content/uploads/2018/04/spartan-logo-18.png"
+              src={spartan}
               alt="Card image cap"
             />
             <CardBody className="raceFinderBackground">
@@ -62,7 +69,7 @@ const Resources = () => {
               className="raceFinderCards"
               top
               width="100%"
-              src="https://www.mudrunguide.com/wp-content/uploads/2019/09/Stacked-Obstacle-Race-300x168.jpg"
+              src={ruggedManiac}
               alt="Card image cap"
             />
             <CardBody className="raceFinderBackground">
@@ -89,7 +96,7 @@ const Resources = () => {
               className="raceFinderCards"
               top
               width="100%"
-              src="https://cdn4.mudrunguide.com/wp-content/uploads/2012/02/logo_tough-mudder.png"
+              src={toughMudder}
               alt="Card image cap"
             />
             <CardBody className="raceFinderBackground">
@@ -118,7 +125,7 @@ const Resources = () => {
               className="raceFinderCards"
               top
               width="100%"
-              src="https://cdn4.mudrunguide.com/wp-content/uploads/2014/01/OCRWC-Logo-Black-Font.png"
+              src={ocrwc}
               alt="Card image cap"
             />
             <CardBody className="raceFinderBackground">
@@ -176,7 +183,7 @@ const Resources = () => {
               className="raceFinderCards"
               top
               width="100%"
-              src="https://cdn4.mudrunguide.com/wp-content/uploads/2012/06/STACKED_Savage_Race.png"
+              src={savageRace}
               alt="Card image cap"
             />
             <CardBody className="raceFinderBackground">
@@ -205,7 +212,7 @@ const Resources = () => {
               className="raceFinderCards"
               top
               width="100%"
-              src="https://media-exp1.licdn.com/dms/image/C4D0BAQGZEtljN3iWpA/company-logo_200_200/0/1519952411343?e=1622678400&v=beta&t=mkhmK7mp-AZtwuHpdc95XA9C30rHNiDttTZMqq3YSd4"
+              src={mudRunGuide}
               alt="Card image cap"
             />
             <CardBody className="raceFinderBackground">
@@ -233,15 +240,19 @@ const Resources = () => {
         </CardColumns>
         <br />
 
+        {/* Resource Card END */}
+
+        {/* Services Link Begin */}
+
         <h2 className="resourceTitle">Transportation & Delivery Services</h2>
         <div>
-          <CardColumns>
+          <CardColumns style={{ display: "flex", justifyContent: "center" }}>
             <Card className="text-muted">
               <CardBody>
                 <CardTitle tag="h3">Restaurant Delivery</CardTitle>
                 {/* <CardSubtitle tag="h6">##</CardSubtitle> */}
                 <CardText>
-                  <ul>
+                  <ul className="servicesLink">
                     <li>
                       <Button
                         a

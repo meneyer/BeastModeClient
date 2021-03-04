@@ -10,10 +10,11 @@ import {
   CardBody,
 } from "reactstrap";
 import WeatherResults from "./WeatherResults"
-import YelpResults from "./YelpResults";
+import ZomatoResults from "./ZomatoResults";
 
 
 const Resources = () => {
+
   return (
 
     <div id="eventInfoBG">      
@@ -21,8 +22,6 @@ const Resources = () => {
       <Container  style={{ padding: "20px" }}>
       <h2 className="resourceTitle">Enter the Race Location's Zip Code to Check out the Local Weather!</h2>
       <WeatherResults />
-      <br />
-      <YelpResults />
       <br />
 
       <h2>Find Your Next Race!</h2>
@@ -234,6 +233,10 @@ const Resources = () => {
           */
         </CardColumns>
         <br />
+
+        <ZomatoResults />     
+
+      <br />
 
       <h2 className="resourceTitle">Transportation & Delivery Services</h2>
       <div>

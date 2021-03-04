@@ -3,6 +3,7 @@ import MessagesCreate from "./MessagesCreate";
 import MessagesEdit from "./MessagesEdit";
 import BeforeLogIn from "../Auth/BeforeLogin";
 import MessageUpdateDelete from "../messages/MessageUpdateDelete";
+import MessagesDisplay from '../messages/MessagesDisplay'
 
 const Messages = (props) => {
   const [messages, setMessages] = useState([]);
@@ -37,9 +38,10 @@ const fetchMessages = () => {
           <div>
             {/* <p className="placeholder">Hello there from Message Index</p> */}
             <div id="displayMessages">
+            <MessagesDisplay>messages</MessagesDisplay>
               <MessageUpdateDelete token={props.token} fetchMessages = {fetchMessages}/>
             </div>
-            <MessagesEdit>test</MessagesEdit>
+            {/* <MessagesEdit>test</MessagesEdit> */}
             <MessagesCreate token={props.token} fetchMessages = {fetchMessages}/>
 
           </div>

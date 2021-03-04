@@ -143,7 +143,7 @@ const EventTableAndDelete = (props) => {
       {/* <h1 className="placeholder">CURRENT RACES</h1> */}
       <Container style={{ padding: "20px" }}>
         {/* <Col md="9"> */}
-        <div className="columnHeader" style={{ width: "100%" }}>
+        <div className="columnHeader" style={{ width: "100%", minWidth: "300px" }}>
           <h2>Current Races</h2>
         </div>
         {/* </Col> */}

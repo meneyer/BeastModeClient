@@ -1,17 +1,20 @@
-import React, {useState} from "react";
-import {Container,
-    Card,
-    CardTitle,
-    CardText,
-    CardColumns,
-    CardBody,
-    CardSubtitle,
-    Button,} from "reactstrap";
+import React, { useState } from "react";
+import {
+  Container,
+  Card,
+  CardTitle,
+  CardText,
+  CardColumns,
+  CardBody,
+  CardSubtitle,
+  Button,
+} from "reactstrap";
 
 const ZomatoResults = (props) => {
     // console.log(props.restaurant)
     return (
-        <div>   
+        <div>
+             <h1 id="locationOutput">Here are a few choices for you.</h1>   
             {props.restaurant.map (restaurants => {
                 return(
                     <div>

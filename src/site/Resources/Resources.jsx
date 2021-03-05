@@ -8,6 +8,7 @@ import {
   CardTitle,
   CardText,
   CardBody,
+  CardGroup,
 } from "reactstrap";
 
 import WeatherResults from "./WeatherResults";
@@ -267,11 +268,13 @@ const Resources = () => {
             </CardBody>
           </Card>{" "}
         </CardColumns>
+        {/* Resource Card END */}
         <br />
 
-        {/* Resource Card END */}
-
         {/* Services Link Begin */}
+        <ZomatoResults />
+
+        <br />
 
       <form  style={{ display: "flex", justifyContent: "center", padding: "10px" }} onSubmit={ (e) => handleSubmit(e)}>                  
         <button id="serviceBtn" size="lg">Click for Local Restaurants</button>
@@ -289,96 +292,93 @@ const Resources = () => {
 
         <h2 className="resourceTitle">Transportation & Delivery Services</h2>
         <div>
-          <CardColumns style={{ display: "flex", justifyContent: "center" }}>
-            <Card className="text-muted">
-              <CardBody>
-                <CardTitle tag="h3">Restaurant Delivery</CardTitle>
-                {/* <CardSubtitle tag="h6">##</CardSubtitle> */}
-                <CardText>
-                  <ul className="servicesLink">
-                    <li>
-                      <Button
-                        a
-                        href="https://www.doordash.com/en-US"
-                        target="blank"
-                      >
-                        DoorDash
-                      </Button>
-                    </li>
-                    <li>
-                      <Button a href="https://www.ubereats.com/" target="blank">
-                        Uber Eats
-                      </Button>
-                    </li>
-                  </ul>
-                </CardText>
-              </CardBody>
+          <CardGroup>
+            <Card
+              body
+              inverse
+              style={{
+                backgroundColor: "rgba(51, 51, 51, 0.76)",
+                borderColor: "rgba(51, 51, 51, 0.76)",
+              }}
+            >
+              <CardTitle style={{ textAlign: "center" }} tag="h5">
+                Restaurant Delivery
+              </CardTitle>
+              <hr />
+              <Button
+                // className="linkBtn"
+                a
+                href="https://www.doordash.com/en-US"
+                target="blank"
+              >
+                DoorDash
+              </Button>
+              <br />
+              <Button a href="https://www.ubereats.com/" target="blank">
+                Uber Eats
+              </Button>
             </Card>
-            <Card className="text-muted">
-              <CardBody>
-                <CardTitle tag="h3">Grocery Delivery</CardTitle>
-                {/* <CardSubtitle tag="h6">##</CardSubtitle> */}
-                <CardText>
-                  <ul>
-                    <li>
-                      <Button
-                        a
-                        href="https://www.instacart.com/"
-                        target="blank"
-                      >
-                        InstaCart
-                      </Button>
-                    </li>
-                    <li>
-                      <Button a href="http://www.shipt.com/" target="blank">
-                        Shipt
-                      </Button>
-                    </li>
-                  </ul>
-                </CardText>
-              </CardBody>
+            <Card
+              body
+              inverse
+              style={{
+                backgroundColor: "rgba(51, 51, 51, 0.76)",
+                borderColor: "rgba(51, 51, 51, 0.76)",
+              }}
+            >
+              <CardTitle style={{ textAlign: "center" }} tag="h5">
+                Grocery Delivery
+              </CardTitle>
+              <hr />
+              <Button a href="https://www.instacart.com/" target="blank">
+                InstaCart
+              </Button>
+              <br />
+              <Button a href="http://www.shipt.com/" target="blank">
+                Shipt
+              </Button>
             </Card>
-            <Card className="text-muted">
-              <CardBody>
-                <CardTitle tag="h3">Transportation</CardTitle>
-                {/* <CardSubtitle tag="h6">Need a ride?</CardSubtitle> */}
-                <CardText>
-                  <ul>
-                    <li>
-                      <Button a href="https://www.lyft.com/" target="blank">
-                        Lyft
-                      </Button>
-                    </li>
-                    <li>
-                      <Button a href="https://www.uber.com/" target="blank">
-                        Uber
-                      </Button>
-                    </li>
-                  </ul>
-                </CardText>
-              </CardBody>
+            <Card
+              body
+              inverse
+              style={{
+                backgroundColor: "rgba(51, 51, 51, 0.76)",
+                borderColor: "rgba(51, 51, 51, 0.76)",
+              }}
+            >
+              <CardTitle style={{ textAlign: "center" }} tag="h5">
+                Transportation Services
+              </CardTitle>
+              <hr />
+              <Button a href="https://www.lyft.com/" target="blank">
+                Lyft
+              </Button>
+              <br />
+              <Button a href="https://www.uber.com/" target="blank">
+                Uber
+              </Button>
             </Card>
-            <Card className="text-muted">
-              <CardBody>
-                <CardTitle tag="h3">Places To Stay</CardTitle>
-                {/* <CardSubtitle tag="h6">##</CardSubtitle> */}
-                <CardText>
-                  <ul>
-                    <li>
-                      <Button a href="https://www.airbnb.com/" target="blank">
-                        airbnb
-                      </Button>
-                    </li>
-                    <li>
-                      <Button a href="https://www.vrbo.com/" target="blank">
-                        Vrbo
-                      </Button>
-                    </li>
-                  </ul>
-                </CardText>
-              </CardBody>
-            </Card> 
-          </CardColumns>
+            <Card
+              body
+              inverse
+              style={{
+                backgroundColor: "rgba(51, 51, 51, 0.76)",
+                borderColor: "rgba(51, 51, 51, 0.76)",
+              }}
+            >
+              <CardTitle style={{ textAlign: "center" }} tag="h5">
+                Places To Stay
+              </CardTitle>
+              <hr />
+              <Button a href="https://www.airbnb.com/" target="blank">
+                airbnb
+              </Button>
+              <br />
+              <Button a href="https://www.vrbo.com/" target="blank">
+                Vrbo
+              </Button>
+            </Card>
+          </CardGroup>
         </div>
         <br />
       </Container>

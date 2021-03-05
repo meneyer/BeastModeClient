@@ -25,11 +25,6 @@ const fetchMessages = () => {
         console.log(logData);
       });
   };
-
- useEffect(() => {
-        fetchMessages();
-      }, []);
-      
   const editMessage = (messagesInfo) => {
     setUpdateMessage(messagesInfo);
     console.log(messagesInfo);
@@ -42,6 +37,11 @@ const fetchMessages = () => {
   const updateOff = () => {
     setUpdateRace(false);
   };
+
+ useEffect(() => {
+        fetchMessages();
+      }, []);
+      
   // const [modal, setModal = useState(false);
 
   //Below: Had to wrap the entire events display in a ternary so that you wouldn't see it if you were'e loggedin with a token - Ginger

@@ -17,42 +17,78 @@ const MessageUpdateDelete= (props) => {
   const [popoverOpen, setPopoverOpen] = useState(false);
   const toggle = () => setPopoverOpen(!popoverOpen);
   console.log(props.updateMessage);
+  console.log(props.messages)
  
- const deleteMessage = (messagesInfo) => {
-   fetch(`http://localhost:3000/messageboard/delete/${messagesInfo.id}`, {
+  const deleteMessage = (messagesInfo) => {
+    console.log(`id to be deleted -> ${messagesInfo.id}`)
+    fetch(`http://localhost:3000/messageboard/delete/${messagesInfo.id}`, {
       method: "DELETE",
-     headers: new Headers({
-       "Content-Type": "application/json",
-       Authorization: props.token,
-   }),
-   }).then(() => fetchMessages());
- };
+      headers: new Headers({
+        "Content-Type": "application/json",
+        Authorization: props.token,
+    }),
+    }).then(() => props.fetchMessages());
+  };
 
-const [messages, setMessages] = useState([]);
+  const PopoverContent = (props) => {
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+      <>
+        <PopoverHeader>
+          Are you sure you want to delete this message? (This CANNOT be undone)
+        </PopoverHeader>
+        <PopoverBody>
+          <Button
+            outline
+            color="danger"
+            onClick={() => {
+              setIsOpen(!isOpen);
+              {
+                deleteMessage(props.messagesInfo);
+              }
+            }}
+          >
+            Confirm Delete
+          </Button>
+          <Collapse
+            isOpen={isOpen}
+            onEntered={props.confirmDelete}
+            onExited={props.confirmDelete}
+          >
+            Click to Confirm Delete
+          </Collapse>
+        </PopoverBody>
+      </>
+    );
+  };
+// const [messages, setMessages] = useState([]);
 
-const fetchMessages = () => {
-    fetch('http://localhost:3000/messageboard/', {
-    method: "GET",
-        headers: new Headers({
-        'Content-Type': 'application/json',
-        }),
-    }) .then((res) => res.json())
-    .then((logData) => {
-        setMessages(logData);
-        console.log(logData);
-    });
-};
+// const fetchMessages = () => {
+//     fetch('http://localhost:3000/messageboard/', {
+//     method: "GET",
+//         headers: new Headers({
+//         'Content-Type': 'application/json',
+//         }),
+//     }) .then((res) => res.json())
+//     .then((logData) => {
+//         setMessages(logData);
+//         console.log(logData);
+//     });
+// };
 
 
     //runes Message Fetch function once with component mount only
-    useEffect(() => {
-        fetchMessages();
-      }, []);
-      //ADDED ABOVE LINE!!!!!
+    // useEffect(() => {
+    //     fetchMessages();
+    //   }, []);
+      //MY VERSION ABOVE
+      useEffect(() => {
+        mbMap();
+      }, [props.messages]);
       
       const mbMap = () => {
         //Because of .slice method will only return the most recent 10
-        return messages.slice(0,11).map((messagesInfo) => {
+        return props.messages.slice(0,11).map((messagesInfo) => {
           return(
             // <div>
     
@@ -69,7 +105,7 @@ const fetchMessages = () => {
                     className="tableBtn updateBtn"
                     id="Popover1"
                     onClick={() => {
-                      // props.editMessage(messagesInfo);
+                      props.editMessage(messagesInfo);
                       toggle();
                     }}
                   >Update</Button>
@@ -86,11 +122,31 @@ const fetchMessages = () => {
               <></>
             )}
 
-                {/* DELETE BUTTON   */}
-                <Button color="danger" onClick={() =>
-                deleteMessage(messagesInfo)}>Delete</Button>
+                {/* GINGER DELETE BUTTON   */}
+                {/* <Button color="danger" onClick={() =>
+                deleteMessage(messagesInfo)}>Delete</Button> */}
+              <Button
+                className="tableBtn deleteBtn"
+                color="danger"
+                id="DeleteButtonOne"
+                type="button"
+              >
+                Delete
+              </Button>
+
+              <UncontrolledPopover
+                trigger="legacy"
+                placement="top"
+                target="DeleteButtonOne"
+              >
+                {({ confirmDelete }) => (
+                  <PopoverContent
+                    confirmDelete={confirmDelete}
+                    messagesInfo={messagesInfo}
+                  />
+                )}
+              </UncontrolledPopover>
               </div>
-              
             </div>
 
           )
@@ -101,8 +157,7 @@ const fetchMessages = () => {
 
     return ( 
         <div>
-        Hello from MessageUpdateDelete
-          {messages !== undefined ?
+          {props.messages !== undefined ?
           mbMap() : "" }
           {/* //     <ButtonToggle color='danger'>danger</ButtonToggle>{''} */}
         </div>

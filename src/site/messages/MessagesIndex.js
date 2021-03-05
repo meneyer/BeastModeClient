@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import MessagesCreate from "./MessagesCreate";
-import MessagesEdit from "./MessagesEdit";
 import BeforeLogIn from "../Auth/BeforeLogin";
 import MessageUpdateDelete from "../messages/MessageUpdateDelete";
-import MessagesDisplay from '../messages/MessagesDisplay'
+
 
 const Messages = (props) => {
   const [messages, setMessages] = useState([]);
@@ -47,13 +46,11 @@ const fetchMessages = () => {
 
   //Below: Had to wrap the entire events display in a ternary so that you wouldn't see it if you were'e loggedin with a token - Ginger
   return (
-      <div id="messagesIndex" style={{ backgroundColor: "darkgoldenrod" }}>
+      <div id="messagesIndex" >
         { props.token === localStorage.getItem("token")   ? 
           <div>
             {/* <p className="placeholder">Hello there from Message Index</p> */}
             <div id="displayMessages">
-          {/* <MessagesDisplay/> */}
-
               <MessageUpdateDelete 
               token={props.token} 
               messages={messages}

@@ -14,7 +14,7 @@ const ZomatoResults = (props) => {
     // console.log(props.restaurant)
     return (
         <div>
-             <h1 id="locationOutput">Here are a few choices for you.</h1>   
+      <h1 id="locationOutput">Here are a few choices for you.</h1>
             {props.restaurant.map (restaurants => {
                 return(
                     <div>

@@ -51,20 +51,19 @@ const Resources = () => {
             console.log(restaurant)
         };
 
-
   return (
-    
-    <div id="eventInfoBG"> 
+    <div id="eventInfoBG">
+      <Container style={{ padding: "20px" }}>
+        <h2 className="resourceTitle">
+          Enter the Race Location's Zip Code to Check out the Local Weather!
+        </h2>
+        <WeatherResults />
+        <br />
 
-      <Container  style={{ padding: "20px" }}>
-      <h2 className="resourceTitle">Enter the Race Location's Zip Code to Check out the Local Weather!</h2>
-      <WeatherResults />
-      <br />
+        <h2 className="resourceTitle">Find Your Next Race!</h2>
+        <CardColumns>
+          <Card>
 
-      <h2>Find Your Next Race!</h2>
-        <CardColumns>           
-
-        <Card>
             <CardImg
               className="raceFinderCards"
               top
@@ -272,10 +271,7 @@ const Resources = () => {
         <br />
 
         {/* Services Link Begin */}
-        <ZomatoResults />
-
-        <br />
-
+       
       <form  style={{ display: "flex", justifyContent: "center", padding: "10px" }} onSubmit={ (e) => handleSubmit(e)}>                  
         <button id="serviceBtn" size="lg">Click for Local Restaurants</button>
       </form>

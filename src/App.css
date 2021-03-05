@@ -155,7 +155,6 @@ FONTS --> Russo One & Open Sans
   font-family: Russo One;
   width: 95%;
   padding: 0px;
-  
 }
 
 #calendar {
@@ -164,7 +163,7 @@ FONTS --> Russo One & Open Sans
   color: #453054;
   background-color: #a8c553;
   width: 95%;
-  
+
   padding-top: 20px;
   padding-bottom: 20px;
   height: auto;
@@ -175,7 +174,6 @@ FONTS --> Russo One & Open Sans
   height: 450px;
 }
 #calendarInside {
-  
   min-width: 320px;
   width: 90%;
 }
@@ -414,12 +412,14 @@ table.table-bordered > tbody > tr > td {
   justify-content: center;
 }
 
-#weatherBtn {
+#weatherBtn,
+#serviceBtn {
   font-family: Open Sans;
   background-color: #453054;
 }
 
-#weatherBtn:hover {
+#weatherBtn:hover,
+#serviceBtn:hover {
   cursor: pointer;
   box-shadow: 0 0 10px #1d2323;
 }
@@ -431,16 +431,19 @@ table.table-bordered > tbody > tr > td {
   text-align: center;
   padding-top: 20px;
   padding-bottom: 30px;
+  text-decoration: underline;
   text-shadow: 5px 5px 40px #000000;
 }
 
-.weatherCardText {
+.weatherCardText,
+.foodCardText {
   background-color: #45305491;
   border-radius: 20px;
   color: white;
 }
 
-.weatherCard {
+.weatherCard,
+.foodCard {
   border-radius: 20px;
   background-color: #4530548c;
   box-shadow: 0px 0px 20px #000000;
@@ -454,7 +457,8 @@ table.table-bordered > tbody > tr > td {
   text-shadow: 5px 5px 40px #000000;
 }
 
-.resourcesButton {
+.resourcesButton,
+.menuBtn {
   font-family: Open Sans;
   background-color: #a8c553;
   color: #453054;
@@ -464,7 +468,8 @@ table.table-bordered > tbody > tr > td {
   justify-content: center;
 }
 
-.resourcesButton:hover {
+.resourcesButton:hover,
+.menuBtn:hover {
   background-color: #453054;
   color: #a8c553;
 }
@@ -484,6 +489,11 @@ table.table-bordered > tbody > tr > td {
 
 .raceFinderCards {
   border: 2px solid #ffffff;
+}
+
+.linkBtn {
+  background-color: #453054;
+  color: #a8c553;
 }
 
 /* Resource Section END */
@@ -533,12 +543,11 @@ table.table-bordered > tbody > tr > td {
     font-size: 2.2em;
   }
   #calendar {
-    margin:auto;
+    margin: auto;
     width: 100%;
   }
   #calendarInside {
     width: 100%;
-
   }
   .columnHeader {
     /* margin-left: 0px;
@@ -556,7 +565,7 @@ table.table-bordered > tbody > tr > td {
   }
   .col-md-6 {
     padding-left: 0px;
-    padding-right:0px;
+    padding-right: 0px;
   }
   .container-fluid {
     padding-right: 10px;

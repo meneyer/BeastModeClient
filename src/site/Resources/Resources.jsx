@@ -22,6 +22,36 @@ import mudRunGuide from "../assets/mudRunGuide.png";
 import ZomatoResults from "./ZomatoResults";
 
 const Resources = () => {
+
+
+    const [restaurant, setRestaurant] = useState([]);
+    const [latitude, setLatitude] = useState('');
+    const [longitude, setLongitude] = useState('');
+    
+    navigator.geolocation.getCurrentPosition(function(position) {
+      setLatitude(position.coords.latitude);
+      setLongitude(position.coords.longitude);
+      // console.log(latitude);
+      // console.log(longitude)
+    })
+        
+    function getZomatoResults (){
+      fetch(`https://developers.zomato.com/api/v2.1/geocode?lat=${latitude}&lon=${longitude}`, {
+        method: "GET",
+        headers: {'user-key': "a827929e8885610b39150d9739cd0cea"}})
+        .then((res) => res.json())
+        .then((json) => {
+          console.log(json);
+          setRestaurant(json.nearby_restaurants); 
+        });
+        };
+
+        const handleSubmit = (event) => {
+            event.preventDefault();
+            getZomatoResults();
+            console.log(restaurant)
+        };
+
   return (
     <div id="eventInfoBG">
       <Container style={{ padding: "20px" }}>
@@ -34,6 +64,7 @@ const Resources = () => {
         <h2 className="resourceTitle">Find Your Next Race!</h2>
         <CardColumns>
           <Card>
+
             <CardImg
               className="raceFinderCards"
               top
@@ -241,12 +272,24 @@ const Resources = () => {
         <br />
 
         {/* Services Link Begin */}
-        <ZomatoResults />
+       
+      <form  style={{ display: "flex", justifyContent: "center", padding: "10px" }} onSubmit={ (e) => handleSubmit(e)}>                  
+        <button id="serviceBtn" size="lg">Click for Local Restaurants</button>
+      </form>
 
-        <br />
+      {
+        restaurant.length > 0 ? 
+        <CardColumns>
+          <ZomatoResults restaurant = {restaurant} />
+          </CardColumns>
+          : null
+      }         
+
+      <br />
 
         <h2 className="resourceTitle">Transportation & Delivery Services</h2>
         <div>
+
           <CardGroup>
             <Card
               body
@@ -272,6 +315,7 @@ const Resources = () => {
               <Button a href="https://www.ubereats.com/" target="blank">
                 Uber Eats
               </Button>
+
             </Card>
             <Card
               body
@@ -313,6 +357,7 @@ const Resources = () => {
                 Uber
               </Button>
             </Card>
+
             <Card
               body
               inverse
@@ -334,6 +379,7 @@ const Resources = () => {
               </Button>
             </Card>
           </CardGroup>
+
         </div>
         <br />
       </Container>

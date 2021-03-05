@@ -53,6 +53,7 @@ const Resources = () => {
   };
 
   return (
+
     <div id="eventInfoBG">
       <Container style={{ padding: "20px" }}>
         <h2 className="resourceTitle">
@@ -288,6 +289,7 @@ const Resources = () => {
         ) : null}
 
         <br />
+
 
         <h2 className="resourceTitle">Transportation & Delivery Services</h2>
         <div>

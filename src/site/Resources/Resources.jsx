@@ -22,35 +22,37 @@ import mudRunGuide from "../assets/mudRunGuide.png";
 import ZomatoResults from "./ZomatoResults";
 
 const Resources = () => {
+  const [restaurant, setRestaurant] = useState([]);
+  const [latitude, setLatitude] = useState("");
+  const [longitude, setLongitude] = useState("");
 
+  navigator.geolocation.getCurrentPosition(function (position) {
+    setLatitude(position.coords.latitude);
+    setLongitude(position.coords.longitude);
+    // console.log(latitude);
+    // console.log(longitude)
+  });
 
-    const [restaurant, setRestaurant] = useState([]);
-    const [latitude, setLatitude] = useState('');
-    const [longitude, setLongitude] = useState('');
-    
-    navigator.geolocation.getCurrentPosition(function(position) {
-      setLatitude(position.coords.latitude);
-      setLongitude(position.coords.longitude);
-      // console.log(latitude);
-      // console.log(longitude)
-    })
-        
-    function getZomatoResults (){
-      fetch(`https://developers.zomato.com/api/v2.1/geocode?lat=${latitude}&lon=${longitude}`, {
+  function getZomatoResults() {
+    fetch(
+      `https://developers.zomato.com/api/v2.1/geocode?lat=${latitude}&lon=${longitude}`,
+      {
         method: "GET",
-        headers: {'user-key': "a827929e8885610b39150d9739cd0cea"}})
-        .then((res) => res.json())
-        .then((json) => {
-          console.log(json);
-          setRestaurant(json.nearby_restaurants); 
-        });
-        };
+        headers: { "user-key": "a827929e8885610b39150d9739cd0cea" },
+      }
+    )
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json);
+        setRestaurant(json.nearby_restaurants);
+      });
+  }
 
-        const handleSubmit = (event) => {
-            event.preventDefault();
-            getZomatoResults();
-            console.log(restaurant)
-        };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    getZomatoResults();
+    console.log(restaurant);
+  };
 
   return (
     <div id="eventInfoBG">
@@ -64,7 +66,6 @@ const Resources = () => {
         <h2 className="resourceTitle">Find Your Next Race!</h2>
         <CardColumns>
           <Card>
-
             <CardImg
               className="raceFinderCards"
               top
@@ -272,24 +273,26 @@ const Resources = () => {
         <br />
 
         {/* Services Link Begin */}
-       
-      <form  style={{ display: "flex", justifyContent: "center", padding: "10px" }} onSubmit={ (e) => handleSubmit(e)}>                  
-        <button id="serviceBtn" size="lg">Click for Local Restaurants</button>
-      </form>
 
-      {
-        restaurant.length > 0 ? 
-        <CardColumns>
-          <ZomatoResults restaurant = {restaurant} />
+        <form
+          style={{ display: "flex", justifyContent: "center", padding: "10px" }}
+          onSubmit={(e) => handleSubmit(e)}
+        >
+          <button id="serviceBtn" size="lg">
+            Click for Local Restaurants
+          </button>
+        </form>
+
+        {restaurant.length > 0 ? (
+          <CardColumns>
+            <ZomatoResults restaurant={restaurant} />
           </CardColumns>
-          : null
-      }         
+        ) : null}
 
-      <br />
+        <br />
 
         <h2 className="resourceTitle">Transportation & Delivery Services</h2>
         <div>
-
           <CardGroup>
             <Card
               body
@@ -315,7 +318,6 @@ const Resources = () => {
               <Button a href="https://www.ubereats.com/" target="blank">
                 Uber Eats
               </Button>
-
             </Card>
             <Card
               body
@@ -379,7 +381,6 @@ const Resources = () => {
               </Button>
             </Card>
           </CardGroup>
-
         </div>
         <br />
       </Container>

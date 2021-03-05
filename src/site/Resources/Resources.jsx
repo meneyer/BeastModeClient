@@ -8,6 +8,7 @@ import {
   CardTitle,
   CardText,
   CardBody,
+  CardGroup,
 } from "reactstrap";
 
 import WeatherResults from "./WeatherResults";
@@ -21,21 +22,51 @@ import mudRunGuide from "../assets/mudRunGuide.png";
 import ZomatoResults from "./ZomatoResults";
 
 const Resources = () => {
+  const [restaurant, setRestaurant] = useState([]);
+  const [latitude, setLatitude] = useState("");
+  const [longitude, setLongitude] = useState("");
+
+  navigator.geolocation.getCurrentPosition(function (position) {
+    setLatitude(position.coords.latitude);
+    setLongitude(position.coords.longitude);
+    // console.log(latitude);
+    // console.log(longitude)
+  });
+
+  function getZomatoResults() {
+    fetch(
+      `https://developers.zomato.com/api/v2.1/geocode?lat=${latitude}&lon=${longitude}`,
+      {
+        method: "GET",
+        headers: { "user-key": "a827929e8885610b39150d9739cd0cea" },
+      }
+    )
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json);
+        setRestaurant(json.nearby_restaurants);
+      });
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    getZomatoResults();
+    console.log(restaurant);
+  };
 
   return (
 
+    <div id="eventInfoBG">
+      <Container style={{ padding: "20px" }}>
+        <h2 className="resourceTitle">
+          Enter the Race Location's Zip Code to Check out the Local Weather!
+        </h2>
+        <WeatherResults />
+        <br />
 
-    <div id="eventInfoBG">      
-
-      <Container  style={{ padding: "20px" }}>
-      <h2 className="resourceTitle">Enter the Race Location's Zip Code to Check out the Local Weather!</h2>
-      <WeatherResults />
-      <br />
-
-      <h2>Find Your Next Race!</h2>
-        <CardColumns>           
-
-         <Card>
+        <h2 className="resourceTitle">Find Your Next Race!</h2>
+        <CardColumns>
+          <Card>
             <CardImg
               className="raceFinderCards"
               top
@@ -239,121 +270,119 @@ const Resources = () => {
             </CardBody>
           </Card>{" "}
         </CardColumns>
-        <br />
-
         {/* Resource Card END */}
+        <br />
 
         {/* Services Link Begin */}
 
-        <ZomatoResults />     
+        <form
+          style={{ display: "flex", justifyContent: "center", padding: "10px" }}
+          onSubmit={(e) => handleSubmit(e)}
+        >
+          <Button id="serviceBtn" size="lg">
+            Click for Local Restaurants
+          </Button>
+        </form>
+
+        {restaurant.length > 0 ? (
+          <CardColumns>
+            <ZomatoResults restaurant={restaurant} />
+          </CardColumns>
+        ) : null}
 
         <br />
 
+
         <h2 className="resourceTitle">Transportation & Delivery Services</h2>
         <div>
-          <CardColumns style={{ display: "flex", justifyContent: "center" }}>
-            <Card className="text-muted">
-              <CardBody>
+          <CardGroup>
+            <Card
+              body
+              inverse
+              style={{
+                backgroundColor: "rgba(51, 51, 51, 0.76)",
+                borderColor: "rgba(51, 51, 51, 0.76)",
+              }}
+            >
+              <CardTitle style={{ textAlign: "center" }} tag="h5">
+                Restaurant Delivery
+              </CardTitle>
+              <hr />
+              <Button
+                // className="linkBtn"
+                a
+                href="https://www.doordash.com/en-US"
+                target="blank"
+              >
+                DoorDash
+              </Button>
+              <br />
+              <Button a href="https://www.ubereats.com/" target="blank">
+                Uber Eats
+              </Button>
+            </Card>
+            <Card
+              body
+              inverse
+              style={{
+                backgroundColor: "rgba(51, 51, 51, 0.76)",
+                borderColor: "rgba(51, 51, 51, 0.76)",
+              }}
+            >
+              <CardTitle style={{ textAlign: "center" }} tag="h5">
+                Grocery Delivery
+              </CardTitle>
+              <hr />
+              <Button a href="https://www.instacart.com/" target="blank">
+                InstaCart
+              </Button>
+              <br />
+              <Button a href="http://www.shipt.com/" target="blank">
+                Shipt
+              </Button>
+            </Card>
+            <Card
+              body
+              inverse
+              style={{
+                backgroundColor: "rgba(51, 51, 51, 0.76)",
+                borderColor: "rgba(51, 51, 51, 0.76)",
+              }}
+            >
+              <CardTitle style={{ textAlign: "center" }} tag="h5">
+                Transportation Services
+              </CardTitle>
+              <hr />
+              <Button a href="https://www.lyft.com/" target="blank">
+                Lyft
+              </Button>
+              <br />
+              <Button a href="https://www.uber.com/" target="blank">
+                Uber
+              </Button>
+            </Card>
 
-
-
-                     <CardTitle tag="h3">Restaurant Delivery</CardTitle>
-                {/* <CardSubtitle tag="h6">##</CardSubtitle> */}
-                <CardText>
-                  <ul className="servicesLink">
-                    <li>
-                      <Button
-                        a
-                        href="https://www.doordash.com/en-US"
-                        target="blank"
-                      >
-                        DoorDash
-                      </Button>
-                    </li>
-                    <li>
-                      <Button a href="https://www.ubereats.com/" target="blank">
-                        Uber Eats
-                      </Button>
-                    </li>
-                  </ul>
-                </CardText>
-              </CardBody>
+            <Card
+              body
+              inverse
+              style={{
+                backgroundColor: "rgba(51, 51, 51, 0.76)",
+                borderColor: "rgba(51, 51, 51, 0.76)",
+              }}
+            >
+              <CardTitle style={{ textAlign: "center" }} tag="h5">
+                Places To Stay
+              </CardTitle>
+              <hr />
+              <Button a href="https://www.airbnb.com/" target="blank">
+                airbnb
+              </Button>
+              <br />
+              <Button a href="https://www.vrbo.com/" target="blank">
+                Vrbo
+              </Button>
             </Card>
-            <Card className="text-muted">
-              <CardBody>
-                <CardTitle tag="h3">Grocery Delivery</CardTitle>
-                {/* <CardSubtitle tag="h6">##</CardSubtitle> */}
-                <CardText>
-                  <ul>
-                    <li>
-                      <Button
-                        a
-                        href="https://www.instacart.com/"
-                        target="blank"
-                      >
-                        InstaCart
-                      </Button>
-                    </li>
-                    <li>
-                      <Button a href="http://www.shipt.com/" target="blank">
-                        Shipt
-                      </Button>
-                    </li>
-                  </ul>
-                </CardText>
-              </CardBody>
-            </Card>
-            <Card className="text-muted">
-              <CardBody>
-                <CardTitle tag="h3">Transportation</CardTitle>
-                {/* <CardSubtitle tag="h6">Need a ride?</CardSubtitle> */}
-                <CardText>
-                  <ul>
-                    <li>
-                      <Button a href="https://www.lyft.com/" target="blank">
-                        Lyft
-                      </Button>
-                    </li>
-                    <li>
-                      <Button a href="https://www.uber.com/" target="blank">
-                        Uber
-                      </Button>
-                    </li>
-                  </ul>
-                </CardText>
-              </CardBody>
-            </Card>
-            <Card className="text-muted">
-              <CardBody>
-                <CardTitle tag="h3">Places To Stay</CardTitle>
-                {/* <CardSubtitle tag="h6">##</CardSubtitle> */}
-                <CardText>
-                  <ul>
-                    <li>
-                      <Button a href="https://www.airbnb.com/" target="blank">
-                        airbnb
-                      </Button>
-                    </li>
-                    <li>
-                      <Button a href="https://www.vrbo.com/" target="blank">
-                        Vrbo
-                      </Button>
-                    </li>
-                  </ul>
-                </CardText>
-              </CardBody>
-            </Card>
-            {/* <Card className="text-muted">        
-            <CardBody>
-                <CardTitle tag="h3">Have a drink</CardTitle>
-                <CardText>
-                  <ul>
-                    <li><Button a href="https://untappd.com/"  target="blank">Untappd</Button></li>  
-                  </ul>
-                </CardText>          
-            </CardBody>
-          </Card> */}
-          </CardColumns>
+          </CardGroup>
         </div>
         <br />
       </Container>

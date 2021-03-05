@@ -278,9 +278,9 @@ const Resources = () => {
           style={{ display: "flex", justifyContent: "center", padding: "10px" }}
           onSubmit={(e) => handleSubmit(e)}
         >
-          <button id="serviceBtn" size="lg">
+          <Button id="serviceBtn" size="lg">
             Click for Local Restaurants
-          </button>
+          </Button>
         </form>
 
         {restaurant.length > 0 ? (

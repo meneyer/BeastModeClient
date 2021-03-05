@@ -491,6 +491,11 @@ table.table-bordered > tbody > tr > td {
   border: 2px solid #ffffff;
 }
 
+.linkBtn {
+  background-color: #453054;
+  color: #a8c553;
+}
+
 /* Resource Section END */
 
 /* Custom CSS is above this line*/

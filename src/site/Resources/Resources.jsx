@@ -22,18 +22,38 @@ import ZomatoResults from "./ZomatoResults";
 
 const Resources = () => {
 
-  return (
-    <div id="eventInfoBG">
-      <Container style={{ padding: "20px" }}>
-        <h2 className="resourceTitle">
-          Enter the Race Location's Zip Code to Check out the Local Weather!
-        </h2>
-        <WeatherResults />
-        <br />
-        <YelpResults />
-        <br />
+    const [restaurant, setRestaurant] = useState([]);
+    const [latitude, setLatitude] = useState('');
+    const [longitude, setLongitude] = useState('');
+    
+    navigator.geolocation.getCurrentPosition(function(position) {
+      setLatitude(position.coords.latitude);
+      setLongitude(position.coords.longitude);
+      // console.log(latitude);
+      // console.log(longitude)
+    })
+        
+    function getZomatoResults (){
+      fetch(`https://developers.zomato.com/api/v2.1/geocode?lat=${latitude}&lon=${longitude}`, {
+        method: "GET",
+        headers: {'user-key': "a827929e8885610b39150d9739cd0cea"}})
+        .then((res) => res.json())
+        .then((json) => {
+          console.log(json);
+          setRestaurant(json.nearby_restaurants); 
+        });
+        };
 
-    <div id="eventInfoBG">      
+        const handleSubmit = (event) => {
+            event.preventDefault();
+            getZomatoResults();
+            console.log(restaurant)
+        };
+
+
+  return (
+    
+    <div id="eventInfoBG"> 
 
       <Container  style={{ padding: "20px" }}>
       <h2 className="resourceTitle">Enter the Race Location's Zip Code to Check out the Local Weather!</h2>
@@ -43,7 +63,7 @@ const Resources = () => {
       <h2>Find Your Next Race!</h2>
         <CardColumns>           
 
-         <Card>
+        <Card>
             <CardImg
               className="raceFinderCards"
               top
@@ -253,17 +273,26 @@ const Resources = () => {
 
         {/* Services Link Begin */}
 
+      <form  style={{ display: "flex", justifyContent: "center", padding: "10px" }} onSubmit={ (e) => handleSubmit(e)}>                  
+        <button id="serviceBtn" size="lg">Click for Local Restaurants</button>
+      </form>
+
+      {
+        restaurant.length > 0 ? 
+        <CardColumns>
+          <ZomatoResults restaurant = {restaurant} />
+          </CardColumns>
+          : null
+      }         
+
+      <br />
+
         <h2 className="resourceTitle">Transportation & Delivery Services</h2>
         <div>
           <CardColumns style={{ display: "flex", justifyContent: "center" }}>
             <Card className="text-muted">
               <CardBody>
-
-        <ZomatoResults />     
-
-      <br />
-
-                     <CardTitle tag="h3">Restaurant Delivery</CardTitle>
+                <CardTitle tag="h3">Restaurant Delivery</CardTitle>
                 {/* <CardSubtitle tag="h6">##</CardSubtitle> */}
                 <CardText>
                   <ul className="servicesLink">
@@ -348,17 +377,7 @@ const Resources = () => {
                   </ul>
                 </CardText>
               </CardBody>
-            </Card>
-            {/* <Card className="text-muted">        
-            <CardBody>
-                <CardTitle tag="h3">Have a drink</CardTitle>
-                <CardText>
-                  <ul>
-                    <li><Button a href="https://untappd.com/"  target="blank">Untappd</Button></li>  
-                  </ul>
-                </CardText>          
-            </CardBody>
-          </Card> */}
+            </Card> 
           </CardColumns>
         </div>
         <br />

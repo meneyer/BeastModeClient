@@ -13,11 +13,11 @@ import {
 const WeatherResults = () => {
   const apiKey = "a9095404d4c44ef1b3e232722212702";
   const [zipCode, setZipCode] = useState("");
-  const [weather, setWeather] = useState({});
+  const [weather, setWeather] = useState({}); 
 
   const fetchWeather = () => {
     fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${zipCode}&days=5`
+      `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${zipCode}&days=3`
     )
       .then((res) => res.json())
       .then((json) => {

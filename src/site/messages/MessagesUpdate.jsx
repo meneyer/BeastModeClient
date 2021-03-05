@@ -13,15 +13,19 @@ import {
 } from "reactstrap";
 
 const MessagesUpdate = (props) => {
-  console.log(props.updateMessage);
+  // console.log(props.updateMessage);
 
   const [editRaceName, setEditRaceName] = useState(props.updateMessage.raceName);
-  const [editMessage, seteditMessage] = useState(props.updateMessage.message);
+  const [editMessageText, seteditMessageText] = useState(props.updateMessage.message);
   const [editName, seteditName] = useState(props.updateMessage.name);
   const [editEmail, seteditEmail] = useState(props.updateMessage.email);
-  const [editCreatedAt, seteditCreatedAt] = useState(
-    props.updateMessage.createdAt
-  );
+  // const [editRaceName, setEditRaceName] = useState('');
+  // const [editMessageText, seteditMessageText] = useState('');
+  // const [editName, seteditName] = useState('');
+  // const [editEmail, seteditEmail] = useState('');
+  // const [editCreatedAt, seteditCreatedAt] = useState(
+  //   props.updateMessage.createdAt
+  // );
 //   const [editPackList, setEditPackList] = useState(props.updateMessage.packList);
 //   const [editLodging, setEditLodging] = useState(props.updateMessage.lodging);
 //   const [editTravelPlan, setEditTravelPlan] = useState(
@@ -30,14 +34,14 @@ const MessagesUpdate = (props) => {
 
   const messageUpdate = (message, updateMessage) => {
     message.preventDefault();
-    fetch(`http://localhost:3000/messages/update/${props.updateMessage.id}`, {
+    fetch(`http://localhost:3000/messageboard/update/${props.updateMessage.id}`, {
       method: "PUT",
       body: JSON.stringify({
-        messages: {
+        messageboard: {
           name: editName,
           email: editEmail,
           raceName: editRaceName,
-          message: editMessage
+          message: editMessageText
         },
       }),
       headers: new Headers({
@@ -85,8 +89,8 @@ const MessagesUpdate = (props) => {
                 <Label htmlFor="message">Message</Label>
                 <Input
                   name="message"
-                  value={editMessage}
-                  onChange={(e) => seteditMessage(e.target.value)}
+                  value={editMessageText}
+                  onChange={(e) => seteditMessageText(e.target.value)}
                 />
               </FormGroup>
 

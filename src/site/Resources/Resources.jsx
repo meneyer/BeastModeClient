@@ -8,6 +8,7 @@ import {
   CardTitle,
   CardText,
   CardBody,
+  CardGroup,
 } from "reactstrap";
 
 import WeatherResults from "./WeatherResults";
@@ -246,7 +247,19 @@ const Resources = () => {
 
         <h2 className="resourceTitle">Transportation & Delivery Services</h2>
         <div>
-          <CardColumns style={{ display: "flex", justifyContent: "center" }}>
+          <CardGroup>
+            <Card
+              body
+              inverse
+              style={{ backgroundColor: "#333", borderColor: "#333" }}
+            >
+              <CardTitle tag="h5">Special Title Treatment</CardTitle>
+              <CardText>
+                With supporting text below as a natural lead-in to additional
+                content.
+              </CardText>
+              <Button>Button</Button>
+            </Card>
             <Card className="text-muted">
               <CardBody>
                 <CardTitle tag="h3">Restaurant Delivery</CardTitle>
@@ -345,7 +358,7 @@ const Resources = () => {
                 </CardText>          
             </CardBody>
           </Card> */}
-          </CardColumns>
+          </CardGroup>
         </div>
         <br />
       </Container>

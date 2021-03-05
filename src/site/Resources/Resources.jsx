@@ -21,7 +21,6 @@ import mudRunGuide from "../assets/mudRunGuide.png";
 import ZomatoResults from "./ZomatoResults";
 
 const Resources = () => {
-
   return (
     <div id="eventInfoBG">
       <Container style={{ padding: "20px" }}>
@@ -30,20 +29,10 @@ const Resources = () => {
         </h2>
         <WeatherResults />
         <br />
-        <YelpResults />
-        <br />
 
-    <div id="eventInfoBG">      
-
-      <Container  style={{ padding: "20px" }}>
-      <h2 className="resourceTitle">Enter the Race Location's Zip Code to Check out the Local Weather!</h2>
-      <WeatherResults />
-      <br />
-
-      <h2>Find Your Next Race!</h2>
-        <CardColumns>           
-
-         <Card>
+        <h2 className="resourceTitle">Find Your Next Race!</h2>
+        <CardColumns>
+          <Card>
             <CardImg
               className="raceFinderCards"
               top
@@ -247,23 +236,20 @@ const Resources = () => {
             </CardBody>
           </Card>{" "}
         </CardColumns>
+        {/* Resource Card END */}
         <br />
 
-        {/* Resource Card END */}
-
         {/* Services Link Begin */}
+        <ZomatoResults />
+
+        <br />
 
         <h2 className="resourceTitle">Transportation & Delivery Services</h2>
         <div>
           <CardColumns style={{ display: "flex", justifyContent: "center" }}>
             <Card className="text-muted">
               <CardBody>
-
-        <ZomatoResults />     
-
-      <br />
-
-                     <CardTitle tag="h3">Restaurant Delivery</CardTitle>
+                <CardTitle tag="h3">Restaurant Delivery</CardTitle>
                 {/* <CardSubtitle tag="h6">##</CardSubtitle> */}
                 <CardText>
                   <ul className="servicesLink">

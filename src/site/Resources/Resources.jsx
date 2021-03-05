@@ -25,11 +25,6 @@ const Resources = () => {
   const [restaurant, setRestaurant] = useState([]);
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
-
-<<<<<<< HEAD
-    const [restaurant, setRestaurant] = useState([]);
-    const [latitude, setLatitude] = useState('');
-    const [longitude, setLongitude] = useState('');
     
     navigator.geolocation.getCurrentPosition(function(position) {
       setLatitude(position.coords.latitude);
@@ -40,19 +35,6 @@ const Resources = () => {
         
     function getZomatoResults (){
       fetch(`https://developers.zomato.com/api/v2.1/geocode?lat=${latitude}&lon=${longitude}`, {
-=======
-  navigator.geolocation.getCurrentPosition(function (position) {
-    setLatitude(position.coords.latitude);
-    setLongitude(position.coords.longitude);
-    // console.log(latitude);
-    // console.log(longitude)
-  });
-
-  function getZomatoResults() {
-    fetch(
-      `https://developers.zomato.com/api/v2.1/geocode?lat=${latitude}&lon=${longitude}`,
-      {
->>>>>>> f17739b2788571156f72205be363ad803e131486
         method: "GET",
         headers: { "user-key": "a827929e8885610b39150d9739cd0cea" },
       }
@@ -294,9 +276,9 @@ const Resources = () => {
           style={{ display: "flex", justifyContent: "center", padding: "10px" }}
           onSubmit={(e) => handleSubmit(e)}
         >
-          <Button id="serviceBtn" size="lg">
+          <button id="serviceBtn" size="lg">
             Click for Local Restaurants
-          </Button>
+          </button>
         </form>
 
         {restaurant.length > 0 ? (

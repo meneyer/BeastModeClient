@@ -23,15 +23,7 @@ import ZomatoResults from "./ZomatoResults";
 const Resources = () => {
 
   return (
-    <div id="eventInfoBG">
-      <Container style={{ padding: "20px" }}>
-        <h2 className="resourceTitle">
-          Enter the Race Location's Zip Code to Check out the Local Weather!
-        </h2>
-        <WeatherResults />
-        <br />
-        <YelpResults />
-        <br />
+
 
     <div id="eventInfoBG">      
 
@@ -253,15 +245,17 @@ const Resources = () => {
 
         {/* Services Link Begin */}
 
+        <ZomatoResults />     
+
+        <br />
+
         <h2 className="resourceTitle">Transportation & Delivery Services</h2>
         <div>
           <CardColumns style={{ display: "flex", justifyContent: "center" }}>
             <Card className="text-muted">
               <CardBody>
 
-        <ZomatoResults />     
 
-      <br />
 
                      <CardTitle tag="h3">Restaurant Delivery</CardTitle>
                 {/* <CardSubtitle tag="h6">##</CardSubtitle> */}

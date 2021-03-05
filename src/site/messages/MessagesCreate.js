@@ -76,7 +76,7 @@ const MessagesCreate = (props) => {
               </FormGroup>
 
               <FormGroup>
-                <Label htmlFor="RaceName">Race Your Attending</Label>
+                <Label htmlFor="RaceName">Race You're Attending</Label>
                 <Input
                   name="RaceName"
                   value={raceName}

@@ -79,6 +79,7 @@ const MessagesCreate = (props) => {
                   type="email"
                   name="email"
                   id="email"
+                  value={email}
                   placeholder="yourname@email.com"
                   onChange={(e) => setEmail(e.target.value)}
                 />

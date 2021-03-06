@@ -15,8 +15,14 @@ import MessagesUpdate from "./MessagesUpdate";
 const MessageUpdateDelete = (props) => {
   const [popoverOpen, setPopoverOpen] = useState(false);
   const toggle = () => setPopoverOpen(!popoverOpen);
+  const [logData, setLogData] = useState([]);
   console.log(props.updateMessage);
   console.log(props.messages);
+
+  useEffect(() => {
+    props.fetchforId();
+    mbMap();
+  }, []);
 
   const deleteMessage = (messagesInfo) => {
     console.log(`id to be deleted -> ${messagesInfo.id}`);
@@ -60,29 +66,6 @@ const MessageUpdateDelete = (props) => {
       </>
     );
   };
-  // const [messages, setMessages] = useState([]);
-
-  // const fetchMessages = () => {
-  //     fetch('http://localhost:3000/messageboard/', {
-  //     method: "GET",
-  //         headers: new Headers({
-  //         'Content-Type': 'application/json',
-  //         }),
-  //     }) .then((res) => res.json())
-  //     .then((logData) => {
-  //         setMessages(logData);
-  //         console.log(logData);
-  //     });
-  // };
-
-  //runes Message Fetch function once with component mount only
-  // useEffect(() => {
-  //     fetchMessages();
-  //   }, []);
-  //MY VERSION ABOVE
-  useEffect(() => {
-    mbMap();
-  }, [props.messages]);
 
   const mbMap = () => {
     //Because of .slice method will only return the most recent 10
@@ -111,63 +94,81 @@ const MessageUpdateDelete = (props) => {
             <span>{messagesInfo.createdAt.slice(0, 10)}</span>
             <br />
             {/* UPDATE BUTTON */}
-            <Button
-              className="tableBtn updateBtn"
-              id="Popover1"
-              onClick={() => {
-                props.editMessage(messagesInfo);
-                toggle();
-              }}
-            >
-              Update
-            </Button>
-            {popoverOpen ? (
-              <MessagesUpdate
-                updateMessage={props.updateMessage}
-                token={props.token}
-                updateOff={props.updateOff}
-                fetchMessages={props.fetchMessages}
-                popoverOpen={popoverOpen}
-                toggle={toggle}
-              />
-            ) : (
-              <></>
+            {console.log(
+              `checking owner --> ${localStorage.getItem(
+                "owner"
+              )} vs messageowner --> ${messagesInfo.owner}`
             )}
-            {/* GINGER DELETE BUTTON   */}
-            {/* <Button color="danger" onClick={() =>
-                deleteMessage(messagesInfo)}>Delete</Button> */}
-            <Button
-              className="tableBtn deleteBtn"
-              color="danger"
-              id="DeleteButtonOne"
-              type="button"
-            >
-              Delete
-            </Button>
-            <UncontrolledPopover
-              trigger="legacy"
-              placement="top"
-              target="DeleteButtonOne"
-            >
-              {({ confirmDelete }) => (
-                <PopoverContent
-                  confirmDelete={confirmDelete}
-                  messagesInfo={messagesInfo}
-                />
-              )}
-            </UncontrolledPopover>
+            {localStorage.getItem("owner") === messagesInfo.owner ? (
+              <span>
+                <Button
+                  className="tableBtn updateBtn"
+                  id="Popover1"
+                  onClick={() => {
+                    props.editMessage(messagesInfo);
+                    toggle();
+                  }}
+                >
+                  Update
+                </Button>
+                {popoverOpen ? (
+                  <MessagesUpdate
+                    updateMessage={props.updateMessage}
+                    token={props.token}
+                    updateOff={props.updateOff}
+                    fetchMessages={props.fetchMessages}
+                    popoverOpen={popoverOpen}
+                    toggle={toggle}
+                  />
+                ) : (
+                  <></>
+                )}
+
+                {/*           OLD FUN POPOVER BUTTON
+              <Button
+                className="tableBtn deleteBtn"
+                color="danger"
+                id="DeleteButtonOne"
+                type="button"
+              >
+                Delete
+              </Button>
+
+              <UncontrolledPopover
+                trigger="legacy"
+                placement="top"
+                target="DeleteButtonOne"
+              >
+                {({ confirmDelete }) => (
+                  <PopoverContent
+                    confirmDelete={confirmDelete}
+                    messagesInfo={messagesInfo}
+                  />
+                )}
+              </UncontrolledPopover> */}
+
+                <Button
+                  className="tableBtn deleteBtn"
+                  id="DeleteButtonOne"
+                  color="danger"
+                  type="button"
+                  onClick={() => {
+                    deleteMessage(messagesInfo);
+                  }}
+                >
+                  Delete
+                </Button>
+              </span>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       );
     });
   };
 
-  return (
-    <div>
-      {props.messages !== undefined ? mbMap() : ""}
-      {/* //     <ButtonToggle color='danger'>danger</ButtonToggle>{''} */}
-    </div>
-  );
+  return <div>{props.messages !== undefined ? mbMap() : ""}</div>;
 };
 
 export default MessageUpdateDelete;

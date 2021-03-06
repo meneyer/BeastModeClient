@@ -7,6 +7,7 @@ const Login = (props) => {
   const [password, setPassword] = useState("");
   const [nope, setNope] = useState("");
 
+
   const handleSubmit = (event) => {
     event.preventDefault();
     //keeps page from reloading after submit
@@ -26,6 +27,7 @@ const Login = (props) => {
           return;
         } else {
         console.log(data.sessionToken);
+        localStorage.setItem("owner", 0);
         console.log("User logged in!");
         setNope("");
         props.setOpen(false);}

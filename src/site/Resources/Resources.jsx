@@ -271,6 +271,7 @@ const Resources = () => {
         <br />
 
         {/* Services Link Begin */}
+        <h2 className="resourceTitle">Restaurant Locator</h2>
 
         <form
           style={{ display: "flex", justifyContent: "center", padding: "10px" }}

@@ -106,7 +106,8 @@ const EventTableAndDelete = (props) => {
             {props.updateRace ? <EventUpdate updateEvent={props.updateEvent} token={props.token} updateOff={props.updateOff}  fetchEventInfo={props.fetchEventInfo} popoverOpen={popoverOpen} toggle={toggle} /> : <></>} */}
 
             <div className="text-center">
-              <Button
+            <Button id="DeleteButtonOne" className="tableBtn deleteBtn" color="danger" type="button" onClick={() => {deleteEvent(eventInfoUpdate)}}>Delete</Button>
+              {/* <Button
                 className="tableBtn deleteBtn"
                 color="danger"
                 id="DeleteButtonOne"
@@ -126,7 +127,7 @@ const EventTableAndDelete = (props) => {
                     eventInfoUpdate={eventInfoUpdate}
                   />
                 )}
-              </UncontrolledPopover>
+              </UncontrolledPopover> */}
             </div>
 
             {/* <Button color="danger" onClick={() => {deleteEvent(eventInfoUpdate)}}>Delete</Button> */}

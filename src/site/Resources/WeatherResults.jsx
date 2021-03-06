@@ -37,10 +37,11 @@ const WeatherResults = () => {
     <div>
       <Container>
         <form id="zipcodeForm" onSubmit={(e) => handleSubmit(e)}>
-          <span style={{ margin: "10px", fontSize: "20px" }}>Zip Code:</span>
+          {/* <span style={{ margin: "10px", fontSize: "20px" }}>Zip Code:</span> */}
           <input
             type="text"
             name="zipcode"
+            placeholder="Zip Code"
             onChange={(e) => setZipCode(e.target.value)}
             required
           ></input>

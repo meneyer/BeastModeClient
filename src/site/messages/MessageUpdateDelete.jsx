@@ -111,6 +111,7 @@ const MessageUpdateDelete= (props) => {
               <></>
             )}
 
+{/*           OLD FUN POPOVER BUTTON
               <Button
                 className="tableBtn deleteBtn"
                 color="danger"
@@ -131,9 +132,9 @@ const MessageUpdateDelete= (props) => {
                     messagesInfo={messagesInfo}
                   />
                 )}
-              </UncontrolledPopover>
+              </UncontrolledPopover> */}
 
-              <Button color="danger" type="button" onClick={() => {deleteMessage(messagesInfo)}}>Working Delete</Button>
+              <Button className="tableBtn deleteBtn" id="DeleteButtonOne" color="danger" type="button" onClick={() => {deleteMessage(messagesInfo)}}>Delete</Button>
               </span>
               : "" }
               

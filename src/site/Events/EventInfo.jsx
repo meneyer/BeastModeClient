@@ -5,6 +5,7 @@ import EventCreate from "./EventCreate";
 import EventTableAndDelete from "./EventTableAndDelete";
 import LoggedIn from "../Auth/LoggedIn";
 import BeforeLogIn from "../Auth/BeforeLogin";
+import APIURL from "../../helpers/environment";
 
 const EventInfo = (props) => {
   const [events, setEvents] = useState([]);
@@ -12,7 +13,7 @@ const EventInfo = (props) => {
   const [updateEvent, setUpdateEvent] = useState({});
 
   const fetchEventInfo = () => {
-    fetch("http://localhost:3000/events/", {
+    fetch(`${APIURL}/events/`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",

@@ -8,6 +8,7 @@ import {
   PopoverBody,
   Collapse,
 } from "reactstrap";
+import APIURL from "../../helpers/environment";
 
 import EventUpdate from "./EventUpdate";
 
@@ -16,7 +17,7 @@ const EventTableAndDelete = (props) => {
   const toggle = () => setPopoverOpen(!popoverOpen);
 
   const deleteEvent = (eventInfoUpdate) => {
-    fetch(`http://localhost:3000/events/delete/${eventInfoUpdate.id}`, {
+    fetch(`${APIURL}/events/delete/${eventInfoUpdate.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",

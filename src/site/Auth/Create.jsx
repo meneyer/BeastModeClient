@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import TextField from '@material-ui/core/TextField';
 // import Button from '@material-ui/core/Button';
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import APIURL from "../../helpers/environment";
 
 const Create = (props) => {
   const [email, setEmail] = useState("");
@@ -28,7 +29,7 @@ const Create = (props) => {
       return;
     }
 
-    fetch("http://localhost:3000/user/create", {
+    fetch(`${APIURL}/user/create`, {
       method: "POST",
       body: JSON.stringify({ user: { email: email, password: password } }),
       //changed password to passwordhash

@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import APIURL from "../../helpers/environment";
 
 
 moment.locale("en-US");
@@ -33,7 +34,7 @@ convertDate = (date) => {
 
   componentDidMount(props){
     let self = this;
-    fetch('http://localhost:3000/events/', {
+    fetch(`${APIURL}/events/`, {
         method: "GET",
         headers: new Headers({
           "Content-Type": "application/json",

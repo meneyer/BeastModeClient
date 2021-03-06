@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+import APIURL from "../../helpers/environment";
 
 const EventDisplay = (props) => {
     const [events, setEvents] = useState([]);
 
     //This endpoint only returns the three soonest events
     const fetchEventInfo = () => {
-        fetch("http://localhost:3000/events/ascdate", {
+        fetch(`${APIURL}/events/ascdate`, {
           method: "GET",
           headers: new Headers({
             "Content-Type": "application/json",

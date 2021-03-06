@@ -33,6 +33,7 @@ const AuthModal = (props) => {
         Create User / Login
       </Button>
       <Modal
+        style={{ opacity: "0.95" }}
         isOpen={modal}
         toggle={toggle}
         className={className}

@@ -401,6 +401,22 @@ table.table-bordered > tbody > tr > td {
   background-position: center;
 }
 
+.popoverHeader {
+  font-family: Russo One;
+  color: #453054;
+}
+
+.popoverBody {
+  background-color: #b8ca81;
+  box-shadow: 0px 5px 40px #000000;
+}
+
+.popoverText {
+  font-family: Open Sans;
+  font-weight: bold;
+  color: #453054;
+}
+
 /* Message Section END */
 
 /*Resources Page*/
@@ -491,8 +507,9 @@ table.table-bordered > tbody > tr > td {
   border: 2px solid #ffffff;
 }
 
-.linkBtn {
-  background-color: #453054;
+.linkBtn:hover {
+  font-family: Russo One;
+  background-color: #1d2323;
   color: #a8c553;
 }
 

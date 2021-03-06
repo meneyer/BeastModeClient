@@ -25,18 +25,16 @@ const Resources = () => {
   const [restaurant, setRestaurant] = useState([]);
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
-
-  navigator.geolocation.getCurrentPosition(function (position) {
-    setLatitude(position.coords.latitude);
-    setLongitude(position.coords.longitude);
-    // console.log(latitude);
-    // console.log(longitude)
-  });
-
-  function getZomatoResults() {
-    fetch(
-      `https://developers.zomato.com/api/v2.1/geocode?lat=${latitude}&lon=${longitude}`,
-      {
+    
+    navigator.geolocation.getCurrentPosition(function(position) {
+      setLatitude(position.coords.latitude);
+      setLongitude(position.coords.longitude);
+      // console.log(latitude);
+      // console.log(longitude)
+    })
+        
+    function getZomatoResults (){
+      fetch(`https://developers.zomato.com/api/v2.1/geocode?lat=${latitude}&lon=${longitude}`, {
         method: "GET",
         headers: { "user-key": "a827929e8885610b39150d9739cd0cea" },
       }
@@ -384,7 +382,6 @@ const Resources = () => {
                 Uber
               </Button>
             </Card>
-
             <Card
               body
               inverse

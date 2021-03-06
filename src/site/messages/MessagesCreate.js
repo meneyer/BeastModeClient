@@ -102,9 +102,10 @@ const MessagesCreate = (props) => {
                 </Label>
                 <Input
                   type="textarea"
+                  maxLength="2000"
                   name="Message"
                   value={message}
-                  placeholder="Messages are shared by everyone"
+                  placeholder="Messages are shared by everyone. (Maximum Length = 2000 characters)"
                   onChange={(e) => setMessage(e.target.value)}
                 />
               </FormGroup>

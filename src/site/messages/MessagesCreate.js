@@ -10,6 +10,7 @@ import {
   Input,
   FormText,
 } from "reactstrap";
+import APIURL from "../../helpers/environment";
 
 const MessagesCreate = (props) => {
   const [name, setName] = useState("");
@@ -20,7 +21,7 @@ const MessagesCreate = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(props.token);
-    fetch("http://localhost:3000/messageboard/create", {
+    fetch(`${APIURL}/messageboard/create`, {
       method: "POST",
       body: JSON.stringify({
         messageboard: {

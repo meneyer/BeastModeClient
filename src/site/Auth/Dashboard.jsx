@@ -7,6 +7,7 @@ import { Container, Row, Col } from "reactstrap";
 import MessagesDisplay from "../messages/MessagesDisplay";
 import EventDisplay from "../Events/EventDisplay";
 import CalendarComp from "./CalendarComp";
+import APIURL from "../../helpers/environment";
 
 moment.locale("en-GB");
 const localizer = momentLocalizer(moment);
@@ -17,7 +18,7 @@ let events = [];
 
 
 // const fetchEventInfo = () => {
-//   fetch("http://localhost:3000/events/", {
+  // fetch(`${APIURL}`/events/`, {
 //     method: "GET",
 //     headers: new Headers({
 //       "Content-Type": "application/json",

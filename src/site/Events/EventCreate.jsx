@@ -10,6 +10,7 @@ import {
   Label,
   Input,
 } from "reactstrap";
+import APIURL from "../../helpers/environment";
 
 const EventCreate = (props) => {
   const [raceName, setRaceName] = useState("");
@@ -23,7 +24,7 @@ const EventCreate = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3000/events/create", {
+    fetch(`${APIURL}/events/create`, {
       method: "POST",
       body: JSON.stringify({
         events: {

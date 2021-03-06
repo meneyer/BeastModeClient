@@ -491,8 +491,9 @@ table.table-bordered > tbody > tr > td {
   border: 2px solid #ffffff;
 }
 
-.linkBtn {
-  background-color: #453054;
+.linkBtn:hover {
+  font-family: Russo One;
+  background-color: #1d2323;
   color: #a8c553;
 }
 

@@ -55,7 +55,6 @@ const Resources = () => {
   };
 
   return (
-
     <div id="eventInfoBG">
       <Container style={{ padding: "20px" }}>
         <h2 className="resourceTitle">
@@ -292,7 +291,6 @@ const Resources = () => {
 
         <br />
 
-
         <h2 className="resourceTitle">Transportation & Delivery Services</h2>
         <div>
           <CardGroup>
@@ -309,7 +307,7 @@ const Resources = () => {
               </CardTitle>
               <hr />
               <Button
-                // className="linkBtn"
+                className="linkBtn"
                 a
                 href="https://www.doordash.com/en-US"
                 target="blank"
@@ -317,7 +315,12 @@ const Resources = () => {
                 DoorDash
               </Button>
               <br />
-              <Button a href="https://www.ubereats.com/" target="blank">
+              <Button
+                className="linkBtn"
+                a
+                href="https://www.ubereats.com/"
+                target="blank"
+              >
                 Uber Eats
               </Button>
             </Card>
@@ -333,11 +336,21 @@ const Resources = () => {
                 Grocery Delivery
               </CardTitle>
               <hr />
-              <Button a href="https://www.instacart.com/" target="blank">
+              <Button
+                className="linkBtn"
+                a
+                href="https://www.instacart.com/"
+                target="blank"
+              >
                 InstaCart
               </Button>
               <br />
-              <Button a href="http://www.shipt.com/" target="blank">
+              <Button
+                className="linkBtn"
+                a
+                href="http://www.shipt.com/"
+                target="blank"
+              >
                 Shipt
               </Button>
             </Card>
@@ -353,11 +366,21 @@ const Resources = () => {
                 Transportation Services
               </CardTitle>
               <hr />
-              <Button a href="https://www.lyft.com/" target="blank">
+              <Button
+                className="linkBtn"
+                a
+                href="https://www.lyft.com/"
+                target="blank"
+              >
                 Lyft
               </Button>
               <br />
-              <Button a href="https://www.uber.com/" target="blank">
+              <Button
+                className="linkBtn"
+                a
+                href="https://www.uber.com/"
+                target="blank"
+              >
                 Uber
               </Button>
             </Card>
@@ -374,11 +397,21 @@ const Resources = () => {
                 Places To Stay
               </CardTitle>
               <hr />
-              <Button a href="https://www.airbnb.com/" target="blank">
+              <Button
+                className="linkBtn"
+                a
+                href="https://www.airbnb.com/"
+                target="blank"
+              >
                 airbnb
               </Button>
               <br />
-              <Button a href="https://www.vrbo.com/" target="blank">
+              <Button
+                className="linkBtn"
+                a
+                href="https://www.vrbo.com/"
+                target="blank"
+              >
                 Vrbo
               </Button>
             </Card>

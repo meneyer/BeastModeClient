@@ -17,7 +17,7 @@ const WeatherResults = () => {
 
   const fetchWeather = () => {
     fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${zipCode}&days=5`
+      `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${zipCode}&days=5`
     )
       .then((res) => res.json())
       .then((json) => {

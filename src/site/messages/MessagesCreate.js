@@ -48,14 +48,21 @@ const MessagesCreate = (props) => {
   };
 
   return (
-    <div style={{ paddingBottom: "40px"}}>
+    <div style={{ paddingBottom: "40px" }}>
       <Container>
-        <h1>Post Your Messages Here</h1>
-        <Row>
+        <div
+          className="columnHeader"
+          style={{ margin: "auto", width: "100%", minWidth: "300px" }}
+        >
+          <h2>Post Your Messages Here</h2>
+        </div>
+        <Row id="eventForm" style={{ width: "100%", marginLeft: "0" }}>
           <Col>
             <Form onSubmit={handleSubmit}>
               <FormGroup>
-                <Label htmlFor="name">Your Name</Label>
+                <Label className="eventLabel" htmlFor="name">
+                  Your Name
+                </Label>
                 <Input
                   name="name"
                   value={name}
@@ -65,7 +72,9 @@ const MessagesCreate = (props) => {
               </FormGroup>
 
               <FormGroup>
-                <Label for="email">Email</Label>
+                <Label className="eventLabel" for="email">
+                  Email
+                </Label>
                 <Input
                   type="email"
                   name="email"
@@ -76,7 +85,9 @@ const MessagesCreate = (props) => {
               </FormGroup>
 
               <FormGroup>
-                <Label htmlFor="RaceName">Race You're Attending</Label>
+                <Label className="eventLabel" htmlFor="RaceName">
+                  Race You're Attending
+                </Label>
                 <Input
                   name="RaceName"
                   value={raceName}
@@ -86,15 +97,25 @@ const MessagesCreate = (props) => {
               </FormGroup>
 
               <FormGroup>
-                <Label htmlFor="Message">What's on your Mind?</Label>
+                <Label className="eventLabel" htmlFor="Message">
+                  What's on your Mind?
+                </Label>
                 <Input
+                  type="textarea"
                   name="Message"
                   value={message}
                   placeholder="Messages are shared by everyone"
                   onChange={(e) => setMessage(e.target.value)}
                 />
               </FormGroup>
-              <Button type="submit">Send us your message</Button>
+              <Button
+                className="eventSubmitBtn"
+                style={{ margin: "20px" }}
+                outline
+                type="submit"
+              >
+                Send us your message
+              </Button>
             </Form>
           </Col>
         </Row>

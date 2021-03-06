@@ -42,6 +42,7 @@ const Create = (props) => {
         console.log("Account created!");
         setNope("");
         props.setOpen(false);
+        localStorage.setItem("owner", 0);
       })
       .catch((err) => console.log(err));
   };

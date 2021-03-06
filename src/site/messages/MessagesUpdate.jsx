@@ -89,6 +89,8 @@ const MessagesUpdate = (props) => {
                 <Label htmlFor="message">Message</Label>
                 <Input
                   name="message"
+                  type="textarea"
+                  maxLength="2000"
                   value={editMessageText}
                   onChange={(e) => seteditMessageText(e.target.value)}
                 />

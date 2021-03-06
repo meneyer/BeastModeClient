@@ -1,6 +1,4 @@
-import React from "react";
-import EventInfo from "../Events/EventInfo";
-import MessagesIndex from "../messages/MessagesIndex";
+import {React, useEffect, useState} from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
@@ -13,29 +11,9 @@ import CalendarComp from "./CalendarComp";
 moment.locale("en-GB");
 const localizer = momentLocalizer(moment);
 
-const myEventsList = {}; //empty object for now
+// const myEventsList = {}; //empty object for now
 //test array of events for now to try out calendar
-let events = [
-  {
-    title: "Big Mommas Day",
-    start: 20210220,
-    end: 20210220,
-    allDay: false,
-    resource: "blah",
-  },
-  {
-    title: "Birthday",
-    start: 20210225,
-    end: 20210225,
-    allDay: true,
-    resource: "blah",
-  },
-];
-
-let input = new Date();
-let today = `${input.getFullYear()}-${input.getMonth()}-${input.getDate()}`
-console.log(today);
-console.log(input);
+let events = [];
 
 
 // const fetchEventInfo = () => {
@@ -54,6 +32,9 @@ console.log(input);
 // };
 
 const Dashboard = (props) => {
+  const [logData, setLogData] = useState([]);
+
+
   return (
     <div id="loggedInPage">
       <div id="heroIntro">
@@ -98,11 +79,6 @@ const Dashboard = (props) => {
       </Container>
     </div>
 
-    //     <div>
-    //       <p className="placeholder"></p>
-    //       <EventInfo token={props.token} />
-
-    //     </div>
   );
 };
 

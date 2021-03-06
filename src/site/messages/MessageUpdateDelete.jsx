@@ -99,7 +99,7 @@ const MessageUpdateDelete = (props) => {
                 "owner"
               )} vs messageowner --> ${messagesInfo.owner}`
             )}
-            {localStorage.getItem("owner") === messagesInfo.owner ? (
+            {localStorage.getItem("owner") == messagesInfo.owner ? (
               <span>
                 <Button
                   className="tableBtn updateBtn"

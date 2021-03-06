@@ -95,9 +95,9 @@ const WeatherResults = () => {
                   </CardSubtitle>
                   <CardText>
                     <ul>
-                      <li>{weather.current.condition.text}</li>
-                      <li>Current Temperature: {weather.current.temp_f}</li>
-                      <li>Feels Like: {weather.current.feelslike_f}</li>
+                      <li>{weather.forecast.forecastday[1].day.condition.text}</li>
+                      <li>Chance of Rain: {weather.forecast.forecastday[1].day.daily_chance_of_rain}%</li>
+                      <li>UV index: {weather.forecast.forecastday[1].day.uv}</li>
                       <li>
                         High: {weather.forecast.forecastday[1].day.maxtemp_f}
                       </li>
@@ -126,9 +126,9 @@ const WeatherResults = () => {
                   </CardSubtitle>
                   <CardText>
                     <ul>
-                      <li>{weather.current.condition.text}</li>
-                      <li>Current Temperature: {weather.current.temp_f}</li>
-                      <li>Feels Like: {weather.current.feelslike_f}</li>
+                      <li>{weather.forecast.forecastday[2].day.condition.text}</li>
+                      <li>Chance of Rain: {weather.forecast.forecastday[2].day.daily_chance_of_rain}%</li>
+                      <li>UV index: {weather.forecast.forecastday[2].day.uv}</li>
                       <li>
                         High: {weather.forecast.forecastday[2].day.maxtemp_f}
                       </li>

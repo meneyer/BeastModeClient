@@ -16,8 +16,16 @@ import {
 const MessageUpdateDelete= (props) => {
   const [popoverOpen, setPopoverOpen] = useState(false);
   const toggle = () => setPopoverOpen(!popoverOpen);
+  const [logData, setLogData] = useState([]);
   console.log(props.updateMessage);
   console.log(props.messages)
+
+
+    useEffect(() => {
+      props.fetchforId();
+      mbMap();
+    }, []);
+
  
   const deleteMessage = (messagesInfo) => {
     console.log(`id to be deleted -> ${messagesInfo.id}`)
@@ -61,30 +69,7 @@ const MessageUpdateDelete= (props) => {
       </>
     );
   };
-// const [messages, setMessages] = useState([]);
 
-// const fetchMessages = () => {
-//     fetch('http://localhost:3000/messageboard/', {
-//     method: "GET",
-//         headers: new Headers({
-//         'Content-Type': 'application/json',
-//         }),
-//     }) .then((res) => res.json())
-//     .then((logData) => {
-//         setMessages(logData);
-//         console.log(logData);
-//     });
-// };
-
-
-    //runes Message Fetch function once with component mount only
-    // useEffect(() => {
-    //     fetchMessages();
-    //   }, []);
-      //MY VERSION ABOVE
-      useEffect(() => {
-        mbMap();
-      }, [props.messages]);
       
       const mbMap = () => {
         //Because of .slice method will only return the most recent 10
@@ -100,7 +85,11 @@ const MessageUpdateDelete= (props) => {
                 <span style={{ fontSize: '1em' }}><i>{messagesInfo.email}</i></span><br/>
                 <span>{messagesInfo.createdAt.slice(0,10)}</span><br/>
 
+
                 {/* UPDATE BUTTON */}
+                {console.log(`checking owner --> ${localStorage.getItem("owner")} vs messageowner --> ${messagesInfo.owner}`)}
+                {localStorage.getItem("owner") == messagesInfo.owner ? 
+                <span>
                 <Button
                     className="tableBtn updateBtn"
                     id="Popover1"
@@ -122,9 +111,6 @@ const MessageUpdateDelete= (props) => {
               <></>
             )}
 
-                {/* GINGER DELETE BUTTON   */}
-                {/* <Button color="danger" onClick={() =>
-                deleteMessage(messagesInfo)}>Delete</Button> */}
               <Button
                 className="tableBtn deleteBtn"
                 color="danger"
@@ -146,6 +132,11 @@ const MessageUpdateDelete= (props) => {
                   />
                 )}
               </UncontrolledPopover>
+
+              <Button color="danger" type="button" onClick={() => {deleteMessage(messagesInfo)}}>Working Delete</Button>
+              </span>
+              : "" }
+              
               </div>
             </div>
 
@@ -159,7 +150,7 @@ const MessageUpdateDelete= (props) => {
         <div>
           {props.messages !== undefined ?
           mbMap() : "" }
-          {/* //     <ButtonToggle color='danger'>danger</ButtonToggle>{''} */}
+
         </div>
      );
 } 

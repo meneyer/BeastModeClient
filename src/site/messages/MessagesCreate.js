@@ -114,7 +114,7 @@ const MessagesCreate = (props) => {
                 outline
                 type="submit"
               >
-                Send us your message
+                Post your message
               </Button>
             </Form>
           </Col>

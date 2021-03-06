@@ -4,3 +4,10 @@ git add .
 git commit -m "heroku deploy"
 
 https://beastmode-client.herokuapp.com/
+
+
+**RUN THIS AFTER CHANGES ARE MADE TO DEPLOY**
+npm run build
+git add . 
+git commit -m "a detailed message of what you did"
+git push heroku main

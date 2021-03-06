@@ -11,6 +11,7 @@ import {
   PopoverHeader,
   PopoverBody,
 } from "reactstrap";
+import APIURL from "../../helpers/environment";
 
 const EventUpdate = (props) => {
   console.log(props.updateEvent);
@@ -30,7 +31,7 @@ const EventUpdate = (props) => {
 
   const eventUpdate = (event, updateEvent) => {
     event.preventDefault();
-    fetch(`http://localhost:3000/events/update/${props.updateEvent.id}`, {
+    fetch(`${APIURL}/events/update/${props.updateEvent.id}`, {
       method: "PUT",
       body: JSON.stringify({
         events: {

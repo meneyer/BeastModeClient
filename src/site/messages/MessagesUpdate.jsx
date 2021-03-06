@@ -11,6 +11,7 @@ import {
   PopoverHeader,
   PopoverBody,
 } from "reactstrap";
+import APIURL from "../../helpers/environment";
 
 const MessagesUpdate = (props) => {
   // console.log(props.updateMessage);
@@ -39,7 +40,7 @@ const MessagesUpdate = (props) => {
   const messageUpdate = (message, updateMessage) => {
     message.preventDefault();
     fetch(
-      `http://localhost:3000/messageboard/update/${props.updateMessage.id}`,
+      `${APIURL}/messageboard/update/${props.updateMessage.id}`,
       {
         method: "PUT",
         body: JSON.stringify({

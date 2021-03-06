@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import APIURL from '../../helpers/environment';
 
 //This Component is for Displaying Message Board posts on the main LoggedIn.jsx page
 
@@ -6,7 +7,7 @@ const MessagesDisplay = (props) => {
     const [messages, setMessages] = useState([]);
 
     const fetchMessages = () => {
-        fetch('http://localhost:3000/messageboard/', {
+        fetch(`${APIURL}/messageboard/`, {
         method: "GET",
             headers: new Headers({
             'Content-Type': 'application/json',

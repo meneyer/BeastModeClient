@@ -8,6 +8,7 @@ import {
   PopoverBody,
   Collapse,
 } from "reactstrap";
+import APIURL from "../../helpers/environment";
 import MessagesUpdate from "./MessagesUpdate";
 
 //This Component is for Displaying Message Board posts on the main LoggedIn.jsx page
@@ -26,7 +27,7 @@ const MessageUpdateDelete = (props) => {
 
   const deleteMessage = (messagesInfo) => {
     console.log(`id to be deleted -> ${messagesInfo.id}`);
-    fetch(`http://localhost:3000/messageboard/delete/${messagesInfo.id}`, {
+    fetch(`${APIURL}/messageboard/delete/${messagesInfo.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",

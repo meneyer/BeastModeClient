@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import MessagesCreate from "./MessagesCreate";
 import BeforeLogIn from "../Auth/BeforeLogin";
 import MessageUpdateDelete from "../messages/MessageUpdateDelete";
+import APIURL from "../../helpers/environment";
 
 
 const Messages = (props) => {
@@ -11,7 +12,7 @@ const Messages = (props) => {
   const [logData, setLogData] = useState([]);
   
   const fetchforId = () => {
-    fetch("http://localhost:3000/messageboard/yours", {
+    fetch(`${APIURL}/messageboard/yours`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
@@ -36,7 +37,7 @@ const Messages = (props) => {
 
 
 const fetchMessages = () => {
-  fetch("http://localhost:3000/messageboard/", {
+  fetch(`${APIURL}/messageboard/`, {
       method: "GET",
         headers: new Headers({
           "Content-Type": "application/json",

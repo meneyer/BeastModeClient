@@ -15,8 +15,12 @@ import {
 const MessagesUpdate = (props) => {
   // console.log(props.updateMessage);
 
-  const [editRaceName, setEditRaceName] = useState(props.updateMessage.raceName);
-  const [editMessageText, seteditMessageText] = useState(props.updateMessage.message);
+  const [editRaceName, setEditRaceName] = useState(
+    props.updateMessage.raceName
+  );
+  const [editMessageText, seteditMessageText] = useState(
+    props.updateMessage.message
+  );
   const [editName, seteditName] = useState(props.updateMessage.name);
   const [editEmail, seteditEmail] = useState(props.updateMessage.email);
   // const [editRaceName, setEditRaceName] = useState('');
@@ -26,29 +30,32 @@ const MessagesUpdate = (props) => {
   // const [editCreatedAt, seteditCreatedAt] = useState(
   //   props.updateMessage.createdAt
   // );
-//   const [editPackList, setEditPackList] = useState(props.updateMessage.packList);
-//   const [editLodging, setEditLodging] = useState(props.updateMessage.lodging);
-//   const [editTravelPlan, setEditTravelPlan] = useState(
-//     props.updateMessage.travelPlan
-//   );
+  //   const [editPackList, setEditPackList] = useState(props.updateMessage.packList);
+  //   const [editLodging, setEditLodging] = useState(props.updateMessage.lodging);
+  //   const [editTravelPlan, setEditTravelPlan] = useState(
+  //     props.updateMessage.travelPlan
+  //   );
 
   const messageUpdate = (message, updateMessage) => {
     message.preventDefault();
-    fetch(`http://localhost:3000/messageboard/update/${props.updateMessage.id}`, {
-      method: "PUT",
-      body: JSON.stringify({
-        messageboard: {
-          name: editName,
-          email: editEmail,
-          raceName: editRaceName,
-          message: editMessageText
-        },
-      }),
-      headers: new Headers({
-        "Content-Type": "application/json",
-        Authorization: props.token,
-      }),
-    }).then((res) => {
+    fetch(
+      `http://localhost:3000/messageboard/update/${props.updateMessage.id}`,
+      {
+        method: "PUT",
+        body: JSON.stringify({
+          messageboard: {
+            name: editName,
+            email: editEmail,
+            raceName: editRaceName,
+            message: editMessageText,
+          },
+        }),
+        headers: new Headers({
+          "Content-Type": "application/json",
+          Authorization: props.token,
+        }),
+      }
+    ).then((res) => {
       props.fetchMessages();
       // props.updateOff();
       props.toggle();
@@ -73,10 +80,12 @@ const MessagesUpdate = (props) => {
           target="Popover1"
           toggle={props.toggle}
         >
-          <PopoverHeader>Update Your Messageboard Post</PopoverHeader>
-          <PopoverBody>
+          <PopoverHeader className="popoverHeader">
+            Update Your Post
+          </PopoverHeader>
+          <PopoverBody className="popoverBody">
             <Form onSubmit={messageUpdate}>
-              <FormGroup>
+              <FormGroup className="popoverText">
                 <Label htmlFor="raceName">Race Name</Label>
                 <Input
                   name="raceName"
@@ -85,7 +94,7 @@ const MessagesUpdate = (props) => {
                 />
               </FormGroup>
 
-              <FormGroup>
+              <FormGroup className="popoverText">
                 <Label htmlFor="message">Message</Label>
                 <Input
                   name="message"
@@ -94,7 +103,7 @@ const MessagesUpdate = (props) => {
                 />
               </FormGroup>
 
-              <FormGroup>
+              <FormGroup className="popoverText">
                 <Label htmlFor="name">Your Name</Label>
                 <Input
                   name="name"
@@ -103,7 +112,7 @@ const MessagesUpdate = (props) => {
                 />
               </FormGroup>
 
-              <FormGroup>
+              <FormGroup className="popoverText">
                 <Label htmlFor="email">Email</Label>
                 <Input
                   name="email"
@@ -112,8 +121,8 @@ const MessagesUpdate = (props) => {
                 />
               </FormGroup>
 
-             <Button color="primary" type="submit">
-                Update Your Messageboard Post!
+              <Button className="updateBtn" type="submit">
+                Confirm Update
               </Button>
             </Form>
           </PopoverBody>

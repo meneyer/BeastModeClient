@@ -73,10 +73,12 @@ const EventUpdate = (props) => {
           target="Popover1"
           toggle={props.toggle}
         >
-          <PopoverHeader>Update Your Race Details</PopoverHeader>
-          <PopoverBody>
+          <PopoverHeader className="popoverHeader">
+            Update Your Race Details
+          </PopoverHeader>
+          <PopoverBody className="popoverBody">
             <Form onSubmit={eventUpdate}>
-              <FormGroup>
+              <FormGroup className="popoverText">
                 <Label htmlFor="raceName">Race Name</Label>
                 <Input
                   name="raceName"
@@ -85,7 +87,7 @@ const EventUpdate = (props) => {
                 />
               </FormGroup>
 
-              <FormGroup>
+              <FormGroup className="popoverText">
                 <Label htmlFor="location">Race Location</Label>
                 <Input
                   name="location"
@@ -94,7 +96,7 @@ const EventUpdate = (props) => {
                 />
               </FormGroup>
 
-              <FormGroup>
+              <FormGroup className="popoverText">
                 <Label htmlFor="length">Race Length</Label>
                 <Input
                   name="length"
@@ -103,7 +105,7 @@ const EventUpdate = (props) => {
                 />
               </FormGroup>
 
-              <FormGroup>
+              <FormGroup className="popoverText">
                 <Label htmlFor="date">Date of Race</Label>
                 <Input
                   name="date"
@@ -113,7 +115,7 @@ const EventUpdate = (props) => {
                 />
               </FormGroup>
 
-              <FormGroup>
+              <FormGroup className="popoverText">
                 <Label htmlFor="Race Start Time">Start Time</Label>
                 <Input
                   name="startTime"
@@ -124,7 +126,7 @@ const EventUpdate = (props) => {
                 <FormText> </FormText>
               </FormGroup>
 
-              <FormGroup>
+              <FormGroup className="popoverText">
                 <Label htmlFor="packList">Packing List</Label>
                 <Input
                   type="textarea"
@@ -135,7 +137,7 @@ const EventUpdate = (props) => {
                 <FormText> </FormText>
               </FormGroup>
 
-              <FormGroup>
+              <FormGroup className="popoverText">
                 <Label htmlFor="lodging">Lodging Plans</Label>
                 <Input
                   name="lodging"
@@ -144,7 +146,7 @@ const EventUpdate = (props) => {
                 />
               </FormGroup>
 
-              <FormGroup>
+              <FormGroup className="popoverText">
                 <Label htmlFor="travelPlan">Travel Plans</Label>
                 <Input
                   type="textarea"
@@ -154,7 +156,7 @@ const EventUpdate = (props) => {
                 />
               </FormGroup>
 
-              <Button color="primary" type="submit">
+              <Button className="updateBtn" type="submit">
                 Update Your Event Details!
               </Button>
             </Form>

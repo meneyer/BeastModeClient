@@ -31,7 +31,7 @@ const EventDisplay = (props) => {
             // <div>
     
             <div key={index} >
-              <div id="singleEvent" style={{ color: "#453054", fontFamily: "Open Sans" }}>
+              <div id="singleEvent" >
               <span style={{ fontSize: '1.5em' }}><b>{eventInfoUpdate.raceName}</b></span><br/>
               <span ><b>{eventInfoUpdate.location}</b></span><br/>
               <span><i>{eventInfoUpdate.date}</i></span><br/>
